@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+.astro/
+
+# OS files
+.DS_Store
+
+# Releases (use GitHub Releases instead)
+releases/
+
+# IDE
+.vscode/
+.idea/

@@ -1,0 +1,391 @@
+/* Neova Brand Theme for Starlight */
+
+/* Import Neova fonts */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+/* Force dark mode always - override all theme states */
+:root,
+:root[data-theme='light'],
+:root[data-theme='dark'],
+:root:not([data-theme]) {
+  color-scheme: dark;
+  --sl-color-bg: 11, 15, 28;
+  --sl-color-bg-nav: 15, 20, 35;
+  --sl-color-bg-sidebar: 11, 15, 28;
+  --sl-color-bg-accent: 20, 50, 60;
+  --sl-color-white: 255, 255, 255;
+  --sl-color-gray-1: 230, 235, 245;
+  --sl-color-gray-2: 180, 190, 210;
+  --sl-color-gray-3: 130, 140, 160;
+  --sl-color-gray-4: 80, 90, 110;
+  --sl-color-gray-5: 50, 55, 70;
+  --sl-color-gray-6: 30, 35, 50;
+  --sl-color-black: 11, 15, 28;
+  --sl-color-text: var(--sl-color-gray-1);
+  --sl-color-text-accent: var(--sl-color-accent);
+}
+
+:root {
+  /* Neova brand colors (RGB values for Starlight) */
+  --sl-color-accent-low: 11, 30, 40;
+  --sl-color-accent: 78, 240, 225;
+  --sl-color-accent-high: 150, 250, 240;
+
+  /* Typography */
+  --sl-font: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --sl-font-mono: 'Fira Code', ui-monospace, monospace;
+
+  /* Text sizes */
+  --sl-text-h1: 2.5rem;
+  --sl-text-h2: 1.875rem;
+  --sl-text-h3: 1.5rem;
+}
+
+/* Dark mode overrides (Starlight default) */
+:root[data-theme='dark'] {
+  /* Background colors */
+  --sl-color-bg: 11, 15, 28;
+  --sl-color-bg-nav: 15, 20, 35;
+  --sl-color-bg-sidebar: 11, 15, 28;
+
+  /* Accent colors */
+  --sl-color-accent-low: 20, 50, 60;
+  --sl-color-accent: 78, 240, 225;
+  --sl-color-accent-high: 150, 250, 240;
+
+  /* Text colors */
+  --sl-color-white: 255, 255, 255;
+  --sl-color-gray-1: 230, 235, 245;
+  --sl-color-gray-2: 180, 190, 210;
+  --sl-color-gray-3: 130, 140, 160;
+  --sl-color-gray-4: 80, 90, 110;
+  --sl-color-gray-5: 50, 55, 70;
+  --sl-color-gray-6: 30, 35, 50;
+  --sl-color-black: 11, 15, 28;
+}
+
+/* Light mode (optional - keeping it clean) */
+:root[data-theme='light'] {
+  --sl-color-accent-low: 220, 250, 248;
+  --sl-color-accent: 40, 180, 170;
+  --sl-color-accent-high: 20, 100, 95;
+}
+
+/* Neon glow effect for links and accents */
+a:hover,
+.sl-link-button:hover {
+  text-shadow: 0 0 8px rgba(78, 240, 225, 0.5);
+}
+
+/* Code blocks with Neova styling */
+:root[data-theme='dark'] pre {
+  background: rgba(15, 20, 35, 0.8) !important;
+  border: 1px solid rgba(78, 240, 225, 0.2);
+}
+
+:root[data-theme='dark'] code {
+  background: rgba(78, 240, 225, 0.1);
+  color: rgb(78, 240, 225);
+}
+
+:root[data-theme='dark'] pre code {
+  background: transparent;
+  color: inherit;
+}
+
+/* Sidebar active state with neon accent */
+:root[data-theme='dark'] [aria-current="page"] {
+  background: rgba(78, 240, 225, 0.1);
+  border-left: 2px solid rgb(78, 240, 225);
+}
+
+/* Hero section enhancements (for landing page) */
+.hero {
+  background: transparent !important;
+}
+
+/* Reduce hero logo size */
+.hero > img,
+.hero picture img {
+  max-width: 180px !important;
+  height: auto !important;
+}
+
+/* Style primary hero button (Download for Mac) */
+.hero .sl-flex a[href="#download"],
+.hero a.primary {
+  background: linear-gradient(135deg, rgb(78, 240, 225), rgb(60, 200, 190)) !important;
+  color: rgb(11, 15, 28) !important;
+  font-weight: 600 !important;
+  border: none !important;
+  box-shadow: 0 4px 20px rgba(78, 240, 225, 0.3);
+}
+
+.hero .sl-flex a[href="#download"]:hover,
+.hero a.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(78, 240, 225, 0.4);
+  text-shadow: none !important;
+}
+
+/* Hero subtitle */
+.hero-subtitle {
+  text-align: center;
+  font-size: 1.25rem;
+  color: rgb(180, 190, 210);
+  margin: -1rem auto 2rem;
+  max-width: 600px;
+}
+
+/* Hero image container */
+.hero-image {
+  margin: 2rem auto;
+  max-width: 900px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 60px rgba(78, 240, 225, 0.15);
+  border: 1px solid rgba(78, 240, 225, 0.2);
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Feature images in cards */
+.feature-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(78, 240, 225, 0.1);
+}
+
+/* Starlight Card grid improvements */
+:root[data-theme='dark'] .card {
+  background: rgba(20, 25, 40, 0.6) !important;
+  border: 1px solid rgba(78, 240, 225, 0.15) !important;
+}
+
+:root[data-theme='dark'] .card:hover {
+  border-color: rgba(78, 240, 225, 0.3) !important;
+}
+
+/* Images inside Starlight cards */
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(78, 240, 225, 0.1);
+}
+
+/* Screenshot showcase grid */
+.screenshot-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .screenshot-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.screenshot-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  max-width: 350px;
+  min-width: 280px;
+}
+
+.screenshot-item a {
+  display: block;
+  width: 100%;
+  cursor: zoom-in;
+}
+
+.screenshot-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(78, 240, 225, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.screenshot-item img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(78, 240, 225, 0.2);
+}
+
+.screenshot-item span {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: rgb(180, 190, 210);
+}
+
+/* Lightbox for screenshot preview */
+a.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+  text-decoration: none;
+}
+
+a.lightbox:target {
+  display: flex;
+}
+
+a.lightbox:hover {
+  text-shadow: none;
+}
+
+a.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 8px 40px rgba(78, 240, 225, 0.3);
+  cursor: zoom-out;
+}
+
+a.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: rgb(180, 190, 210);
+  cursor: pointer;
+}
+
+a.lightbox .close:hover {
+  color: rgb(78, 240, 225);
+}
+
+/* Download section */
+.download-section {
+  text-align: center;
+  padding: 3rem 2rem;
+  margin: 2rem 0;
+  background: linear-gradient(135deg, rgba(78, 240, 225, 0.05), rgba(168, 85, 247, 0.05));
+  border-radius: 16px;
+  border: 1px solid rgba(78, 240, 225, 0.1);
+}
+
+.download-section h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, rgb(78, 240, 225), rgb(168, 85, 247));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.download-section p {
+  color: rgb(180, 190, 210);
+  margin-bottom: 1.5rem;
+}
+
+.download-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  padding: 1rem 2rem !important;
+  background: linear-gradient(135deg, rgb(78, 240, 225), rgb(60, 200, 190)) !important;
+  color: rgb(11, 15, 28) !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 20px rgba(78, 240, 225, 0.3) !important;
+}
+
+.download-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 32px rgba(78, 240, 225, 0.4) !important;
+  text-shadow: none !important;
+  color: rgb(11, 15, 28) !important;
+}
+
+.download-button svg {
+  fill: rgb(11, 15, 28) !important;
+}
+
+.download-button p,
+.download-button span {
+  color: rgb(11, 15, 28) !important;
+}
+
+.download-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.system-requirements {
+  font-size: 0.85rem;
+  color: rgb(130, 140, 160);
+  margin-top: 1rem;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(78, 240, 225, 0.1);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  color: rgb(78, 240, 225);
+  text-decoration: none;
+}
+
+.footer-links .separator {
+  color: rgb(80, 90, 110);
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: rgb(130, 140, 160);
+}
+
+/* Purple accent for secondary elements */
+.sl-badge {
+  background: rgba(168, 85, 247, 0.2);
+  border-color: rgb(168, 85, 247);
+}
+
+/* Smooth transitions */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
