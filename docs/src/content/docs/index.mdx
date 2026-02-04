@@ -1,123 +1,322 @@
 ---
 title: Neova
-description: AI-powered development companion for coding agents
+description: Structured workflows for AI-powered development
 template: splash
 hero:
-  tagline: Think. Build. Beyond.
+  tagline: Structured workflows for AI-powered development.
   image:
     file: ../../assets/neova-logo-color.svg
     alt: Neova Logo
   actions:
-    - text: Download for Mac
-      link: "#download"
-      icon: apple
+    - text: Download Free on GitHub
+      link: https://github.com/RemcoMagielse/neova.studio/releases
+      icon: github
       variant: primary
-    - text: Documentation
+    - text: View Documentation
       link: /guides/introduction/
       icon: right-arrow
       variant: minimal
 ---
 
-import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { Card, CardGrid } from '@astrojs/starlight/components';
 
 <div class="hero-subtitle">
-  AI-powered development companion for coding agents
+  Stop prompting from scratch. Neova gives your coding agents the context, structure, and workflow they need to ship better software — <span class="highlight">consistently</span>.
 </div>
 
-<div class="hero-image">
+<div class="hero-image animate-float">
   <img src="/assets/img/neova-feature-builder.png" alt="Neova Feature Builder" />
 </div>
 
----
-
-## Features
-
-<CardGrid>
-  <Card title="Task Management" icon="list-format">
-    <img src="/assets/img/neova-stages.png" alt="Task Management" class="feature-image" />
-    Kanban-style boards to track development tasks through customizable stages. Organize your workflow with drag-and-drop simplicity.
-  </Card>
-  <Card title="Prompt Builder" icon="pencil">
-    <img src="/assets/img/neova-taskeditor-full.png" alt="Prompt Builder" class="feature-image" />
-    Create structured, context-aware prompts for AI coding agents. Build comprehensive instructions with templates and dynamic replacements.
-  </Card>
-  <Card title="Snippet Library" icon="document">
-    <img src="/assets/img/neova-snippets.png" alt="Snippet Library" class="feature-image" />
-    Store and reuse code snippets, templates, and instructions. Quick access to your most-used patterns and boilerplate.
-  </Card>
-  <Card title="Template System" icon="setting">
-    <img src="/assets/img/neova-templates.png" alt="Template System" class="feature-image" />
-    Build reusable templates with dynamic replacements. Variables, conditionals, and smart context injection for any workflow.
-  </Card>
-</CardGrid>
-
----
-
-## Screenshots
-
-<div class="screenshot-grid">
-  <div class="screenshot-item">
-    <a href="#lightbox-1">
-      <img src="/assets/img/neova-feature-builder.png" alt="Feature Builder" />
-    </a>
-    <span>Feature Builder</span>
-  </div>
-  <div class="screenshot-item">
-    <a href="#lightbox-2">
-      <img src="/assets/img/neova-taskeditor-simple.png" alt="Task Editor" />
-    </a>
-    <span>Task Editor</span>
-  </div>
-  <div class="screenshot-item">
-    <a href="#lightbox-3">
-      <img src="/assets/img/neova-file-manager.png" alt="File Manager" />
-    </a>
-    <span>File Manager</span>
+<div class="trusted-by">
+  <span>Works with</span>
+  <div class="agent-logos">
+    <span class="agent-badge">Claude Code</span>
+    <span class="agent-badge">Cursor</span>
+    <span class="agent-badge">Windsurf</span>
+    <span class="agent-badge">Any MCP Agent</span>
   </div>
 </div>
 
-<a id="lightbox-1" class="lightbox" href="#screenshots">
-  <span class="close">&times;</span>
-  <img src="/assets/img/neova-feature-builder.png" alt="Feature Builder" />
-</a>
+---
 
-<a id="lightbox-2" class="lightbox" href="#screenshots">
-  <span class="close">&times;</span>
-  <img src="/assets/img/neova-taskeditor-simple.png" alt="Task Editor" />
-</a>
-
-<a id="lightbox-3" class="lightbox" href="#screenshots">
-  <span class="close">&times;</span>
-  <img src="/assets/img/neova-file-manager.png" alt="File Manager" />
-</a>
+<section class="content-section what-is-neova">
+  <div class="section-badge">What is Neova?</div>
+  <h2>Your AI agents deserve proper tooling.</h2>
+  <div class="two-column">
+    <div class="column"><p class="lead-text">Neova is a workflow tool built for developers who work with coding agents. It combines a <strong>kanban-style board</strong> with <strong>reusable prompt templates</strong>, so your agents always know <em>what</em> to do, <em>how</em> to do it, and <em>where they are</em> in the process.</p></div>
+    <div class="column"><p>Everything lives in your repository. Humans and agents collaborate on the same tasks. No context lost, no ad-hoc prompting, full version control.</p><div class="highlight-box"><span class="icon">📁</span><span>100% file-based — inspect, diff, and version control everything</span></div></div>
+  </div>
+</section>
 
 ---
 
-<div id="download" class="download-section">
-  <h2>Ready to build beyond?</h2>
-  <p>Download Neova and supercharge your AI-assisted development workflow.</p>
+<section class="content-section why-neova">
+  <div class="section-badge">The Problem</div>
+  <h2>Your agents are only as good as the context you give them.</h2>
+  <p class="section-intro">
+    Coding agents are powerful — but without structured input, they hallucinate, go off-track, or produce inconsistent results.
+  </p>
 
-  <a href="#" class="download-button">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-    </svg>
-    Download for Mac (Apple Silicon)
-  </a>
+  <div class="problem-cards">
+    <div class="problem-card"><h4>Repetitive Instructions</h4><p>You rewrite similar prompts every single time</p></div>
+    <div class="problem-card"><h4>Lost Context</h4><p>Agents lack awareness of where a task sits in the bigger picture</p></div>
+    <div class="problem-card"><h4>Inconsistent Output</h4><p>Quality varies wildly between sessions</p></div>
+    <div class="problem-card"><h4>No Traceability</h4><p>Nothing is tracked or version-controlled</p></div>
+  </div>
+</section>
 
-  <p class="system-requirements">Requires macOS 12.0 or later</p>
-</div>
+---
+
+<section class="content-section solution-section">
+  <div class="section-badge accent">The Solution</div>
+  <h2>What changes with Neova</h2>
+
+  <div class="solution-grid">
+    <div class="solution-card">
+      <div class="solution-icon">✓</div>
+      <div class="solution-content">
+        <h4>Consistent Output</h4>
+        <p>Prompt templates standardize how agents approach recurring activities like design, implementation, and review.</p>
+      </div>
+    </div>
+    <div class="solution-card">
+      <div class="solution-icon">✓</div>
+      <div class="solution-content">
+        <h4>Persistent Context</h4>
+        <p>Agents read from and write to tasks, building up shared knowledge as work progresses.</p>
+      </div>
+    </div>
+    <div class="solution-card">
+      <div class="solution-icon">✓</div>
+      <div class="solution-content">
+        <h4>Controlled Workflow</h4>
+        <p>Tasks move through defined stages, so you always know what's done and what's next.</p>
+      </div>
+    </div>
+    <div class="solution-card">
+      <div class="solution-icon">✓</div>
+      <div class="solution-content">
+        <h4>Full Traceability</h4>
+        <p>Everything is markdown in your repo — diffable, reviewable, version-controlled.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+---
+
+<section class="content-section features-section">
+  <div class="section-badge">Features</div>
+  <h2>Everything you need to supercharge your AI workflow</h2>
+
+  <div class="feature-showcase">
+    <div class="feature-item">
+      <div class="feature-visual">
+        <img src="/assets/img/neova-stages.png" alt="Kanban Board" />
+      </div>
+      <div class="feature-details">
+        <h3><span class="neon-highlight">Kanban Board</span> with Custom Stages</h3>
+        <p>Define your own development workflow. Backlog → Preparation → Implementation → Validation → Done — or whatever fits your process. Tasks flow through stages, giving both you and your agents clear structure.</p>
+      </div>
+    </div>
+
+    <div class="feature-item reverse">
+      <div class="feature-visual">
+        <img src="/assets/img/neova-templates.png" alt="Prompt Templates" />
+      </div>
+      <div class="feature-details">
+        <h3>Reusable <span class="neon-highlight">Prompt Templates</span></h3>
+        <p>Write instructions once, use them everywhere. Templates support variable fields that pull in context from tasks and the app automatically — so your agents always get the right input without manual copy-pasting.</p>
+      </div>
+    </div>
+
+    <div class="feature-item">
+      <div class="feature-visual">
+        <img src="/assets/img/neova-taskeditor-full.png" alt="Collaborative Tasks" />
+      </div>
+      <div class="feature-details">
+        <h3>Collaborative <span class="neon-highlight">Tasks</span></h3>
+        <p>Tasks aren't just tickets — they're living documents. You write the goal, agents write back their output. The result is a rich, evolving artifact that captures decisions, designs, specs, and code in one place.</p>
+      </div>
+    </div>
+
+    <div class="feature-item reverse">
+      <div class="feature-visual">
+        <div class="code-preview">
+          <div class="code-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="code-title">MCP Connection</span>
+          </div>
+          <div class="code-content">
+```json
+// Any MCP-compatible agent connects directly
+{
+  "mcpServers": {
+    "neova": {
+      "command": "neova",
+      "args": ["--mcp"]
+    }
+  }
+}
+```
+          </div>
+        </div>
+      </div>
+      <div class="feature-details">
+        <h3><span class="neon-highlight">MCP Server</span> Built In</h3>
+        <p>Neova exposes an MCP server, so any compatible coding agent — Claude Code, Cursor, Windsurf, or your own setup — can connect and work with your board directly.</p>
+      </div>
+    </div>
+
+    <div class="feature-item">
+      <div class="feature-visual">
+        <div class="git-visual">
+          <div class="git-branch main">
+            <span class="branch-name">main</span>
+            <div class="commits">
+              <span class="commit"></span>
+              <span class="commit"></span>
+              <span class="commit active"></span>
+            </div>
+          </div>
+          <div class="git-files">
+            <div class="file">.neova/tasks/feature-auth.json</div>
+            <div class="file">.neova/stages.json</div>
+            <div class="file">.neova/templates/implement.md</div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-details">
+        <h3><span class="neon-highlight">Git-Native</span> Storage</h3>
+        <p>No database lock-in. Tasks, templates, and workflow config are stored as files in your repository. Commit them, branch them, review them — just like your code.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+---
+
+<section class="content-section faq-section">
+  <div class="section-badge">FAQ</div>
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-grid">
+    <details class="faq-item">
+      <summary>
+        <span class="faq-question">Why not just use sub-agents in Claude Code or Cursor?</span>
+        <span class="faq-toggle"></span>
+      </summary>
+      <div class="faq-answer">
+        Sub-agents are session-scoped — they lose context the moment your session ends. Neova gives your agents persistent, structured context that lives across sessions. Plus, it's agent-agnostic: it works with any coding agent through its MCP server or by simply reading files from your repo. No lock-in to a single tool.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <span class="faq-question">How is this different from Jira, Linear, or other PM tools?</span>
+        <span class="faq-toggle"></span>
+      </summary>
+      <div class="faq-answer">
+        Traditional PM tools are designed for humans to read. Neova is designed for agents <em>and</em> humans to collaborate on. Tasks are living documents that both sides read from and write to — creating a shared workspace where context builds up over time, not a ticket graveyard.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <span class="faq-question">Which coding agents does it work with?</span>
+        <span class="faq-toggle"></span>
+      </summary>
+      <div class="faq-answer">
+        All of them. Neova stores everything as plain files in your repository, so any agent that can read files can use it. For deeper integration, the built-in MCP server lets agents like Claude Code, Cursor, Windsurf, and others interact with your board directly.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <span class="faq-question">Do I need to change my existing workflow?</span>
+        <span class="faq-toggle"></span>
+      </summary>
+      <div class="faq-answer">
+        No. You define your own stages and templates — Neova adapts to how you already work. Start with our defaults and customize as you learn what works best for your team.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <span class="faq-question">Is my data safe? Where is it stored?</span>
+        <span class="faq-toggle"></span>
+      </summary>
+      <div class="faq-answer">
+        Everything is stored locally as files in your repository. We don't store anything — no cloud, no database, no telemetry. Your data never leaves your machine. You own it completely.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <span class="faq-question">Is it open source?</span>
+        <span class="faq-toggle"></span>
+      </summary>
+      <div class="faq-answer">
+        No, but it's completely free to use. We believe in giving developers great tools without barriers.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <span class="faq-question">Can I use it with a team?</span>
+        <span class="faq-toggle"></span>
+      </summary>
+      <div class="faq-answer">
+        Yes! Since Neova is git-native, it fits right into any team workflow. If your team collaborates through a shared repo, Neova works out of the box. Branch, merge, and review tasks just like code.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <span class="faq-question">How do I get started?</span>
+        <span class="faq-toggle"></span>
+      </summary>
+      <div class="faq-answer">
+        Download Neova, open your project folder, and you're ready to go. We provide starter templates so you can be up and running in minutes. Connect your agent via MCP for the full experience.
+      </div>
+    </details>
+  </div>
+</section>
+
+---
+
+<section id="download" class="download-section">
+  <div class="download-glow"></div>
+  <div class="download-content">
+    <h2>Ready to give your agents some structure?</h2>
+    <p class="download-subtitle">Neova is free to use. Download it, set up your workflow, and start shipping better software with AI.</p>
+
+    <a href="https://github.com/RemcoMagielse/neova.studio/releases" class="download-button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+      </svg>
+      Download for Mac
+    </a>
+
+    <p class="system-requirements">Requires macOS 12.0 or later · Apple Silicon optimized</p>
+  </div>
+</section>
 
 ---
 
 <footer class="site-footer">
+  <div class="footer-about">
+    <p>Built by a developer, for developers. Neova was born from the frustration of repetitive prompting and inconsistent agent output — and the belief that AI-assisted development deserves proper tooling.</p>
+  </div>
   <div class="footer-links">
     <a href="/guides/introduction/">Documentation</a>
-    <span class="separator">|</span>
+    <span class="separator">·</span>
     <a href="/guides/getting-started/">Getting Started</a>
-    <span class="separator">|</span>
-    <a href="https://github.com/neova-suite/neova">GitHub</a>
-    <span class="separator">|</span>
-    <span>Version 1.0.0</span>
+    <span class="separator">·</span>
+    <a href="https://github.com/RemcoMagielse/neova.studio">GitHub</a>
   </div>
-  <p class="copyright">&copy; 2025 Neova. All rights reserved.</p>
+  <p class="copyright">© 2025 Neova. Free to use, forever.</p>
 </footer>

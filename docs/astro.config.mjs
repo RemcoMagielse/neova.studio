@@ -11,7 +11,7 @@ export default defineConfig({
 			tagline: 'AI-powered development companion',
 			customCss: ['./src/styles/custom.css'],
 			social: [
-				{ icon: 'github', label: 'GitHub', href: 'https://github.com/neova-suite/neova' },
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/RemcoMagielse/neova.studio' },
 			],
 			// Force dark mode as default (matches Neova app)
 			head: [
