@@ -1,0 +1,42 @@
+SOFTWARE LICENSE AGREEMENT: Neova
+Version: 1.0
+Date: 16-02-2026
+
+1. GRANT OF LICENSE
+The Author grants you a personal, non-exclusive, world-wide, royalty-free 
+license to install and use the executable version of Neova
+(the "Software") for both personal and commercial purposes.
+
+2. PERMITTED USE
+- You may use the Software within any organization, regardless of size or revenue.
+- You may install the Software on as many devices as you own or control.
+
+3. PROHIBITED ACTIONS (THE "RESTRICTIONS")
+To protect the integrity of this project, the following are strictly prohibited:
+- RESALE: You may not sell, rent, lease, or sublicense the Software.
+- BUNDLING: You may not include this Software as part of a commercial 
+  package or service without prior written consent from the Author.
+- REDISTRIBUTION: You may not host the installer on third-party websites 
+  for commercial gain. Please link to the official repository/website.
+- REVERSE ENGINEERING: You may not decompile, disassemble, or attempt 
+  to derive the source code of the Software.
+
+4. OWNERSHIP
+The Software is licensed, not sold. The Author retains all ownership, 
+intellectual property rights, and copyright to the Software.
+
+5. NO WARRANTY
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY 
+OR FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL THE AUTHOR BE 
+LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM THE USE 
+OF THE SOFTWARE.
+
+6. TERMINATION
+This license is effective until terminated. Your rights under this license 
+will terminate automatically if you fail to comply with any of its terms.
+
+----------------------------------------------------------------------
+For permissions beyond the scope of this license, please contact:
+Remco Magielse
+----------------------------------------------------------------------
