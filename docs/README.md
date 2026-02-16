@@ -41,23 +41,15 @@ Download the latest release for macOS from [GitHub Releases](https://github.com/
 
 Visit [neova.studio](https://neova.studio) for full documentation.
 
-## Website Development
-
-The docs site is built with [Astro](https://astro.build) and [Starlight](https://starlight.astro.build).
-
-```bash
-cd website
-npm install
-npm run dev
-```
-
 ## License
 
 License & Terms
 This application is provided as Freeware for personal and professional use.
 
 ✅ Permitted: You are free to use this tool within any organization, regardless of size.
+
 ❌ Prohibited: You may **not** sell, rent, lease, or redistribute this software for commercial gain.
+
 ❌ No Derivatives: You may not decompile, reverse engineer, or bundle this application into other commercial products.
 
 © 2025 Neova. All rights reserved.
