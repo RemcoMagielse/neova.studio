@@ -53,6 +53,13 @@ npm run dev
 
 ## License
 
+License & Terms
+This application is provided as Freeware for personal and professional use.
+
+✅ Permitted: You are free to use this tool within any organization, regardless of size.
+❌ Prohibited: You may **not** sell, rent, lease, or redistribute this software for commercial gain.
+❌ No Derivatives: You may not decompile, reverse engineer, or bundle this application into other commercial products.
+
 © 2025 Neova. All rights reserved.
 
 This software is proprietary. Use of this application is subject to the End User License Agreement (EULA) included with the software.
