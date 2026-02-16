@@ -1,0 +1,27 @@
+{
+  "id": "1771151143654-3u",
+  "title": "Fix pagination bug in task list",
+  "description": "## Description\n\n### Problem\n\nTasks beyond page 2 don't load when scrolling.\n\n### Expected\n\nInfinite scroll should load all tasks.\n\n### Notes\n\nCheck the offset calculation in TaskService.",
+  "tags": [
+    "bug",
+    "pagination"
+  ],
+  "status": "pending",
+  "createdAt": "2026-02-15T10:25:43.654Z",
+  "updatedAt": "2026-02-15T10:26:49.592Z",
+  "stage": "Prepare",
+  "order": 0,
+  "history": [
+    {
+      "timestamp": "2026-02-15T10:25:43.654Z",
+      "source": "system",
+      "message": "Task created"
+    },
+    {
+      "timestamp": "2026-02-15T10:26:49.592Z",
+      "source": "system",
+      "message": "Moved to Prepare"
+    }
+  ],
+  "attachments": []
+}

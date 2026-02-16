@@ -35,23 +35,37 @@ export default defineConfig({
 				{
 					label: 'Getting Started',
 					items: [
-						{ label: 'Introduction', slug: 'guides/introduction' },
-						{ label: 'Getting Started', slug: 'guides/getting-started' },
+						{ label: 'Introduction', slug: 'getting-started/introduction' },
+						{ label: 'Quick Start', slug: 'getting-started/quick-start' },
+						// Use Cases - hidden until content is ready
+						// {
+						// 	label: 'Use Cases',
+						// 	items: [
+						// 		{ label: 'Bug Fixing Workflow', slug: 'getting-started/use-cases/bug-fixing' },
+						// 		{ label: 'Feature Development', slug: 'getting-started/use-cases/feature-development' },
+						// 		{ label: 'Code Review Process', slug: 'getting-started/use-cases/code-review' },
+						// 	],
+						// },
 					],
 				},
+				// How-To Guides - hidden until content is ready
+				// {
+				// 	label: 'How-To Guides',
+				// 	autogenerate: { directory: 'how-to' },
+				// },
 				{
-					label: 'Features',
-					autogenerate: { directory: 'features' },
+					label: 'Reference',
+					autogenerate: { directory: 'reference' },
 				},
-				{
-					label: 'Examples',
-					items: [
-						{
-							label: 'Activities',
-							autogenerate: { directory: 'examples/activities' },
-						},
-					],
-				},
+				// Examples - hidden until content is ready
+				// {
+				// 	label: 'Examples',
+				// 	items: [
+				// 		{ label: 'Stage Configurations', slug: 'examples/stage-configurations' },
+				// 		{ label: 'Activity Templates', slug: 'examples/activity-templates' },
+				// 		{ label: 'Standards', slug: 'examples/standards' },
+				// 	],
+				// },
 			],
 		}),
 	],

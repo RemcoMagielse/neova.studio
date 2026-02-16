@@ -1,0 +1,110 @@
+---
+title: Quick Start
+description: Get up and running with Neova in 5 minutes.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="caution" title="Pre-release notice">
+Neova is currently in pre-release and not yet code-signed for macOS. After installing, run this command in Terminal to allow the app to open:
+
+```bash
+sudo xattr -cr /Applications/Neova.app
+```
+</Aside>
+
+## Open Your Project Folder
+
+![Neova Project Dashboard](/assets/img/neova-project-dashboard.png)
+
+Launch Neova and open your project folder — the same folder your coding agent works in.
+
+Neova creates a `.neova/` folder inside your project. Everything stays local:
+
+- **Your data stays on your machine** — no cloud, no sync, no external services
+- **Agents can access it** — because it lives in the same folder they already work in
+- **Full version control** — commit your tasks and templates alongside your code
+
+![Neova Project File Explorer](/assets/img/neova-project-file-explorer.png)
+
+## Configure Your Stages
+
+Stages define the steps your tasks move through. Think of them as columns on a kanban board.
+
+1. Go to **Settings** → **Stages**
+2. Add, remove, or reorder stages to match your workflow
+
+![Neova Stages](/assets/img/neova-settings-stages.png)
+
+A typical setup might look like:
+
+| Stage | Purpose |
+|-------|---------|
+| Backlog | Ideas and upcoming work |
+| Prepare | Research, design, specifications |
+| Implement | Active development |
+| Verify | Testing and review |
+| Done | Completed work |
+
+## Create Activities
+
+Activities are structured prompt templates. You configure them once and reuse them every time you work on a task.
+
+1. Go to **Settings** → **Activities**
+2. Create a new activity or import an existing template
+
+![Neova Stages](/assets/img/neova-settings-templates.png)
+
+Each activity contains a prompt template with placeholders that get filled in automatically when you use it.
+
+![Neova Stages](/assets/img/neova-settings-project-templates.png)
+
+## Assign Activities to Stages
+
+Once you've created activities, assign them to stages. When a task is in a stage, the assigned activities appear as buttons on that task.
+
+1. Go to **Settings** → **Stages**
+2. Select a stage
+3. Choose which activities should be available in that stage
+
+![Neova Assigning an Activity to a Stage](/assets/img/neova-assign-activity-to-stage.png)
+
+Activities can be assigned to multiple stages. For example:
+- **Debug** → Prepare, Verify
+- **Implement** → Implement
+- **Test & Review** → Verify
+
+![Neova Activity assigned to a Stage](/assets/img/neova-settings-stages-assigned.png)
+
+## Create Your First Task
+
+1. Click **+ New Task** on your board
+2. Give it a title and optional description
+3. The task appears in your default stage
+
+![Neova Boards Task Editor](/assets/img/neova-boards-task-editor-02.png)
+
+
+Use the stage buttons to move it through your workflow.
+
+## Run an Activity
+
+With a task selected:
+
+1. Open the task or right-click it
+2. Choose an activity from the available options for that stage
+3. The activity template renders with your task context filled in
+
+![Neova Boards Actions on a Task](/assets/img/neova-boards-task-actions.png)
+
+
+## Copy & Use Your Prompt
+
+Once an activity is rendered:
+
+1. **Right-click the task** and select **Copy Prompt**, or
+2. **Open the task** and click the copy button
+
+Paste the prompt directly into your coding agent — Claude Code, Cursor, Windsurf, or any other tool.
+
+Your agent now has structured context: what to do, how to approach it, and where the task fits in your workflow.
