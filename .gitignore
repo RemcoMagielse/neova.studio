@@ -14,3 +14,6 @@ releases/
 # IDE
 .vscode/
 .idea/
+
+# Catalogue output (built by catalogue/build.mjs in the deploy workflow)
+docs/public/catalogue/

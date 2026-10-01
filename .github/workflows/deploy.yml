@@ -16,6 +16,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test catalogue build
+        run: node --test catalogue/build.test.mjs
+      - name: Build catalogue
+        run: node catalogue/build.mjs
       - name: Build with Astro
         uses: withastro/action@v3
         with:
