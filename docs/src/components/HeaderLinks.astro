@@ -1,0 +1,29 @@
+---
+// Replaces Starlight's SocialIcons: a GitHub text link and the Download button.
+---
+
+<a class="header-link" href="https://github.com/RemcoMagielse/neova.studio">GitHub</a>
+<a class="header-download" href="/#download">Download</a>
+
+<style>
+	.header-link {
+		color: var(--sl-color-gray-2);
+		font-size: var(--sl-text-sm);
+		text-decoration: none;
+	}
+	.header-link:hover {
+		color: var(--sl-color-white);
+	}
+	.header-download {
+		padding: 0.5rem 0.75rem;
+		border-radius: 0.375rem;
+		background: var(--sl-color-accent);
+		color: var(--neova-on-accent);
+		font-size: var(--sl-text-xs);
+		font-weight: 700;
+		text-decoration: none;
+	}
+	.header-download:hover {
+		background: var(--sl-color-accent-high);
+	}
+</style>

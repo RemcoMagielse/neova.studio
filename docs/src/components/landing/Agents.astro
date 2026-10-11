@@ -1,0 +1,71 @@
+---
+// Row 05 (Penpot › Website). Two scroll ranges in one pinned block (agreed with UX):
+// 0–50% the agent card comes apart into CLI, role, skills and notebook;
+// 50–100% the parts snap back, the card becomes a terminal and two more tile in.
+// Without motion the exploded frame is shown.
+import AgentCard from '../../assets/landing/05-agents/agent-card.light.svg';
+import PartCli from '../../assets/landing/05-agents/part-cli.light.svg';
+import PartRole from '../../assets/landing/05-agents/part-role.light.svg';
+import PartSkills from '../../assets/landing/05-agents/part-skills.light.svg';
+import PartNotebook from '../../assets/landing/05-agents/part-notebook.light.svg';
+import SessionsFrame from '../../assets/landing/05-agents/sessions-frame.light.svg';
+import TerminalPm from '../../assets/landing/05-agents/terminal-pm.light.svg';
+import TerminalUx from '../../assets/landing/05-agents/terminal-ux.light.svg';
+import TerminalSe from '../../assets/landing/05-agents/terminal-se.light.svg';
+
+const lines = [
+	{ x: 635, y: 340, w: 2, h: 90 },
+	{ x: 850, y: 340, w: 2, h: 90 },
+	{ x: 910, y: 500, w: 230, h: 2 },
+	{ x: 740, y: 580, w: 2, h: 80 },
+];
+const dots = [
+	{ x: 631, y: 425 },
+	{ x: 845, y: 425 },
+	{ x: 905, y: 496 },
+	{ x: 736, y: 575 },
+];
+---
+
+<section id="agents" class="section pin agents" aria-labelledby="agents-title">
+	<div class="pin-sticky">
+		<div class="stage">
+			<div class="copy agents-copy">
+				<p class="eyebrow">Agents + Terminals + Skills</p>
+				<h2 id="agents-title">A team of agents, each with its own role and skills</h2>
+				<p class="lede">
+					Pick the CLI you trust, give it a role, add skills. Every agent runs in its own terminal, so you
+					can watch it work or step in.
+				</p>
+			</div>
+			<div class="copy center-copy sessions-copy" aria-hidden="true">
+				<p class="eyebrow">Agents + Terminals + Skills</p>
+				<h2>Side by side. Watching, or hands-off.</h2>
+				<p class="lede">Each agent in its own terminal. Step in any time: type, and your message goes straight to that agent.</p>
+			</div>
+			<div class="art agents-art">
+				<div class="ag-explode">
+					{lines.map((l) => <i class="at line ag-line" style={`--x:${l.x};--y:${l.y};--w:${l.w};--h:${l.h}`} />)}
+					<div class="at panel ag-part ag-cli" style="--x:520;--y:170;--w:230"><PartCli role="img" aria-label="Pick a CLI: Claude Code, Codex or Gemini CLI" /></div>
+					<div class="at panel ag-part ag-role" style="--x:800;--y:140;--w:300"><PartRole role="img" aria-label="Role instructions" /></div>
+					<div class="at panel ag-part ag-skills" style="--x:1140;--y:330;--w:250"><PartSkills role="img" aria-label="Skills" /></div>
+					<div class="at panel ag-part ag-notebook" style="--x:600;--y:660;--w:280"><PartNotebook role="img" aria-label="Notebook: lessons from past sessions" /></div>
+					<div class="at panel ag-card" style="--x:610;--y:430;--w:300"><AgentCard role="img" aria-label="Agent card: Software Engineer, online, codex, 3 skills" /></div>
+					{dots.map((d) => <i class="at dot ag-dot" style={`--x:${d.x};--y:${d.y}`} />)}
+				</div>
+				<div class="ag-sessions" aria-hidden="true">
+					<div class="at panel window" style="--x:48;--y:260;--w:1344"><SessionsFrame /></div>
+					<div class="at ag-term ag-term-pm" style="--x:60;--y:310;--w:434.667"><TerminalPm /></div>
+					<div class="at ag-term ag-term-ux" style="--x:503;--y:310;--w:434.667"><TerminalUx /></div>
+					<div class="at ag-term ag-term-se" style="--x:945;--y:310;--w:434.667"><TerminalSe /></div>
+				</div>
+			</div>
+			<ul class="label-list">
+				<li>CLI: Claude Code, Codex or Gemini CLI</li>
+				<li>Role instructions</li>
+				<li>Skills</li>
+				<li>Notebook: lessons from past sessions</li>
+			</ul>
+		</div>
+	</div>
+</section>

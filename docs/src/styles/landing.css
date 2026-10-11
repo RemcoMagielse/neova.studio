@@ -1,0 +1,2801 @@
+/* Landing page (Penpot › Website, rows 01–11).
+   Three layers:
+   1. Base: phones. Every section is a normal block; its art is a still image.
+   2. ≥ 900px: a 1440×900 stage per section. Positions are the boards' pixels, in --u.
+   3. Scroll-driven: sections pin and scroll progress plays one motion each. Only with
+      no reduced-motion preference and browser support; otherwise layer 2 shows end frames. */
+
+:root {
+	--bg: #fbf7f1;
+	--ink: #1d1712;
+	--ink-2: #493e35;
+	--muted: #7b7063;
+	--line: #d3c9bc;
+	--accent: #b94e34;
+	--accent-hover: #a2432c;
+	--espresso: #2e241e;
+	--shadow: 46 36 30;
+	--font-sans: 'Lato', ui-sans-serif, system-ui, sans-serif;
+	--font-serif: 'Lusitana', Georgia, ui-serif, serif;
+	--font-mono: 'Courier Prime', ui-monospace, SFMono-Regular, monospace;
+	--nav-h: 78px;
+	color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--ink-2);
+	font-family: var(--font-sans);
+	-webkit-font-smoothing: antialiased;
+}
+
+a {
+	color: inherit;
+}
+
+h1,
+h2,
+h3 {
+	margin: 0;
+	color: var(--ink);
+	font-family: var(--font-serif);
+	font-weight: 700;
+	line-height: 1.15;
+}
+
+/* ---------- Nav ---------- */
+
+.nav {
+	position: fixed;
+	inset: 0 0 auto;
+	z-index: 50;
+	display: flex;
+	align-items: center;
+	gap: 2.25rem;
+	height: var(--nav-h);
+	padding: 0 48px;
+	background: color-mix(in srgb, var(--bg) 88%, transparent);
+	backdrop-filter: blur(8px);
+}
+.nav-brand {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-right: auto;
+	color: var(--ink);
+	font-size: 17px;
+	font-weight: 700;
+	text-decoration: none;
+}
+.nav-mark {
+	width: auto;
+	height: 27px;
+}
+.nav-links {
+	display: flex;
+	gap: 2.25rem;
+	font-size: 14px;
+}
+.nav-links a {
+	color: var(--ink-2);
+	text-decoration: none;
+}
+.nav-links a:hover {
+	color: var(--ink);
+}
+
+/* ---------- Buttons ---------- */
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 22px;
+	height: 38px;
+	border: 1px solid transparent;
+	border-radius: 8px;
+	font-size: 14px;
+	font-weight: 700;
+	text-decoration: none;
+	white-space: nowrap;
+}
+.button-lg {
+	height: 50px;
+	border-radius: 10px;
+	font-size: 15px;
+}
+.button-primary {
+	background: var(--accent);
+	color: #fff;
+}
+.button-primary:hover {
+	background: var(--accent-hover);
+}
+.button-secondary {
+	border-color: var(--line);
+	color: var(--ink);
+}
+.button-secondary:hover {
+	border-color: var(--muted);
+}
+.button:focus-visible,
+.nav a:focus-visible,
+.label:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+}
+
+/* ---------- Shared type ---------- */
+
+.eyebrow {
+	margin: 0;
+	color: var(--accent);
+	font-family: var(--font-mono);
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+}
+
+/* ---------- Layer 1: phones ---------- */
+
+.section {
+	padding: 104px 20px 40px;
+}
+.copy {
+	display: grid;
+	gap: 16px;
+}
+.copy h1 {
+	font-size: 2.75rem;
+}
+.copy h2 {
+	font-size: 2rem;
+}
+.lede {
+	margin: 0;
+	font-size: 1.0625rem;
+	line-height: 1.5;
+}
+.actions {
+	display: grid;
+	gap: 12px;
+	margin-top: 8px;
+}
+.fineprint {
+	margin: 0;
+	color: var(--muted);
+	font-size: 13px;
+}
+
+.art {
+	position: relative;
+	margin-top: 32px;
+	container-type: inline-size;
+	--u: calc(100cqw / 1440);
+}
+.at {
+	position: absolute;
+	left: calc(var(--x) * var(--u));
+	top: calc((var(--y) - var(--crop-y, 0)) * var(--u));
+	width: calc(var(--w) * var(--u));
+}
+.at > svg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+/* Phones crop each frame to its art (--crop-y / --crop-h, in board pixels). */
+.art {
+	aspect-ratio: 1440 / var(--crop-h, 900);
+}
+.workspace-art {
+	--crop-y: 200;
+	--crop-h: 700;
+}
+.goals-art {
+	--crop-y: 100;
+	--crop-h: 780;
+}
+.wiki-art {
+	--crop-y: 380;
+	--crop-h: 440;
+}
+.agents-art {
+	--crop-y: 130;
+	--crop-h: 700;
+}
+.mcp-art {
+	--crop-y: 190;
+	--crop-h: 570;
+}
+.files-art {
+	--crop-y: 290;
+	--crop-h: 530;
+}
+.mcp-art .mcp-lines {
+	top: calc(-1 * var(--crop-y) * var(--u));
+	height: calc(900 * var(--u));
+}
+
+/* SVGs carry no shadows (UX handoff): the wrapper casts them, with the same radius. */
+.panel {
+	--lift: 0.6;
+	border-radius: calc(12 * var(--u));
+	box-shadow:
+		0 calc(2 * var(--u)) calc(4 * var(--u)) rgb(var(--shadow) / 0.06),
+		0 calc(var(--lift) * 24 * var(--u)) calc(var(--lift) * 48 * var(--u)) rgb(var(--shadow) / calc(var(--lift) * 0.16));
+}
+.panel.window {
+	border-radius: calc(14 * var(--u));
+}
+
+.line {
+	height: calc(var(--h) * var(--u));
+	background: var(--accent);
+}
+.dot {
+	width: calc(10 * var(--u));
+	height: calc(10 * var(--u));
+	border-radius: 50%;
+	background: var(--accent);
+}
+.label {
+	display: grid;
+	gap: calc(3 * var(--u));
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+}
+.label strong {
+	color: var(--ink);
+	font-size: calc(15 * var(--u));
+}
+.label span {
+	color: var(--accent);
+	font-family: var(--font-mono);
+	font-size: calc(12 * var(--u));
+}
+.label-end {
+	text-align: end;
+}
+.label-start {
+	text-align: start;
+}
+.label:hover strong {
+	color: var(--accent);
+}
+
+/* The board zooms over the other layers at the end of row 02. */
+.ws-board {
+	z-index: 1;
+}
+
+/* The board export is 640 wide around a 620-wide panel: the panel sets the box. */
+.ws-board > svg {
+	width: calc(640 / 620 * 100%);
+	margin-left: calc(-10 / 620 * 100%);
+}
+
+/* Hero (phone): flat window under the copy. Download becomes "Get it for desktop". */
+.hero .copy {
+	text-align: start;
+}
+.hero-art {
+	aspect-ratio: 1344 / 780;
+}
+.hero-art .hero-window {
+	--x: 0 !important;
+	--y: 0 !important;
+	--w: 1440 !important;
+}
+
+/* Exploded workspace (phone): exploded still, labels as a list underneath. */
+.ws-frame,
+.ws-hero-window,
+.ws-labels {
+	display: none;
+}
+.label-list {
+	display: grid;
+	gap: 6px;
+	margin: 20px 0 0;
+	padding-left: 1.25rem;
+	font-size: 15px;
+}
+.label-list a {
+	color: var(--ink);
+}
+
+
+/* ---------- 03 Goals + Tasks ---------- */
+
+.steps {
+	display: grid;
+	gap: 18px;
+	margin: 16px 0 0;
+	padding: 0;
+	list-style: none;
+}
+.step {
+	--active: 0;
+	--done: 1;
+	position: relative;
+	display: grid;
+	grid-template-columns: 26px 1fr;
+	column-gap: 16px;
+	row-gap: 4px;
+}
+.step-4 {
+	--active: 1;
+	--done: 0;
+}
+.step-dot {
+	position: relative;
+	grid-row: span 2;
+	display: grid;
+	place-items: center;
+	width: 26px;
+	height: 26px;
+	border: 2px solid var(--line);
+	border-radius: 50%;
+	color: color-mix(in srgb, #fff calc(var(--active) * 100%), var(--muted));
+	font-size: 12px;
+	font-weight: 700;
+}
+.step-dot::before,
+.step-dot::after {
+	content: '';
+	position: absolute;
+	inset: -2px;
+	border-radius: 50%;
+}
+.step-dot::before {
+	background: var(--accent);
+	opacity: var(--active);
+}
+.step-dot::after {
+	background: #4f6b34;
+	opacity: var(--done);
+}
+.step-num,
+.step-check {
+	position: relative;
+	z-index: 1;
+	grid-area: 1 / 1;
+}
+.step-num {
+	opacity: calc(1 - var(--done));
+}
+.step-check {
+	color: #fff;
+	opacity: var(--done);
+}
+.step strong {
+	color: color-mix(in srgb, var(--ink) calc(var(--active) * 100%), var(--ink-2));
+	font-size: 15px;
+}
+.step-text {
+	color: var(--muted);
+	font-size: 13px;
+}
+
+.gt-board > svg {
+	width: calc(932 / 912 * 100%);
+	margin-left: calc(-10 / 912 * 100%);
+}
+.gt-goal {
+	height: calc(6 * var(--u));
+	overflow: hidden;
+	border-radius: calc(3 * var(--u));
+}
+.gt-goal i {
+	display: block;
+	width: 75%;
+	height: 100%;
+	background: #4f6b34;
+}
+.gt-percent {
+	display: grid;
+	margin: 0;
+	color: #4f6b34;
+	font-size: calc(12 * var(--u));
+	font-weight: 700;
+}
+.gt-percent span {
+	grid-area: 1 / 1;
+}
+.gt-from {
+	opacity: 0;
+}
+.gt-slot {
+	height: calc(104 * var(--u));
+	border: 1px dashed rgb(185 78 52 / 0.5);
+	border-radius: calc(10 * var(--u));
+}
+.gt-card {
+	--lift: 0.5;
+	border-radius: calc(10 * var(--u));
+	transform: translateX(calc(658.5 * var(--u)));
+}
+.gt-v {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.gt-v + .gt-v {
+	position: absolute;
+	inset: 0;
+}
+.gt-v-prepare,
+.gt-v-implement,
+.gt-v-verify {
+	opacity: 0;
+}
+
+/* ---------- 04 Wiki ---------- */
+
+.wk-conduct {
+	transform: rotate(-8deg);
+}
+.wk-data {
+	transform: rotate(-3deg);
+}
+.wk-security {
+	transform: rotate(2deg);
+}
+.wk-call {
+	color: var(--accent);
+	font-family: var(--font-mono);
+	font-size: calc(11 * var(--u));
+}
+.wk-line {
+	transform-origin: 0 50%;
+}
+
+/* ---------- 05 Agents ---------- */
+
+.ag-card {
+	z-index: 1;
+	border-radius: calc(14 * var(--u));
+}
+.ag-dot {
+	z-index: 2;
+}
+.sessions-copy,
+.ag-sessions {
+	display: none;
+}
+
+/* ---------- 06 Chat + Events + Schedules (HTML) ---------- */
+
+.chat-art {
+	--u: 1px;
+	display: grid;
+	gap: 16px;
+	aspect-ratio: auto;
+	container-type: normal;
+}
+.chat-art .at {
+	position: static;
+	width: auto;
+}
+.ch-panel {
+	overflow: hidden;
+	border: 1px solid var(--line);
+	border-radius: calc(12 * var(--u));
+	background: #fff;
+	box-shadow: 0 calc(14 * var(--u)) calc(32 * var(--u)) rgb(var(--shadow) / 0.08);
+	color: var(--ink);
+}
+.ch-head {
+	display: flex;
+	align-items: baseline;
+	gap: calc(16 * var(--u));
+	padding: calc(16 * var(--u)) calc(20 * var(--u));
+	border-bottom: 1px solid #ede6dc;
+}
+.ch-head h3 {
+	font-size: calc(16 * var(--u));
+}
+.ch-chat .ch-head {
+	padding: calc(18 * var(--u)) calc(24 * var(--u));
+}
+.ch-chat .ch-head h3 {
+	font-size: calc(18 * var(--u));
+}
+.ch-online {
+	color: #4f6b34;
+	font-size: calc(12 * var(--u));
+	font-weight: 700;
+}
+.ch-messages,
+.ch-rows {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.ch-messages {
+	display: grid;
+	gap: calc(16 * var(--u));
+	padding: calc(20 * var(--u)) calc(24 * var(--u));
+}
+.ch-msg {
+	display: grid;
+	grid-template-columns: calc(32 * var(--u)) 1fr;
+	column-gap: calc(12 * var(--u));
+}
+.ch-avatar {
+	grid-row: span 3;
+	display: grid;
+	place-items: center;
+	width: calc(32 * var(--u));
+	height: calc(32 * var(--u));
+	border-radius: 50%;
+	background: var(--c);
+	color: #fff;
+	font-size: calc(12 * var(--u));
+	font-weight: 700;
+}
+.ch-meta {
+	display: flex;
+	gap: calc(22 * var(--u));
+	align-items: baseline;
+	margin: 0;
+	font-size: calc(12.5 * var(--u));
+}
+.ch-meta time {
+	color: var(--muted);
+	font-size: calc(11 * var(--u));
+}
+.ch-text {
+	margin: calc(4 * var(--u)) 0 0;
+	font-size: calc(14 * var(--u));
+	line-height: 1.45;
+}
+.ch-mention {
+	color: var(--ink);
+}
+.ch-card {
+	width: calc(420 * var(--u));
+	max-width: 100%;
+	margin-top: calc(12 * var(--u));
+	padding: calc(12 * var(--u)) calc(14 * var(--u));
+	border: 1px solid #ede6dc;
+	border-radius: calc(10 * var(--u));
+	background: #f9f3ec;
+	font-family: var(--font-mono);
+	font-size: calc(13 * var(--u));
+}
+.ch-card p {
+	margin: 0;
+}
+.ch-card-head {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: calc(12 * var(--u)) !important;
+}
+.ch-card-head span {
+	color: var(--muted);
+	font-size: calc(11 * var(--u));
+}
+.ch-item {
+	display: flex;
+	gap: calc(12 * var(--u));
+	line-height: calc(24 * var(--u));
+}
+.ch-done b {
+	color: #4f6b34;
+}
+.ch-active b {
+	color: var(--accent);
+}
+.ch-todo {
+	color: var(--muted);
+}
+.ch-todo b {
+	color: #a89c8d;
+}
+.ch-composer {
+	margin: calc(16 * var(--u));
+	padding: calc(13 * var(--u)) calc(14 * var(--u));
+	border: 1px solid #ede6dc;
+	border-radius: calc(10 * var(--u));
+	background: #f9f3ec;
+	color: var(--muted);
+	font-size: calc(13 * var(--u));
+}
+.ch-rows {
+	display: grid;
+}
+.ch-event {
+	display: grid;
+	grid-template-columns: calc(22 * var(--u)) 1fr auto;
+	align-items: center;
+	column-gap: calc(12 * var(--u));
+	padding: calc(13 * var(--u)) calc(20 * var(--u));
+	font-size: calc(13 * var(--u));
+}
+.ch-event b {
+	display: grid;
+	place-items: center;
+	width: calc(22 * var(--u));
+	height: calc(22 * var(--u));
+	border-radius: 50%;
+	background: var(--c);
+	color: #fff;
+	font-size: calc(11 * var(--u));
+}
+.ch-event time {
+	color: var(--muted);
+	font-family: var(--font-mono);
+	font-size: calc(11 * var(--u));
+}
+.ch-schedule .ch-rows {
+	gap: calc(12 * var(--u));
+	padding: calc(16 * var(--u));
+}
+.ch-job {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	row-gap: calc(8 * var(--u));
+	padding: calc(14 * var(--u)) calc(16 * var(--u));
+	border: 1px solid #ede6dc;
+	border-radius: calc(10 * var(--u));
+	background: #f9f3ec;
+}
+.ch-job strong {
+	font-size: calc(14 * var(--u));
+}
+.ch-when {
+	grid-row: 2;
+	color: var(--muted);
+	font-family: var(--font-mono);
+	font-size: calc(12 * var(--u));
+}
+.ch-status {
+	grid-row: 1 / span 2;
+	grid-column: 2;
+	display: grid;
+	align-items: center;
+	font-family: var(--font-mono);
+	font-size: calc(12 * var(--u));
+	font-weight: 700;
+}
+.ch-status span {
+	grid-area: 1 / 1;
+	text-align: end;
+}
+.ch-next {
+	color: var(--accent);
+}
+.ch-ran {
+	color: #4f6b34;
+}
+.ch-job-ran {
+	border-color: #4f6b34;
+	background: rgb(79 107 52 / 0.1);
+}
+.ch-job-ran .ch-next {
+	opacity: 0;
+}
+
+/* ---------- 07 MCP ---------- */
+
+.mcp-config {
+	margin: 8px 0 0;
+	padding: 20px;
+	overflow-x: auto;
+	border-radius: 12px;
+	background: var(--espresso);
+	color: #f3ece4;
+	font-family: var(--font-mono);
+	font-size: 13px;
+	line-height: 2;
+	text-align: start;
+}
+.mcp-config .c {
+	color: #a89c8d;
+}
+.mcp-config .a {
+	color: #e48c66;
+}
+.mcp-lines {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+.mcp-line-idle {
+	stroke: var(--line);
+	stroke-width: 2;
+}
+.mcp-line {
+	stroke: var(--accent);
+	stroke-width: 2;
+	stroke-dasharray: 1;
+}
+.mcp-node {
+	display: grid;
+	place-items: center;
+	height: calc(44 * var(--u));
+	border: 1px solid var(--line);
+	border-radius: calc(22 * var(--u));
+	background: #fff;
+	box-shadow: 0 calc(6 * var(--u)) calc(16 * var(--u)) rgb(var(--shadow) / 0.08);
+	color: var(--ink);
+	font-size: calc(14 * var(--u));
+	font-weight: 700;
+	white-space: nowrap;
+}
+.mcp-hub {
+	border-radius: 50%;
+	box-shadow: 0 calc(16 * var(--u)) calc(40 * var(--u)) rgb(var(--shadow) / 0.14);
+}
+.mcp-hub svg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.mcp-hub-idle {
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+}
+.mcp-pill {
+	display: grid;
+	place-items: center;
+	height: calc(26 * var(--u));
+	border-radius: calc(13 * var(--u));
+	background: var(--accent);
+	color: #fff;
+	font-family: var(--font-mono);
+	font-size: calc(12 * var(--u));
+	font-weight: 700;
+	white-space: nowrap;
+}
+
+/* ---------- 08 Advanced tools ---------- */
+
+.tools-art {
+	aspect-ratio: auto;
+	container-type: normal;
+}
+.tl-track {
+	display: flex;
+	gap: 16px;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scrollbar-width: none;
+	padding-bottom: 8px;
+}
+.tl-slide {
+	--focus: 1;
+	flex: 0 0 86%;
+	margin: 0;
+	scroll-snap-align: center;
+}
+.tl-window {
+	overflow: hidden;
+	border-radius: 14px;
+	box-shadow: 0 16px 36px rgb(var(--shadow) / 0.12);
+}
+.tl-window svg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.tl-slide figcaption {
+	display: grid;
+	gap: 6px;
+	margin-top: 16px;
+	text-align: center;
+	opacity: var(--focus);
+}
+.tl-slide figcaption strong {
+	color: var(--ink);
+	font-family: var(--font-serif);
+	font-size: 20px;
+}
+.tl-slide figcaption span {
+	font-size: 15px;
+}
+.tl-tabs {
+	display: flex;
+	justify-content: center;
+	gap: 8px 20px;
+	flex-wrap: wrap;
+	margin-top: 20px;
+	font-size: 13px;
+}
+.tl-tab {
+	--focus: 0;
+	padding-bottom: 8px;
+	border-bottom: 3px solid color-mix(in srgb, var(--accent) calc(var(--focus) * 100%), var(--line));
+	color: color-mix(in srgb, var(--accent) calc(var(--focus) * 100%), var(--muted));
+	font-weight: calc(400 + 300 * round(var(--focus)));
+	text-decoration: none;
+}
+
+/* ---------- 09 It's all files ---------- */
+
+.fl-card {
+	border-radius: calc(10 * var(--u));
+}
+.fl-note {
+	color: var(--accent);
+	font-family: var(--font-mono);
+	font-size: calc(12 * var(--u));
+}
+
+/* ---------- 10 Download + footer (static on every screen) ---------- */
+
+.download {
+	display: grid;
+	justify-items: center;
+	padding: 96px 20px 64px;
+	text-align: center;
+	scroll-margin-top: var(--nav-h);
+}
+.dl-mark {
+	width: 53px;
+	height: auto;
+}
+.download h2 {
+	margin-top: 20px;
+	font-size: clamp(2rem, 5vw, 3rem);
+}
+.dl-lede {
+	margin: 12px 0 0;
+	font-size: 18px;
+}
+.dl-cards {
+	display: none;
+	grid-template-columns: repeat(3, 312px);
+	gap: 24px;
+	margin-top: 48px;
+}
+.dl-card {
+	display: grid;
+	grid-template-rows: auto auto 1fr auto;
+	height: 220px;
+	padding: 24px;
+	border: 1px solid var(--line);
+	border-radius: 16px;
+	background: #fff;
+	box-shadow: 0 10px 28px rgb(var(--shadow) / 0.06);
+	text-align: start;
+}
+.dl-card header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.dl-card h3 {
+	font-size: 24px;
+}
+.dl-yours {
+	display: none;
+	padding: 3px 13px;
+	border-radius: 999px;
+	background: rgb(185 78 52 / 0.13);
+	color: var(--accent);
+	font-size: 11px;
+	font-weight: 700;
+}
+.dl-detail {
+	margin: 8px 0 0;
+	color: var(--muted);
+	font-size: 14px;
+}
+.dl-button {
+	grid-row: 4;
+	height: 46px;
+	border-color: var(--line);
+	color: var(--ink);
+	font-size: 14px;
+}
+.dl-button:hover {
+	border-color: var(--muted);
+}
+/* The visitor's platform: Terracotta outline, chip and the filled button. */
+[data-platform='mac'] .dl-mac,
+[data-platform='windows'] .dl-windows,
+[data-platform='linux'] .dl-linux {
+	border: 2px solid var(--accent);
+	box-shadow: 0 16px 40px rgb(var(--shadow) / 0.14);
+}
+[data-platform='mac'] .dl-mac .dl-yours,
+[data-platform='windows'] .dl-windows .dl-yours,
+[data-platform='linux'] .dl-linux .dl-yours {
+	display: inline-block;
+}
+[data-platform='mac'] .dl-mac .dl-button,
+[data-platform='windows'] .dl-windows .dl-button,
+[data-platform='linux'] .dl-linux .dl-button {
+	border-color: transparent;
+	background: var(--accent);
+	color: #fff;
+}
+.dl-phone {
+	display: grid;
+	gap: 12px;
+	width: 100%;
+	max-width: 24rem;
+	margin-top: 32px;
+	padding: 24px;
+	border: 1px solid var(--line);
+	border-radius: 16px;
+	background: #fff;
+}
+.dl-phone h3 {
+	font-size: 22px;
+}
+.dl-phone p {
+	margin: 0;
+	color: var(--muted);
+	font-size: 14px;
+}
+.dl-phone .button {
+	border: 0;
+	font-family: inherit;
+	cursor: pointer;
+}
+.dl-version {
+	margin-top: 28px;
+	color: var(--accent);
+	font-size: 14px;
+	font-weight: 700;
+	text-decoration: none;
+}
+.dl-version:hover {
+	text-decoration: underline;
+}
+
+.footer {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 28px;
+	padding: 40px 20px;
+	background: var(--espresso);
+	color: #d9cfc4;
+	font-size: 13px;
+}
+.footer-brand {
+	display: flex;
+	gap: 12px;
+}
+.footer-mark {
+	width: 23px;
+	height: auto;
+	align-self: start;
+}
+.footer-brand strong {
+	display: block;
+	color: #f3ece4;
+	font-size: 16px;
+}
+.footer-brand span {
+	color: #a89c8d;
+	font-family: var(--font-serif);
+}
+.footer-col {
+	display: grid;
+	gap: 8px;
+	align-content: start;
+}
+.footer-col p {
+	margin: 0 0 4px;
+	color: #e48c66;
+	font-family: var(--font-mono);
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+.footer-col a {
+	text-decoration: none;
+}
+.footer-col a:hover {
+	color: #fff;
+}
+.footer-legal {
+	margin: 0;
+	color: #a89c8d;
+	font-size: 12px;
+}
+
+@media (min-width: 900px) {
+	.dl-cards {
+		display: grid;
+	}
+	.dl-phone {
+		display: none;
+	}
+	.footer {
+		grid-template-columns: 1fr repeat(3, 200px);
+		gap: 40px 0;
+		padding: 40px 20px 24px 48px;
+	}
+	.footer-legal {
+		grid-column: 1 / -1;
+	}
+}
+
+@media (max-width: 899px) {
+	.nav {
+		padding: 0 20px;
+	}
+	.nav-links,
+	.nav-download {
+		display: none;
+	}
+}
+
+/* ---------- Layer 2: ≥ 900px, stage with end frames ---------- */
+
+@media (min-width: 900px) {
+	.section {
+		padding: 0;
+	}
+	.pin-sticky {
+		display: grid;
+		place-items: center;
+		height: 100svh;
+		overflow: hidden;
+		background: var(--bg);
+	}
+	.stage {
+		position: relative;
+		width: min(100vw, 160svh);
+		aspect-ratio: 1440 / 900;
+		container-type: size;
+		--u: calc(100cqw / 1440);
+	}
+	.stage > .copy,
+	.stage > .art {
+		position: absolute;
+		inset: 0;
+		margin: 0;
+	}
+	.stage > .art {
+		--crop-y: 0;
+		aspect-ratio: auto;
+		container-type: normal;
+		pointer-events: none;
+	}
+	.mcp-art .mcp-lines {
+		top: 0;
+		height: 100%;
+	}
+	.stage > .art a {
+		pointer-events: auto;
+	}
+	.stage > .copy {
+		display: block;
+		pointer-events: none;
+	}
+	.stage > .copy > * {
+		pointer-events: auto;
+	}
+	.label-list {
+		display: none;
+	}
+	.ws-labels {
+		display: block;
+	}
+
+	/* Hero copy, centred as on the 01 · start board. */
+	.hero .copy {
+		text-align: center;
+	}
+	.hero-copy .eyebrow {
+		position: absolute;
+		top: calc(150 * var(--u));
+		width: 100%;
+		font-size: calc(13 * var(--u));
+	}
+	.hero-copy h1 {
+		position: absolute;
+		top: calc(186 * var(--u));
+		width: 100%;
+		font-size: calc(84 * var(--u));
+		line-height: calc(101 * var(--u));
+	}
+	.hero-copy .lede {
+		position: absolute;
+		top: calc(296 * var(--u));
+		left: calc(370 * var(--u));
+		width: calc(700 * var(--u));
+		font-size: calc(20 * var(--u));
+		line-height: calc(30 * var(--u));
+	}
+	.hero-copy .actions {
+		position: absolute;
+		top: calc(386 * var(--u));
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		gap: calc(12 * var(--u));
+		margin: 0;
+	}
+	.hero-copy .button-lg {
+		height: calc(50 * var(--u));
+		padding: 0 calc(30 * var(--u));
+		border-radius: calc(10 * var(--u));
+		font-size: calc(15 * var(--u));
+	}
+	.hero-copy .fineprint {
+		position: absolute;
+		top: calc(450 * var(--u));
+		width: 100%;
+		font-size: calc(13 * var(--u));
+	}
+	/* Static hero: the window lies flat under the copy, so the stage grows to fit it. */
+	.hero .pin-sticky {
+		height: auto;
+	}
+	.hero .stage {
+		aspect-ratio: 1440 / 1200;
+	}
+	.hero-art {
+		aspect-ratio: auto;
+	}
+	.hero-art .hero-window {
+		--x: 48 !important;
+		--y: 96 !important;
+		--w: 1344 !important;
+		transform-origin: 50% 0;
+		transform: translateY(calc(424 * var(--u))) scale(0.8);
+	}
+
+
+	/* 03 copy: left column. */
+	.goals-copy .eyebrow {
+		position: absolute;
+		top: calc(150 * var(--u));
+		left: calc(48 * var(--u));
+		font-size: calc(13 * var(--u));
+	}
+	.goals-copy h2 {
+		position: absolute;
+		top: calc(178 * var(--u));
+		left: calc(48 * var(--u));
+		width: calc(400 * var(--u));
+		font-size: calc(40 * var(--u));
+		line-height: calc(45 * var(--u));
+	}
+	.goals-copy .steps {
+		position: absolute;
+		top: calc(400 * var(--u));
+		left: calc(48 * var(--u));
+		width: calc(360 * var(--u));
+		gap: calc(34 * var(--u));
+		margin: 0;
+	}
+	.goals-copy .step {
+		grid-template-columns: calc(26 * var(--u)) 1fr;
+		column-gap: calc(16 * var(--u));
+		row-gap: calc(4 * var(--u));
+	}
+	.goals-copy .step-dot {
+		width: calc(26 * var(--u));
+		height: calc(26 * var(--u));
+		font-size: calc(12 * var(--u));
+	}
+	.goals-copy .step:not(:last-child)::after {
+		content: '';
+		position: absolute;
+		top: calc(30 * var(--u));
+		left: calc(12 * var(--u));
+		width: calc(2 * var(--u));
+		height: calc(40 * var(--u));
+		background: var(--line);
+	}
+	.goals-copy .step strong {
+		font-size: calc(15 * var(--u));
+	}
+	.goals-copy .step-text {
+		font-size: calc(13 * var(--u));
+	}
+
+
+	/* Centred copy (rows 04, 05, 07, 09): eyebrow, title, lede. Positions per row below. */
+	.center-copy {
+		text-align: center;
+	}
+	.center-copy .eyebrow {
+		position: absolute;
+		top: calc(var(--eyebrow-y) * var(--u));
+		width: 100%;
+		font-size: calc(13 * var(--u));
+	}
+	.center-copy h2 {
+		position: absolute;
+		top: calc(var(--title-y) * var(--u));
+		left: calc((1440 - var(--title-w)) / 2 * var(--u));
+		width: calc(var(--title-w) * var(--u));
+		font-size: calc(44 * var(--u));
+		line-height: calc(50 * var(--u));
+	}
+	.center-copy .lede {
+		position: absolute;
+		top: calc(var(--lede-y) * var(--u));
+		left: calc((1440 - var(--lede-w)) / 2 * var(--u));
+		width: calc(var(--lede-w) * var(--u));
+		font-size: calc(17 * var(--u));
+		line-height: calc(26 * var(--u));
+	}
+	.wiki-copy {
+		--eyebrow-y: 120;
+		--title-y: 146;
+		--title-w: 900;
+		--lede-y: 262;
+		--lede-w: 720;
+	}
+
+
+	/* 05 copy: left column for the explode, centred for the terminals. */
+	.agents-copy .eyebrow {
+		position: absolute;
+		top: calc(150 * var(--u));
+		left: calc(48 * var(--u));
+		font-size: calc(13 * var(--u));
+	}
+	.agents-copy h2 {
+		position: absolute;
+		top: calc(178 * var(--u));
+		left: calc(48 * var(--u));
+		width: calc(420 * var(--u));
+		font-size: calc(40 * var(--u));
+		line-height: calc(45 * var(--u));
+	}
+	.agents-copy .lede {
+		position: absolute;
+		top: calc(370 * var(--u));
+		left: calc(48 * var(--u));
+		width: calc(400 * var(--u));
+		font-size: calc(17 * var(--u));
+		line-height: calc(26 * var(--u));
+	}
+	.stage > .sessions-copy {
+		display: none;
+	}
+	/* Without motion, the three terminals sit under the exploded frame (UX review). */
+	.agents .pin-sticky {
+		height: auto;
+	}
+	.agents .stage {
+		aspect-ratio: 1440 / 1360;
+	}
+	.stage > .agents-art .ag-sessions {
+		display: block;
+		transform: translateY(calc(560 * var(--u)));
+	}
+	.sessions-copy {
+		--eyebrow-y: 104;
+		--title-y: 130;
+		--title-w: 1200;
+		--lede-y: 800;
+		--lede-w: 1000;
+	}
+	.sessions-copy h2 {
+		font-size: calc(40 * var(--u));
+	}
+	.sessions-copy .lede {
+		color: var(--muted);
+		font-size: calc(15 * var(--u));
+	}
+
+
+	/* 06: panels on the stage. */
+	.chat-copy {
+		--eyebrow-y: 104;
+		--title-y: 130;
+		--title-w: 920;
+	}
+	.chat-copy h2 {
+		font-size: calc(40 * var(--u));
+		line-height: calc(45 * var(--u));
+	}
+	.stage > .chat-art {
+		display: block;
+		--u: calc(100cqw / 1440);
+	}
+	.chat-art .at {
+		position: absolute;
+		width: calc(var(--w) * var(--u));
+	}
+	.ch-chat {
+		display: flex;
+		flex-direction: column;
+		height: calc(610 * var(--u));
+	}
+	.ch-chat .ch-composer {
+		margin-top: auto;
+	}
+	.ch-events {
+		height: calc(330 * var(--u));
+	}
+	.ch-schedule {
+		height: calc(260 * var(--u));
+	}
+
+
+	/* 07 copy: left column with the config snippet. */
+	.mcp-copy .eyebrow {
+		position: absolute;
+		top: calc(170 * var(--u));
+		left: calc(48 * var(--u));
+		font-size: calc(13 * var(--u));
+	}
+	.mcp-copy h2 {
+		position: absolute;
+		top: calc(198 * var(--u));
+		left: calc(48 * var(--u));
+		width: calc(440 * var(--u));
+		font-size: calc(40 * var(--u));
+		line-height: calc(45 * var(--u));
+	}
+	.mcp-copy .lede {
+		position: absolute;
+		top: calc(320 * var(--u));
+		left: calc(48 * var(--u));
+		width: calc(420 * var(--u));
+		font-size: calc(17 * var(--u));
+		line-height: calc(26 * var(--u));
+	}
+	.mcp-copy .mcp-config {
+		position: absolute;
+		top: calc(520 * var(--u));
+		left: calc(48 * var(--u));
+		width: calc(420 * var(--u));
+		height: calc(206 * var(--u));
+		margin: 0;
+		padding: calc(18 * var(--u)) calc(20 * var(--u));
+		border-radius: calc(12 * var(--u));
+		font-size: calc(13 * var(--u));
+		line-height: calc(26 * var(--u));
+	}
+
+
+	/* 08: static desktop keeps the swipe carousel, scaled to the stage. */
+	.tools-copy {
+		--eyebrow-y: 104;
+		--title-y: 130;
+		--title-w: 1200;
+	}
+	.tools-copy h2 {
+		font-size: calc(40 * var(--u));
+	}
+	.stage > .tools-art .tl-track {
+		position: absolute;
+		top: calc(220 * var(--u));
+		left: 0;
+		right: 0;
+		gap: calc(24 * var(--u));
+		padding: calc(10 * var(--u)) calc(440 * var(--u)) calc(20 * var(--u));
+		scroll-padding: 0 calc(440 * var(--u));
+		pointer-events: auto;
+	}
+	.stage > .tools-art .tl-slide {
+		flex: 0 0 calc(560 * var(--u));
+	}
+	.tl-window {
+		border-radius: calc(14 * var(--u));
+	}
+	.stage > .tools-art .tl-slide figcaption {
+		gap: calc(8 * var(--u));
+		width: calc(900 * var(--u));
+		margin: calc(40 * var(--u)) 0 0 calc(-170 * var(--u));
+	}
+	.stage > .tools-art .tl-slide figcaption strong {
+		font-size: calc(22 * var(--u));
+	}
+	.stage > .tools-art .tl-slide figcaption span {
+		font-size: calc(16 * var(--u));
+	}
+	.stage > .tools-art .tl-tabs {
+		position: absolute;
+		top: calc(790 * var(--u));
+		left: calc(420 * var(--u));
+		gap: 0;
+		margin: 0;
+		font-size: calc(13 * var(--u));
+	}
+	.stage > .tools-art .tl-tab {
+		width: calc(120 * var(--u));
+		padding-bottom: calc(10 * var(--u));
+		border-bottom: none;
+		background: linear-gradient(color-mix(in srgb, var(--accent) calc(var(--focus) * 100%), var(--line)) 0 0) no-repeat 50% 100% / calc(80 * var(--u)) calc(3 * var(--u));
+		text-align: center;
+	}
+
+
+	.files-copy {
+		--eyebrow-y: 104;
+		--title-y: 130;
+		--title-w: 1200;
+		--lede-y: 190;
+		--lede-w: 800;
+	}
+	.files-copy h2 {
+		font-size: calc(40 * var(--u));
+	}
+
+	/* Exploded workspace copy. */
+	.workspace-copy {
+		text-align: center;
+	}
+	.workspace-copy .eyebrow {
+		position: absolute;
+		top: calc(104 * var(--u));
+		width: 100%;
+		font-size: calc(13 * var(--u));
+	}
+	.workspace-copy h2 {
+		position: absolute;
+		top: calc(130 * var(--u));
+		width: 100%;
+		font-size: calc(44 * var(--u));
+		line-height: calc(50 * var(--u));
+	}
+}
+
+/* ---------- Layer 3: scroll-driven ---------- */
+
+@media (min-width: 900px) and (prefers-reduced-motion: no-preference) {
+	@supports (animation-timeline: view()) {
+		.pin {
+			height: calc((1 + var(--pin, 1)) * 100svh);
+		}
+		.pin-sticky {
+			position: sticky;
+			top: 0;
+		}
+		/* A joined section starts on the previous section's last frame: it overlaps the
+		   previous one by a screen and only shows once it is pinned. */
+		.pin.joined {
+			position: relative;
+			z-index: 1;
+			margin-top: -100svh;
+		}
+		.pin.joined > .pin-sticky {
+			animation: hidden-until-pinned linear;
+			animation-timeline: var(--tl);
+			animation-range: cover 0% contain 0%;
+		}
+		/* 01 Hero: 1.5 screens. The window tilts flat and grows; the copy leaves. */
+		.hero {
+			--pin: 1.5;
+			--tl: --t-hero;
+			view-timeline: --t-hero block;
+		}
+		.hero .pin-sticky {
+			height: 100svh;
+		}
+		.hero .stage {
+			aspect-ratio: 1440 / 900;
+		}
+		.hero-art {
+			perspective: calc(2400 * var(--u));
+		}
+		.hero-art .hero-window {
+			transform: none;
+		}
+		.hero-window {
+			animation: hero-window linear both;
+		}
+		.hero-copy {
+			animation: hero-copy linear both;
+		}
+		.hero-window,
+		.hero-copy {
+			animation-timeline: --t-hero;
+			animation-range: contain 0% contain 100%;
+		}
+
+
+		/* 03 Goals + Tasks: 2 screens. Moves at 20–30%, 45–55% and 70–80%. */
+		.goals {
+			--pin: 2;
+			--tl: --t-goals;
+			view-timeline: --t-goals block;
+		}
+		/* 03 pins 0.4 screen before 02 ends (02's last 20%) and fades in over it, so 02
+		   ends on 03's start frame. Its backdrop turns opaque before 02 scrolls away. */
+		.goals.joined {
+			margin-top: -140svh;
+		}
+		.goals.joined > .pin-sticky {
+			background: transparent;
+			animation-name: hidden-until-pinned, gt-backdrop;
+			animation-timeline: --t-goals, --t-goals;
+			animation-range:
+				cover 0% contain 0%,
+				contain 0% contain 20%;
+			animation-fill-mode: none, both;
+		}
+		.goals-copy,
+		.goals-art {
+			animation: gt-arrive linear both;
+			animation-timeline: --t-goals;
+			animation-range: contain 4% contain 16%;
+		}
+		.goals-art > *,
+		.goals-copy .step {
+			animation-timeline: --t-goals;
+			animation-range: contain 0% contain 100%;
+			animation-timing-function: linear;
+			animation-fill-mode: both;
+		}
+		.gt-card {
+			animation-name: gt-card;
+		}
+		.gt-v {
+			animation-timeline: --t-goals;
+			animation-range: contain 0% contain 100%;
+			animation-fill-mode: both;
+		}
+		.gt-v-prepare {
+			animation-name: gt-v-prepare;
+		}
+		.gt-v-implement {
+			animation-name: gt-v-implement;
+		}
+		.gt-v-verify {
+			animation-name: gt-v-verify;
+		}
+		.gt-v-done {
+			animation-name: gt-v-done;
+		}
+		.gt-slot-1 {
+			animation-name: gt-slot-1;
+		}
+		.gt-slot-2 {
+			animation-name: gt-slot-2;
+		}
+		.gt-slot-3 {
+			animation-name: gt-slot-3;
+		}
+		.gt-goal i,
+		.gt-percent span {
+			animation-timeline: --t-goals;
+			animation-range: contain 0% contain 100%;
+			animation-fill-mode: both;
+		}
+		.gt-goal i {
+			animation-name: gt-goal;
+		}
+		.gt-from {
+			animation-name: gt-from;
+		}
+		.gt-to {
+			animation-name: gt-to;
+		}
+		.goals-copy .step-1 {
+			animation-name: gt-step-1;
+		}
+		.goals-copy .step-2 {
+			animation-name: gt-step-2;
+		}
+		.goals-copy .step-3 {
+			animation-name: gt-step-3;
+		}
+		.goals-copy .step-4 {
+			animation-name: gt-step-4;
+		}
+
+
+		/* 04 Wiki: 1.5 screens. 0–50% fan out · 50–100% pull out to the terminal. */
+		.wiki {
+			--pin: 1.5;
+			view-timeline: --t-wiki block;
+		}
+		.wiki-art > *,
+		.wk-link > * {
+			animation-timeline: --t-wiki;
+			animation-range: contain 0% contain 100%;
+			animation-timing-function: linear;
+			animation-fill-mode: both;
+		}
+		.wk-conduct {
+			animation-name: wk-conduct;
+		}
+		.wk-data {
+			animation-name: wk-data;
+		}
+		.wk-security {
+			animation-name: wk-security;
+		}
+		.wk-release {
+			animation-name: wk-release;
+		}
+		.wk-terminal {
+			animation-name: wk-terminal;
+		}
+		.wk-link > * {
+			animation-name: wk-link;
+		}
+		.wk-link > .wk-line {
+			animation-name: wk-line;
+		}
+
+
+		/* 05 Agents: 2 screens. 5–45% explode · 50–62% snap back · 62–72% card → terminal ·
+		   72–90% two more terminals tile in. */
+		.agents {
+			--pin: 2;
+			view-timeline: --t-agents block;
+		}
+		.stage > .sessions-copy,
+		.ag-sessions {
+			display: block;
+		}
+		.agents .pin-sticky {
+			height: 100svh;
+		}
+		.agents .stage {
+			aspect-ratio: 1440 / 900;
+		}
+		.stage > .agents-art .ag-sessions {
+			transform: none;
+		}
+		.ag-explode > *,
+		.ag-sessions > *,
+		.agents-copy,
+		.sessions-copy {
+			animation-timeline: --t-agents;
+			animation-range: contain 0% contain 100%;
+			animation-timing-function: linear;
+			animation-fill-mode: both;
+		}
+		.ag-cli {
+			--from-x: 125;
+			--from-y: 250;
+			animation-name: ag-part;
+		}
+		.ag-role {
+			--from-x: -190;
+			--from-y: 265;
+			animation-name: ag-part;
+		}
+		.ag-skills {
+			--from-x: -505;
+			--from-y: 60;
+			animation-name: ag-part;
+		}
+		.ag-notebook {
+			--from-x: 20;
+			--from-y: -230;
+			animation-name: ag-part;
+		}
+		.ag-line,
+		.ag-dot {
+			animation-name: ag-line;
+		}
+		.ag-card {
+			animation-name: ag-card;
+		}
+		.ag-sessions > .window {
+			animation-name: ag-frame;
+		}
+		.ag-term-se {
+			animation-name: ag-term-se;
+		}
+		.ag-term-pm,
+		.ag-term-ux {
+			animation-name: ag-term-tile;
+		}
+		.agents-copy {
+			animation-name: ag-copy-out;
+		}
+		.sessions-copy {
+			animation-name: ag-copy-in;
+		}
+
+
+		/* 06 Chat: 2 screens. Message + event pairs at 8%, 30% and 50%; the schedule
+		   flips at 70%; the question for you arrives at 82%. */
+		.chat {
+			--pin: 2;
+			view-timeline: --t-chat block;
+		}
+		.ch-msg,
+		.ch-event,
+		.ch-job-ran,
+		.ch-job-ran .ch-status span {
+			animation-timeline: --t-chat;
+			animation-range: contain 0% contain 100%;
+			animation-timing-function: linear;
+			animation-fill-mode: both;
+		}
+		.ch-msg.ch-1,
+		.ch-event.ch-1 {
+			animation-name: ch-in-1;
+		}
+		.ch-msg.ch-2,
+		.ch-event.ch-2 {
+			animation-name: ch-in-2;
+		}
+		.ch-msg.ch-3,
+		.ch-event.ch-3 {
+			animation-name: ch-in-3;
+		}
+		.ch-event.ch-4 {
+			animation-name: ch-in-4;
+		}
+		.ch-job-ran {
+			animation-name: ch-job;
+		}
+		.ch-job-ran .ch-next {
+			animation-name: ch-next;
+		}
+		.ch-job-ran .ch-ran {
+			animation-name: ch-ran;
+		}
+
+
+		/* 07 MCP: 1.5 screens. Lines connect one by one (0–40%), then the calls travel. */
+		.mcp {
+			--pin: 1.5;
+			view-timeline: --t-mcp block;
+		}
+		.mcp-line,
+		.mcp-pill,
+		.mcp-hub svg {
+			animation-timeline: --t-mcp;
+			animation-range: contain 0% contain 100%;
+			animation-timing-function: linear;
+			animation-fill-mode: both;
+		}
+		.mcp-line {
+			animation-name: mcp-connect;
+		}
+		.mcp-line-1 {
+			animation-range: contain 0% contain 12%;
+		}
+		.mcp-line-2 {
+			animation-range: contain 7% contain 19%;
+		}
+		.mcp-line-3 {
+			animation-range: contain 14% contain 26%;
+		}
+		.mcp-line-4 {
+			animation-range: contain 21% contain 33%;
+		}
+		.mcp-line-5 {
+			animation-range: contain 28% contain 40%;
+		}
+		.mcp-hub-idle {
+			animation-name: mcp-hub-idle;
+		}
+		.mcp-pill {
+			animation-name: mcp-pill;
+		}
+		.mcp-pill-1 {
+			animation-range: contain 40% contain 70%;
+		}
+		.mcp-pill-2 {
+			animation-range: contain 48% contain 78%;
+		}
+		.mcp-pill-3 {
+			animation-range: contain 56% contain 86%;
+		}
+		.mcp-pill-4 {
+			animation-range: contain 63% contain 93%;
+		}
+		.mcp-pill-5 {
+			animation-range: contain 70% contain 100%;
+		}
+
+
+		/* 08 Tools: 2.5 screens. The row moves left one tool at a time and snaps:
+		   holds 0–14 · 22–36 · 44–58 · 66–80 · 88–100%, moves in between. */
+		.tools {
+			--pin: 2.5;
+			view-timeline: --t-tools block;
+		}
+		.stage > .tools-art .tl-track {
+			top: calc(230 * var(--u));
+			left: calc(440 * var(--u));
+			right: auto;
+			gap: 0;
+			padding: 0;
+			overflow: visible;
+		}
+		.stage > .tools-art .tl-slide {
+			flex: none;
+			width: calc(560 * var(--u));
+			margin-right: calc(-30 * var(--u));
+		}
+		.tl-track,
+		.tl-slide,
+		.tl-tab {
+			animation-timeline: --t-tools;
+			animation-range: contain 0% contain 100%;
+			animation-timing-function: linear;
+			animation-fill-mode: both;
+		}
+		.tl-track {
+			animation-name: tl-track;
+		}
+		/* The centre window: full size, Terracotta outline, deeper shadow. */
+		.tl-window {
+			transform: scale(calc(0.86 + 0.14 * var(--focus)));
+			box-shadow:
+				0 0 0 calc(var(--focus) * 2 * var(--u)) rgb(185 78 52 / var(--focus)),
+				0 calc((10 + var(--focus) * 14) * var(--u)) calc((24 + var(--focus) * 24) * var(--u)) rgb(var(--shadow) / calc(0.08 + var(--focus) * 0.08));
+		}
+		.tl-1 {
+			animation-name: tl-focus-1;
+		}
+		.tl-2 {
+			animation-name: tl-focus-2;
+		}
+		.tl-3 {
+			animation-name: tl-focus-3;
+		}
+		.tl-4 {
+			animation-name: tl-focus-4;
+		}
+		.tl-5 {
+			animation-name: tl-focus-5;
+		}
+
+
+		/* 09 Files: 1.5 screens. 0–50% the card moves aside and the file slides out ·
+		   50–75% the folder tree unfolds · 75–90% the git diff. */
+		.files {
+			--pin: 1.5;
+			view-timeline: --t-files block;
+		}
+		.files-art > *,
+		.fl-link > * {
+			animation-timeline: --t-files;
+			animation-range: contain 0% contain 100%;
+			animation-timing-function: linear;
+			animation-fill-mode: both;
+		}
+		.fl-card {
+			animation-name: fl-card;
+		}
+		.fl-file {
+			animation-name: fl-file;
+		}
+		.fl-tree {
+			animation-name: fl-tree;
+		}
+		.fl-link > * {
+			animation-name: fl-link;
+		}
+		.fl-diff {
+			animation-name: fl-diff;
+		}
+
+		/* 02 Exploded workspace: 2 screens, joined to the hero. */
+		.workspace {
+			--pin: 2;
+			--tl: --t-workspace;
+			view-timeline: --t-workspace block;
+		}
+		.workspace .ws-frame,
+		.workspace .ws-hero-window {
+			display: block;
+		}
+		.workspace-art > *,
+		.workspace-copy {
+			animation-timeline: --t-workspace;
+			animation-range: contain 0% contain 100%;
+			animation-timing-function: linear;
+			animation-fill-mode: both;
+		}
+		.ws-hero-window {
+			animation-name: ws-hero-window;
+		}
+		.ws-frame {
+			animation-name: ws-frame;
+		}
+		.ws-sidebar {
+			animation-name: ws-sidebar;
+		}
+		.ws-board {
+			animation-name: ws-board;
+		}
+		.ws-chat {
+			animation-name: ws-chat;
+		}
+		.ws-rise {
+			animation-name: ws-rise;
+		}
+		.ws-labels {
+			animation-name: ws-labels;
+		}
+		.workspace-copy {
+			animation-name: ws-copy;
+		}
+	}
+}
+
+@keyframes hidden-until-pinned {
+	from,
+	to {
+		visibility: hidden;
+	}
+}
+
+@keyframes hero-window {
+	from {
+		transform: translateY(calc(424 * var(--u))) rotateX(28deg) scale(0.8);
+		transform-origin: 50% 0;
+	}
+	to {
+		transform: none;
+		transform-origin: 50% 0;
+	}
+}
+@keyframes hero-copy {
+	from {
+		opacity: 1;
+		transform: none;
+	}
+	55%,
+	to {
+		opacity: 0;
+		transform: translateY(calc(-160 * var(--u)));
+	}
+}
+
+/* 02 timeline: 0–6% crossfade from the hero window · 6–45% explode · 45–55% labels ·
+   80–100% the rest fades and the board moves to 03's board, where 03 fades in over it. */
+@keyframes ws-hero-window {
+	from {
+		opacity: 1;
+	}
+	6%,
+	to {
+		opacity: 0;
+	}
+}
+@keyframes ws-frame {
+	from,
+	6% {
+		opacity: 1;
+	}
+	25%,
+	to {
+		opacity: 0;
+	}
+}
+@keyframes ws-sidebar {
+	from,
+	6% {
+		--lift: 0;
+		transform: translate(calc(-122 * var(--u)), calc(-156 * var(--u))) scale(1.1);
+		transform-origin: 0 0;
+	}
+	45%,
+	80% {
+		--lift: 1;
+		transform: none;
+		opacity: 1;
+		transform-origin: 0 0;
+	}
+	88%,
+	to {
+		opacity: 0;
+		transform: none;
+	}
+}
+@keyframes ws-board {
+	from,
+	6% {
+		--lift: 0;
+		transform: translate(calc(-142 * var(--u)), calc(-136 * var(--u))) scale(1.329);
+		transform-origin: 0 0;
+	}
+	45%,
+	80% {
+		--lift: 1;
+		transform: none;
+		transform-origin: 0 0;
+	}
+	88% {
+		--lift: 0.6;
+		opacity: 1;
+		transform: translate(calc(70 * var(--u)), calc(-160 * var(--u))) scale(1.471);
+		transform-origin: 0 0;
+	}
+	to {
+		opacity: 0;
+		transform: translate(calc(70 * var(--u)), calc(-160 * var(--u))) scale(1.471);
+		transform-origin: 0 0;
+	}
+}
+@keyframes ws-chat {
+	from,
+	6% {
+		--lift: 0;
+		transform: translate(calc(22 * var(--u)), calc(-156 * var(--u))) scale(1.1538);
+		transform-origin: 0 0;
+	}
+	45%,
+	80% {
+		--lift: 1;
+		transform: none;
+		opacity: 1;
+		transform-origin: 0 0;
+	}
+	88%,
+	to {
+		opacity: 0;
+		transform: none;
+	}
+}
+@keyframes ws-rise {
+	from,
+	15% {
+		--lift: 0;
+		opacity: 0;
+		transform: translateY(calc(260 * var(--u)));
+	}
+	45%,
+	80% {
+		--lift: 1;
+		opacity: 1;
+		transform: none;
+	}
+	88%,
+	to {
+		opacity: 0;
+		transform: none;
+	}
+}
+@keyframes ws-labels {
+	from,
+	42% {
+		opacity: 0;
+	}
+	55%,
+	78% {
+		opacity: 1;
+	}
+	85%,
+	to {
+		opacity: 0;
+	}
+}
+@keyframes ws-copy {
+	from,
+	25% {
+		opacity: 0;
+		transform: translateY(calc(16 * var(--u)));
+	}
+	40%,
+	78% {
+		opacity: 1;
+		transform: none;
+	}
+	85%,
+	to {
+		opacity: 0;
+	}
+}
+
+
+@keyframes gt-backdrop {
+	from {
+		background-color: transparent;
+	}
+	to {
+		background-color: var(--bg);
+	}
+}
+@keyframes gt-arrive {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* 03: the card lifts, slides one column and drops in, three times. */
+@keyframes gt-card {
+	from,
+	20% {
+		--lift: 0.5;
+		transform: translateX(0);
+	}
+	25% {
+		--lift: 1.2;
+		transform: translate(calc(109.75 * var(--u)), calc(-8 * var(--u)));
+	}
+	30%,
+	45% {
+		--lift: 0.5;
+		transform: translateX(calc(219.5 * var(--u)));
+	}
+	50% {
+		--lift: 1.2;
+		transform: translate(calc(329.25 * var(--u)), calc(-8 * var(--u)));
+	}
+	55%,
+	70% {
+		--lift: 0.5;
+		transform: translateX(calc(439 * var(--u)));
+	}
+	75% {
+		--lift: 1.2;
+		transform: translate(calc(548.75 * var(--u)), calc(-8 * var(--u)));
+	}
+	80%,
+	to {
+		--lift: 0.5;
+		transform: translateX(calc(658.5 * var(--u)));
+	}
+}
+@keyframes gt-v-prepare {
+	from,
+	24% {
+		opacity: 1;
+	}
+	26%,
+	to {
+		opacity: 0;
+	}
+}
+@keyframes gt-v-implement {
+	from,
+	24% {
+		opacity: 0;
+	}
+	26%,
+	49% {
+		opacity: 1;
+	}
+	51%,
+	to {
+		opacity: 0;
+	}
+}
+@keyframes gt-v-verify {
+	from,
+	49% {
+		opacity: 0;
+	}
+	51%,
+	74% {
+		opacity: 1;
+	}
+	76%,
+	to {
+		opacity: 0;
+	}
+}
+@keyframes gt-v-done {
+	from,
+	74% {
+		opacity: 0;
+	}
+	76%,
+	to {
+		opacity: 1;
+	}
+}
+@keyframes gt-slot-1 {
+	from,
+	22% {
+		opacity: 0;
+	}
+	26%,
+	to {
+		opacity: 1;
+	}
+}
+@keyframes gt-slot-2 {
+	from,
+	47% {
+		opacity: 0;
+	}
+	51%,
+	to {
+		opacity: 1;
+	}
+}
+@keyframes gt-slot-3 {
+	from,
+	72% {
+		opacity: 0;
+	}
+	76%,
+	to {
+		opacity: 1;
+	}
+}
+@keyframes gt-goal {
+	from,
+	76% {
+		width: 50%;
+	}
+	82%,
+	to {
+		width: 75%;
+	}
+}
+@keyframes gt-from {
+	from,
+	78% {
+		opacity: 1;
+	}
+	80%,
+	to {
+		opacity: 0;
+	}
+}
+@keyframes gt-to {
+	from,
+	78% {
+		opacity: 0;
+	}
+	80%,
+	to {
+		opacity: 1;
+	}
+}
+@keyframes gt-step-1 {
+	from,
+	24% {
+		--active: 1;
+		--done: 0;
+	}
+	26%,
+	to {
+		--active: 0;
+		--done: 1;
+	}
+}
+@keyframes gt-step-2 {
+	from,
+	24% {
+		--active: 0;
+		--done: 0;
+	}
+	26%,
+	49% {
+		--active: 1;
+		--done: 0;
+	}
+	51%,
+	to {
+		--active: 0;
+		--done: 1;
+	}
+}
+@keyframes gt-step-3 {
+	from,
+	49% {
+		--active: 0;
+		--done: 0;
+	}
+	51%,
+	74% {
+		--active: 1;
+		--done: 0;
+	}
+	76%,
+	to {
+		--active: 0;
+		--done: 1;
+	}
+}
+@keyframes gt-step-4 {
+	from,
+	74% {
+		--active: 0;
+		--done: 0;
+	}
+	76%,
+	to {
+		--active: 1;
+		--done: 0;
+	}
+}
+@property --active {
+	syntax: '<number>';
+	inherits: true;
+	initial-value: 0;
+}
+@property --done {
+	syntax: '<number>';
+	inherits: true;
+	initial-value: 0;
+}
+
+
+/* 04: from the stack (580,390 +8 per page) to the fan, then the pull-out. */
+@keyframes wk-conduct {
+	from,
+	5% {
+		transform: translate(calc(530 * var(--u)), calc(-45 * var(--u)));
+	}
+	50%,
+	to {
+		transform: rotate(-8deg);
+	}
+}
+@keyframes wk-data {
+	from,
+	5% {
+		transform: translate(calc(331 * var(--u)), calc(-22 * var(--u)));
+	}
+	50%,
+	to {
+		transform: rotate(-3deg);
+	}
+}
+@keyframes wk-security {
+	from,
+	5% {
+		transform: translate(calc(141 * var(--u)), calc(-29 * var(--u)));
+	}
+	50%,
+	to {
+		transform: rotate(2deg);
+	}
+}
+@keyframes wk-release {
+	from,
+	50% {
+		--lift: 0.6;
+		transform: translate(calc(-56 * var(--u)), calc(14 * var(--u)));
+	}
+	70% {
+		--lift: 1.2;
+	}
+	80%,
+	to {
+		--lift: 0.8;
+		transform: none;
+	}
+}
+@keyframes wk-terminal {
+	from,
+	55% {
+		opacity: 0;
+		transform: translateX(calc(80 * var(--u)));
+	}
+	75%,
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+@keyframes wk-link {
+	from,
+	78% {
+		opacity: 0;
+	}
+	84%,
+	to {
+		opacity: 1;
+	}
+}
+@keyframes wk-line {
+	from,
+	78% {
+		opacity: 0;
+		transform: scaleX(0);
+	}
+	90%,
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+
+/* 05: parts slide out of the card (from its centre), and back in. */
+@keyframes ag-part {
+	from,
+	5% {
+		opacity: 0;
+		transform: translate(calc(var(--from-x) * var(--u)), calc(var(--from-y) * var(--u))) scale(0.5);
+	}
+	40%,
+	50% {
+		opacity: 1;
+		transform: none;
+	}
+	62%,
+	to {
+		opacity: 0;
+		transform: translate(calc(var(--from-x) * var(--u)), calc(var(--from-y) * var(--u))) scale(0.5);
+	}
+}
+@keyframes ag-line {
+	from,
+	32% {
+		opacity: 0;
+	}
+	42%,
+	50% {
+		opacity: 1;
+	}
+	55%,
+	to {
+		opacity: 0;
+	}
+}
+@keyframes ag-card {
+	from,
+	62% {
+		opacity: 1;
+		transform: none;
+		transform-origin: 0 0;
+	}
+	72%,
+	to {
+		opacity: 0;
+		transform: translate(calc(335 * var(--u)), calc(-120 * var(--u))) scale(1.45, 0.25);
+		transform-origin: 0 0;
+	}
+}
+@keyframes ag-frame {
+	from,
+	62% {
+		opacity: 0;
+	}
+	72%,
+	to {
+		opacity: 1;
+	}
+}
+@keyframes ag-term-se {
+	from,
+	66% {
+		opacity: 0;
+	}
+	72%,
+	to {
+		opacity: 1;
+	}
+}
+@keyframes ag-term-tile {
+	from,
+	72% {
+		opacity: 0;
+		transform: translateX(calc(500 * var(--u)));
+	}
+	90%,
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+@keyframes ag-copy-out {
+	from,
+	55% {
+		opacity: 1;
+	}
+	65%,
+	to {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+@keyframes ag-copy-in {
+	from,
+	68% {
+		opacity: 0;
+	}
+	78%,
+	to {
+		opacity: 1;
+	}
+}
+
+
+/* 06: each message (and its event) slides up 12px and fades in. */
+@keyframes ch-in-1 {
+	from,
+	4% {
+		opacity: 0;
+		transform: translateY(calc(12 * var(--u)));
+	}
+	12%,
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+@keyframes ch-in-2 {
+	from,
+	26% {
+		opacity: 0;
+		transform: translateY(calc(12 * var(--u)));
+	}
+	34%,
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+@keyframes ch-in-3 {
+	from,
+	46% {
+		opacity: 0;
+		transform: translateY(calc(12 * var(--u)));
+	}
+	54%,
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+@keyframes ch-in-4 {
+	from,
+	78% {
+		opacity: 0;
+		transform: translateY(calc(12 * var(--u)));
+	}
+	86%,
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+@keyframes ch-job {
+	from,
+	69% {
+		border-color: #ede6dc;
+		background: #f9f3ec;
+	}
+	71%,
+	to {
+		border-color: #4f6b34;
+		background: rgb(79 107 52 / 0.1);
+	}
+}
+@keyframes ch-next {
+	from,
+	69% {
+		opacity: 1;
+	}
+	71%,
+	to {
+		opacity: 0;
+	}
+}
+@keyframes ch-ran {
+	from,
+	69% {
+		opacity: 0;
+	}
+	71%,
+	to {
+		opacity: 1;
+	}
+}
+
+
+/* 07: a grey line turns Terracotta as it is drawn from the hub outwards. */
+@keyframes mcp-connect {
+	from {
+		stroke: var(--line);
+		stroke-dashoffset: 1;
+	}
+	to {
+		stroke: var(--accent);
+		stroke-dashoffset: 0;
+	}
+}
+@keyframes mcp-hub-idle {
+	from,
+	10% {
+		opacity: 1;
+	}
+	40%,
+	to {
+		opacity: 0;
+	}
+}
+@keyframes mcp-pill {
+	from {
+		opacity: 0;
+		transform: translate(calc(var(--from-x) * var(--u)), calc(var(--from-y) * var(--u)));
+	}
+	15% {
+		opacity: 1;
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+
+/* 08: the row snaps to each tool (pitch 530 = 560 focus + 30 overlap of the 86% neighbours). */
+@keyframes tl-track {
+	from,
+	14% {
+		transform: none;
+	}
+	22%,
+	36% {
+		transform: translateX(calc(-530 * var(--u)));
+	}
+	44%,
+	58% {
+		transform: translateX(calc(-1060 * var(--u)));
+	}
+	66%,
+	80% {
+		transform: translateX(calc(-1590 * var(--u)));
+	}
+	88%,
+	to {
+		transform: translateX(calc(-2120 * var(--u)));
+	}
+}
+@keyframes tl-focus-1 {
+	from,
+	14% {
+		--focus: 1;
+	}
+	20%,
+	to {
+		--focus: 0;
+	}
+}
+@keyframes tl-focus-2 {
+	from,
+	16% {
+		--focus: 0;
+	}
+	22%,
+	36% {
+		--focus: 1;
+	}
+	42%,
+	to {
+		--focus: 0;
+	}
+}
+@keyframes tl-focus-3 {
+	from,
+	38% {
+		--focus: 0;
+	}
+	44%,
+	58% {
+		--focus: 1;
+	}
+	64%,
+	to {
+		--focus: 0;
+	}
+}
+@keyframes tl-focus-4 {
+	from,
+	60% {
+		--focus: 0;
+	}
+	66%,
+	80% {
+		--focus: 1;
+	}
+	86%,
+	to {
+		--focus: 0;
+	}
+}
+@keyframes tl-focus-5 {
+	from,
+	82% {
+		--focus: 0;
+	}
+	88%,
+	to {
+		--focus: 1;
+	}
+}
+@property --focus {
+	syntax: '<number>';
+	inherits: true;
+	initial-value: 1;
+}
+
+
+/* 09: card from the centre (560,400 at 320 wide) to its spot; file out from behind it. */
+@keyframes fl-card {
+	from,
+	5% {
+		--lift: 0.6;
+		transform: translate(calc(-490 * var(--u)), calc(100 * var(--u))) scale(1.103);
+		transform-origin: 0 0;
+	}
+	25% {
+		--lift: 1.2;
+	}
+	45%,
+	to {
+		--lift: 0.6;
+		transform: none;
+		transform-origin: 0 0;
+	}
+}
+@keyframes fl-file {
+	from,
+	10% {
+		opacity: 0;
+		transform: translate(calc(-10 * var(--u)), calc(-90 * var(--u))) scale(0.5);
+	}
+	45%,
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+@keyframes fl-tree {
+	from,
+	50% {
+		opacity: 0;
+		clip-path: inset(0 0 100% 0 round calc(12 * var(--u)));
+	}
+	55% {
+		opacity: 1;
+	}
+	75%,
+	to {
+		opacity: 1;
+		clip-path: inset(0 0 0 0 round calc(12 * var(--u)));
+	}
+}
+@keyframes fl-link {
+	from,
+	40% {
+		opacity: 0;
+	}
+	48%,
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fl-diff {
+	from,
+	75% {
+		opacity: 0;
+		transform: translateY(calc(12 * var(--u)));
+	}
+	88%,
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+/* --lift drives the shadow depth; registering it lets keyframes interpolate it. */
+@property --lift {
+	syntax: '<number>';
+	inherits: true;
+	initial-value: 0.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}

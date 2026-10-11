@@ -1,0 +1,51 @@
+---
+import Mark from '../../assets/landing/brand/mark.svg';
+
+const columns = [
+	{
+		title: 'Product',
+		links: [
+			['Features', '#workspace'],
+			['Download', '#download'],
+			['Changelog', 'https://github.com/RemcoMagielse/neova.studio/releases'],
+		],
+	},
+	{
+		title: 'Docs',
+		links: [
+			['Getting started', '/getting-started/introduction/'],
+			['Quick start', '/getting-started/quick-start/'],
+			['MCP reference', '/reference/mcp-server/'],
+		],
+	},
+	{
+		title: 'Project',
+		links: [
+			['GitHub', 'https://github.com/RemcoMagielse/neova.studio'],
+			['Release notes', 'https://github.com/RemcoMagielse/neova.studio/releases'],
+			['Report a bug', 'https://github.com/RemcoMagielse/neova.studio/issues'],
+		],
+	},
+];
+---
+
+<footer class="footer">
+	<div class="footer-brand">
+		<Mark class="footer-mark" aria-hidden="true" />
+		<div>
+			<strong>Neova Studio</strong>
+			<span>Think. Build. Beyond.</span>
+		</div>
+	</div>
+	{
+		columns.map((c) => (
+			<nav class="footer-col" aria-label={c.title}>
+				<p>{c.title}</p>
+				{c.links.map(([label, href]) => (
+					<a href={href}>{label}</a>
+				))}
+			</nav>
+		))
+	}
+	<p class="footer-legal">© 2026 Neova Studio · Free to use</p>
+</footer>

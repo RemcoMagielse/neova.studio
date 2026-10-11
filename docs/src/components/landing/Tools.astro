@@ -1,0 +1,74 @@
+---
+// Row 08 (Penpot › Website). Horizontal scroll while pinned: the row moves left and each tool
+// snaps to the centre. The tool names below are buttons that scroll to that tool. Without
+// motion this is a normal swipe carousel.
+import Browser from '../../assets/landing/08-tools/browser.light.svg';
+import Api from '../../assets/landing/08-tools/api.light.svg';
+import Insights from '../../assets/landing/08-tools/insights.light.svg';
+import Git from '../../assets/landing/08-tools/git.light.svg';
+import Deck from '../../assets/landing/08-tools/deck.light.svg';
+
+// Browser and Agent Insights captions are from the boards; API Tester, Git and Stream Deck are drafts for UX review.
+const tools = [
+	{ id: 'browser', name: 'Browser', text: 'Agents drive a real browser you can watch and take over.', Svg: Browser },
+	{ id: 'api', name: 'API Tester', text: 'Call the API your agents build, with saved requests and history.', Svg: Api },
+	{ id: 'insights', name: 'Agent Insights', text: 'Read back every agent conversation and see how much each agent used.', Svg: Insights },
+	{ id: 'git', name: 'Git', text: 'Branches, commits and goal folders, without leaving the workspace.', Svg: Git },
+	{ id: 'deck', name: 'Stream Deck', text: 'Agents, tasks and links on physical keys and dials.', Svg: Deck },
+];
+---
+
+<section id="tools" class="section pin tools" aria-labelledby="tools-title">
+	<div class="pin-sticky">
+		<div class="stage">
+			<div class="copy center-copy tools-copy">
+				<p class="eyebrow">Advanced tools</p>
+				<h2 id="tools-title">The tools around the work, built in</h2>
+			</div>
+			<div class="art tools-art">
+				<div class="tl-track">
+					{
+						tools.map(({ id, name, text, Svg }, i) => (
+							<figure class={`tl-slide tl-${i + 1}`} id={`tool-${id}`} style={`--i:${i}`}>
+								<div class="tl-window">
+									<Svg role="img" aria-label={`${name} window`} />
+								</div>
+								<figcaption>
+									<strong>{name}</strong>
+									<span>{text}</span>
+								</figcaption>
+							</figure>
+						))
+					}
+				</div>
+				<nav class="tl-tabs" aria-label="Tools">
+					{
+						tools.map(({ id, name }, i) => (
+							<a class={`tl-tab tl-${i + 1}`} href={`#tool-${id}`} data-tool={i}>
+								{name}
+							</a>
+						))
+					}
+				</nav>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	// While pinned, a tool name scrolls the page to the moment that tool is centred.
+	// Hold midpoints match the tl-focus keyframes in landing.css.
+	const holds = [0.07, 0.29, 0.51, 0.73, 0.94];
+	const pinned = matchMedia('(min-width: 900px) and (prefers-reduced-motion: no-preference)');
+	const supported = CSS.supports('animation-timeline: view()');
+	const section = document.getElementById('tools');
+
+	document.querySelectorAll<HTMLAnchorElement>('.tl-tab').forEach((tab) => {
+		tab.addEventListener('click', (e) => {
+			if (!section || !pinned.matches || !supported) return; // swipe carousel: the anchor scrolls it
+			e.preventDefault();
+			const range = section.offsetHeight - innerHeight;
+			scrollTo({ top: section.offsetTop + range * holds[Number(tab.dataset.tool)], behavior: 'smooth' });
+		});
+	});
+</script>

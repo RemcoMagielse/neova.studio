@@ -7,29 +7,26 @@ export default defineConfig({
 	site: 'https://neova.studio',
 	integrations: [
 		starlight({
-			title: 'Neova',
-			tagline: 'AI-powered development companion',
-			customCss: ['./src/styles/custom.css'],
-			social: [
-				{ icon: 'github', label: 'GitHub', href: 'https://github.com/RemcoMagielse/neova.studio' },
+			title: 'Neova Studio',
+			// "On this page" lists h2 only, so long reference pages keep a short map (UX review).
+			tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 2 },
+			description: 'Think. Build. Beyond. A workspace for you and your team of AI coding agents.',
+			logo: {
+				light: './src/assets/neova-logo-color.svg',
+				dark: './src/assets/neova-logo-dark.svg',
+			},
+			customCss: [
+				'@fontsource/lato/400.css',
+				'@fontsource/lato/700.css',
+				'@fontsource/lusitana/700.css',
+				'@fontsource/courier-prime/400.css',
+				'./src/styles/custom.css',
 			],
-			// Force dark mode as default (matches Neova app)
-			head: [
-				{
-					tag: 'script',
-					content: `
-						(function() {
-							const theme = localStorage.getItem('starlight-theme');
-							if (!theme) {
-								localStorage.setItem('starlight-theme', 'dark');
-								document.documentElement.dataset.theme = 'dark';
-							}
-						})();
-					`,
-				},
-			],
-			expressiveCode: {
-				themes: ['dracula'],
+			components: {
+				// GitHub link + Download button instead of social icons (Penpot › Website, row 12)
+				SocialIcons: './src/components/HeaderLinks.astro',
+				ThemeSelect: './src/components/ThemeToggle.astro',
+				PageTitle: './src/components/PageTitle.astro',
 			},
 			sidebar: [
 				{
@@ -37,35 +34,12 @@ export default defineConfig({
 					items: [
 						{ label: 'Introduction', slug: 'getting-started/introduction' },
 						{ label: 'Quick Start', slug: 'getting-started/quick-start' },
-						// Use Cases - hidden until content is ready
-						// {
-						// 	label: 'Use Cases',
-						// 	items: [
-						// 		{ label: 'Bug Fixing Workflow', slug: 'getting-started/use-cases/bug-fixing' },
-						// 		{ label: 'Feature Development', slug: 'getting-started/use-cases/feature-development' },
-						// 		{ label: 'Code Review Process', slug: 'getting-started/use-cases/code-review' },
-						// 	],
-						// },
 					],
 				},
-				// How-To Guides - hidden until content is ready
-				// {
-				// 	label: 'How-To Guides',
-				// 	autogenerate: { directory: 'how-to' },
-				// },
 				{
 					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					items: [{ autogenerate: { directory: 'reference' } }],
 				},
-				// Examples - hidden until content is ready
-				// {
-				// 	label: 'Examples',
-				// 	items: [
-				// 		{ label: 'Stage Configurations', slug: 'examples/stage-configurations' },
-				// 		{ label: 'Activity Templates', slug: 'examples/activity-templates' },
-				// 		{ label: 'Standards', slug: 'examples/standards' },
-				// 	],
-				// },
 			],
 		}),
 	],

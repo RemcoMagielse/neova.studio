@@ -1,0 +1,68 @@
+---
+// Row 06 (Penpot › Website). Static HTML, not images (agreed with UX). Each chat message
+// appears with its matching event; at 70% the scheduled triage flips to "ran".
+---
+
+<section id="chat" class="section pin chat" aria-labelledby="chat-title">
+	<div class="pin-sticky">
+		<div class="stage">
+			<div class="copy center-copy chat-copy">
+				<p class="eyebrow">Chat + Events + Schedules</p>
+				<h2 id="chat-title">Your team talks, reports and keeps time, even when you're away</h2>
+			</div>
+			<div class="art chat-art">
+				<div class="at ch-panel ch-chat" style="--x:48;--y:260;--w:800">
+					<header class="ch-head"><h3>Chat</h3><span class="ch-online">4 agents online</span></header>
+					<ol class="ch-messages">
+						<li class="ch-msg ch-1">
+							<span class="ch-avatar" style="--c:#6e6154">PM</span>
+							<p class="ch-meta"><strong>Project Manager</strong><time>09:00</time></p>
+							<p class="ch-text">Morning. 3 bugs came in overnight, triaging now.</p>
+							<div class="ch-card">
+								<p class="ch-card-head"><strong>Bug triage</strong><span>3 new</span></p>
+								<p class="ch-item ch-done"><b>✓</b>Crash when a pane closes → SE</p>
+								<p class="ch-item ch-active"><b>●</b>Chat scroll jumps → SE</p>
+								<p class="ch-item ch-todo"><b>○</b>Typo on the Wiki page → UX</p>
+							</div>
+						</li>
+						<li class="ch-msg ch-2">
+							<span class="ch-avatar" style="--c:#4f6b34">SE</span>
+							<p class="ch-meta"><strong>Software Engineer</strong><time>09:04</time></p>
+							<p class="ch-text">On the crash. Repro found, fix + test coming. <span class="ch-mention">@Project Manager</span> I'll take the scroll one after.</p>
+						</li>
+						<li class="ch-msg ch-3">
+							<span class="ch-avatar" style="--c:#b94e34">UX</span>
+							<p class="ch-meta"><strong>UX Designer</strong><time>09:06</time></p>
+							<p class="ch-text">Fixed the typo and moved it to Verify.</p>
+						</li>
+					</ol>
+					<p class="ch-composer">Message the team… use @ to mention an agent</p>
+				</div>
+				<div class="at ch-panel ch-events" style="--x:880;--y:260;--w:512">
+					<header class="ch-head"><h3>Events</h3></header>
+					<ol class="ch-rows">
+						<li class="ch-event ch-1"><b style="--c:#2e241e">⏱</b>Scheduled: daily bug triage started<time>09:00</time></li>
+						<li class="ch-event ch-2"><b style="--c:#b94e34">●</b>SE picked up: Crash when a pane closes<time>09:04</time></li>
+						<li class="ch-event ch-3"><b style="--c:#4f6b34">✓</b>Task moved to Verify: Wiki typo<time>09:06</time></li>
+						<li class="ch-event ch-4"><b style="--c:#3c83f6">?</b>PM asks you: ship rc.2 today?<time>09:12</time></li>
+					</ol>
+				</div>
+				<div class="at ch-panel ch-schedule" style="--x:880;--y:610;--w:512">
+					<header class="ch-head"><h3>Scheduled</h3></header>
+					<ol class="ch-rows">
+						<li class="ch-job ch-job-ran">
+							<strong>Triage new bugs → Project Manager</strong>
+							<span class="ch-when">every weekday · 09:00</span>
+							<span class="ch-status"><span class="ch-next">next 09:00</span><span class="ch-ran">✓ ran 09:00</span></span>
+						</li>
+						<li class="ch-job">
+							<strong>Write the weekly summary → PM</strong>
+							<span class="ch-when">fridays · 17:00</span>
+							<span class="ch-status"><span class="ch-next ch-next-static">next fri 17:00</span></span>
+						</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

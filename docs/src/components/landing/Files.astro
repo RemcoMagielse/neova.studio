@@ -1,0 +1,41 @@
+---
+// Row 09 (Penpot › Website). The task card from row 03 moves aside and its markdown file
+// slides out from behind it; then the .neova folder tree unfolds and a git diff appears.
+import FolderTree from '../../assets/landing/09-files/folder-tree.light.svg';
+import TaskFile from '../../assets/landing/09-files/task-file.light.svg';
+import TaskCard from '../../assets/landing/09-files/task-card.light.svg';
+import GitDiff from '../../assets/landing/09-files/git-diff.light.svg';
+---
+
+<section id="files" class="section pin files" aria-labelledby="files-title">
+	<div class="pin-sticky">
+		<div class="stage">
+			<div class="copy center-copy files-copy">
+				<p class="eyebrow">100% local</p>
+				<h2 id="files-title">It's all files. Diff it, commit it, own it.</h2>
+				<p class="lede">
+					Tasks, goals, wiki pages and settings are plain files in a .neova folder in your repo. No cloud, no
+					database, no account.
+				</p>
+			</div>
+			<div class="art files-art">
+				<div class="at panel fl-tree" style="--x:110;--y:300;--w:300"><FolderTree role="img" aria-label="The .neova folder: agents, goals, tasks, wiki and settings" /></div>
+				<div class="at panel fl-file" style="--x:450;--y:300;--w:560"><TaskFile role="img" aria-label="The task as a markdown file with front matter" /></div>
+				<div class="fl-link" aria-hidden="true">
+					<i class="at line" style="--x:1010;--y:360;--w:40;--h:2"></i>
+					<i class="at dot" style="--x:1005;--y:356"></i>
+					<i class="at dot" style="--x:1045;--y:356"></i>
+					<span class="at fl-note" style="--x:1050;--y:432;--w:200">same task, as a card</span>
+				</div>
+				<div class="at panel fl-diff" style="--x:1050;--y:480;--w:290"><GitDiff role="img" aria-label="git diff: the task file changed, then committed" /></div>
+				<div class="at panel fl-card" style="--x:1050;--y:300;--w:290"><TaskCard role="img" aria-label="The same task as a card" /></div>
+			</div>
+			<ul class="label-list">
+				<li>The task as a card</li>
+				<li>The same task as a markdown file</li>
+				<li>The .neova folder in your repo</li>
+				<li>A git diff you can commit</li>
+			</ul>
+		</div>
+	</div>
+</section>

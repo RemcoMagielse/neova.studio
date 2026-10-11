@@ -1,0 +1,30 @@
+---
+// Starlight's PageTitle plus a breadcrumb with the sidebar group, e.g. "Work with Neova › Wiki"
+// (Penpot › Website, row 12).
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+
+const { sidebar, entry } = Astro.locals.starlightRoute;
+const group = sidebar.find(
+	(item) => item.type === 'group' && item.entries.some((e) => e.type === 'link' && e.isCurrent)
+);
+---
+
+{
+	group && (
+		<p class="breadcrumb">
+			{group.label} › {entry.data.title}
+		</p>
+	)
+}
+<Default />
+
+<style>
+	.breadcrumb {
+		margin: 0;
+		font-size: 0.8125rem;
+		color: var(--sl-color-gray-3);
+	}
+	.breadcrumb + :global(h1) {
+		margin-top: 0.5rem;
+	}
+</style>

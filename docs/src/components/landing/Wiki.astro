@@ -1,0 +1,43 @@
+---
+// Row 04 (Penpot › Website). A stack of wiki pages fans out; Release Strategy is pulled out
+// towards an agent terminal along a get_wiki line.
+import Conduct from '../../assets/landing/04-wiki/page-agent-code-of-conduct.light.svg';
+import DataStructure from '../../assets/landing/04-wiki/page-data-structure.light.svg';
+import Security from '../../assets/landing/04-wiki/page-security-standards.light.svg';
+import Release from '../../assets/landing/04-wiki/page-release-strategy.light.svg';
+import Terminal from '../../assets/landing/04-wiki/terminal.light.svg';
+---
+
+<section id="wiki" class="section pin wiki" aria-labelledby="wiki-title">
+	<div class="pin-sticky">
+		<div class="stage">
+			<div class="copy center-copy wiki-copy">
+				<p class="eyebrow">Wiki</p>
+				<h2 id="wiki-title">Write your standards once. Every agent follows them.</h2>
+				<p class="lede">
+					Conventions, release rules, security standards: they live in the project wiki. Agents look them
+					up before they start, so you stop repeating yourself.
+				</p>
+			</div>
+			<div class="art wiki-art">
+				<div class="at panel wk-page wk-conduct" style="--x:50;--y:435;--w:280"><Conduct role="img" aria-label="Wiki page: Agent Code of Conduct" /></div>
+				<div class="at panel wk-page wk-data" style="--x:257;--y:420;--w:280"><DataStructure role="img" aria-label="Wiki page: Data Structure" /></div>
+				<div class="at panel wk-page wk-security" style="--x:455;--y:435;--w:280"><Security role="img" aria-label="Wiki page: Security Standards" /></div>
+				<div class="at panel wk-page wk-release" style="--x:660;--y:400;--w:280"><Release role="img" aria-label="Wiki page: Release Strategy" /></div>
+				<div class="wk-link" aria-hidden="true">
+					<i class="at dot" style="--x:935;--y:515"></i>
+					<i class="at line wk-line" style="--x:945;--y:519;--w:80;--h:2"></i>
+					<i class="at dot" style="--x:1020;--y:515"></i>
+					<span class="at wk-call" style="--x:948;--y:494;--w:60">get_wiki</span>
+				</div>
+				<div class="at panel wk-terminal" style="--x:1030;--y:430;--w:360"><Terminal role="img" aria-label="Software Engineer terminal reading the release strategy" /></div>
+			</div>
+			<ul class="label-list">
+				<li>Agent Code of Conduct</li>
+				<li>Data Structure</li>
+				<li>Security Standards</li>
+				<li>Release Strategy, read by the agent with get_wiki</li>
+			</ul>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,78 @@
+---
+// Row 02 (Penpot › Website). Starts on the hero's end frame, explodes the window into its
+// layers with labels (a table of contents for rows 03–08), then zooms into the board.
+import HeroWindow from '../../assets/landing/01-hero/window.light.svg';
+import Frame from '../../assets/landing/02-exploded/frame.light.svg';
+import Sidebar from '../../assets/landing/02-exploded/sidebar.light.svg';
+import Board from '../../assets/landing/02-exploded/board.light.svg';
+import Chat from '../../assets/landing/02-exploded/chat.light.svg';
+import TerminalUx from '../../assets/landing/02-exploded/terminal-ux.light.svg';
+import TerminalSe from '../../assets/landing/02-exploded/terminal-se.light.svg';
+import Assistant from '../../assets/landing/02-exploded/assistant.light.svg';
+
+const labels = [
+	{ title: 'Navigation + Wiki', section: 4, href: '#wiki', x: 160, y: 220, w: 220 },
+	{ title: 'Goals + Tasks', section: 3, href: '#goals-tasks', x: 610, y: 220, w: 220 },
+	{ title: 'Chat + Events', section: 6, href: '#chat', x: 1090, y: 220, w: 220 },
+	{ title: 'Agents + Terminals', section: 5, href: '#agents', x: 60, y: 782, w: 180, align: 'end' },
+	{ title: 'Assistant', x: 1374, y: 794, w: 63, align: 'start' },
+];
+// Connector lines and dots, from the 02 · 50% board.
+const lines = [
+	{ x: 269, y: 262, w: 2, h: 28 },
+	{ x: 719, y: 262, w: 2, h: 8 },
+	{ x: 1199, y: 262, w: 2, h: 28 },
+	{ x: 250, y: 804, w: 150, h: 2 },
+	{ x: 1340, y: 804, w: 30, h: 2 },
+];
+const dots = [
+	{ x: 265, y: 285 },
+	{ x: 715, y: 265 },
+	{ x: 1195, y: 285 },
+	{ x: 400, y: 800 },
+	{ x: 1335, y: 800 },
+];
+---
+
+<section id="workspace" class="section pin joined workspace" aria-labelledby="workspace-title">
+	<div class="pin-sticky">
+		<div class="stage">
+			<div class="copy workspace-copy">
+				<p class="eyebrow">One workspace</p>
+				<h2 id="workspace-title">Everything your AI team needs, in one place</h2>
+			</div>
+			<div class="art workspace-art">
+				<div class="at panel window ws-frame" style="--x:48;--y:96;--w:1344" aria-hidden="true"><Frame /></div>
+				<div class="at panel ws-layer ws-sidebar" style="--x:170;--y:290;--w:200"><Sidebar role="img" aria-label="Sidebar: project, tasks and agents" /></div>
+				<div class="at panel ws-layer ws-board" style="--x:410;--y:270;--w:620"><Board role="img" aria-label="Task board with Prepare, Implement and Done" /></div>
+				<div class="at panel ws-layer ws-chat" style="--x:1070;--y:290;--w:260"><Chat role="img" aria-label="Team chat" /></div>
+				<div class="at panel ws-layer ws-rise ws-term-ux" style="--x:410;--y:730;--w:302"><TerminalUx role="img" aria-label="UX Designer terminal" /></div>
+				<div class="at panel ws-layer ws-rise ws-term-se" style="--x:728;--y:730;--w:302"><TerminalSe role="img" aria-label="Software Engineer terminal" /></div>
+				<div class="at panel ws-layer ws-rise ws-assistant" style="--x:1070;--y:730;--w:260"><Assistant role="img" aria-label="Assistant" /></div>
+				<div class="at panel window ws-hero-window" style="--x:48;--y:96;--w:1344" aria-hidden="true"><HeroWindow /></div>
+
+				<div class="ws-labels">
+					{lines.map((l) => <i class="at line" style={`--x:${l.x};--y:${l.y};--w:${l.w};--h:${l.h}`} />)}
+					{dots.map((d) => <i class="at dot" style={`--x:${d.x};--y:${d.y}`} />)}
+					{
+						labels.map((l) =>
+							l.href ? (
+								<a class={`at label label-${l.align ?? 'center'}`} href={l.href} style={`--x:${l.x};--y:${l.y};--w:${l.w}`}>
+									<strong>{l.title}</strong>
+									<span>→ section {l.section}</span>
+								</a>
+							) : (
+								<span class={`at label label-${l.align ?? 'center'}`} style={`--x:${l.x};--y:${l.y};--w:${l.w}`}>
+									<strong>{l.title}</strong>
+								</span>
+							)
+						)
+					}
+				</div>
+			</div>
+			<ol class="label-list">
+				{labels.map((l) => <li>{l.href ? <a href={l.href}>{l.title}</a> : l.title}</li>)}
+			</ol>
+		</div>
+	</div>
+</section>

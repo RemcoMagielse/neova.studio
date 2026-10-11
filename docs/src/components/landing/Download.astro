@@ -1,0 +1,71 @@
+---
+// Row 10 (Penpot › Website). Every button goes to the latest GitHub release, where the visitor
+// picks their file, so the page never shows a stale version (@user, 11-10-2026). The visitor's
+// platform is highlighted but the other two stay available.
+import Mark from '../../assets/landing/brand/mark.svg';
+
+const releasesUrl = 'https://github.com/RemcoMagielse/neova.studio/releases/latest';
+
+const platforms = [
+	{ id: 'mac', name: 'macOS', detail: 'Apple Silicon and Intel', label: 'Download for Mac' },
+	{ id: 'windows', name: 'Windows', detail: 'Windows 10 and 11', label: 'Download for Windows' },
+	{ id: 'linux', name: 'Linux', detail: 'Ubuntu, Fedora, Arch', label: 'Download for Linux' },
+];
+---
+
+<section id="download" class="download" data-platform="mac" aria-labelledby="download-title">
+	<Mark class="dl-mark" aria-hidden="true" />
+	<h2 id="download-title">Free. Download Neova Studio.</h2>
+	<p class="dl-lede">Bring your own agents. Everything stays on your machine.</p>
+
+	<div class="dl-cards">
+		{
+			platforms.map((p) => (
+				<article class={`dl-card dl-${p.id}`}>
+					<header>
+						<h3>{p.name}</h3>
+						<span class="dl-yours">Your platform</span>
+					</header>
+					<p class="dl-detail">{p.detail}</p>
+					<a class="button button-lg dl-button" href={releasesUrl}>{p.label}</a>
+				</article>
+			))
+		}
+	</div>
+
+	<div class="dl-phone">
+		<h3>Neova Studio is a desktop app</h3>
+		<p>Send the link to your computer to install it there.</p>
+		<button class="button button-primary button-lg" type="button" data-copy-link>Copy download link</button>
+	</div>
+
+	<a class="dl-version" href={releasesUrl}>What's new →</a>
+</section>
+
+<script>
+	// Highlight the visitor's platform (never hide the others) and name it on the hero button.
+	const ua = (navigator as Navigator & { userAgentData?: { platform?: string } }).userAgentData?.platform ?? navigator.userAgent;
+	const platform = /win/i.test(ua) ? 'windows' : /linux|x11/i.test(ua) && !/android/i.test(ua) ? 'linux' : 'mac';
+	const names: Record<string, string> = { mac: 'Mac', windows: 'Windows', linux: 'Linux' };
+	document.getElementById('download')?.setAttribute('data-platform', platform);
+	// Phones can't install it: the hero button leads to the download block instead.
+	const phone = matchMedia('(max-width: 899px)').matches;
+	document
+		.querySelectorAll('[data-platform-label]')
+		.forEach((el) => (el.textContent = phone ? 'Get it for desktop' : `Download for ${names[platform]}`));
+
+	// Phones: share or copy the link, so it can be opened on a computer.
+	document.querySelector('[data-copy-link]')?.addEventListener('click', async (e) => {
+		const button = e.currentTarget as HTMLButtonElement;
+		const url = `${location.origin}/#download`;
+		try {
+			if (navigator.share) await navigator.share({ title: 'Neova Studio', url });
+			else {
+				await navigator.clipboard.writeText(url);
+				button.textContent = 'Link copied';
+			}
+		} catch {
+			// Share sheet dismissed.
+		}
+	});
+</script>

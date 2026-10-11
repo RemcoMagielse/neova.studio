@@ -1,0 +1,33 @@
+---
+// The landing page lives outside Starlight. It is light only (@user, 11-10-2026):
+// its images are drawn for warm stone. The docs follow the system theme.
+import '@fontsource/lato/400.css';
+import '@fontsource/lato/700.css';
+import '@fontsource/lusitana/400.css';
+import '@fontsource/lusitana/700.css';
+import '@fontsource/courier-prime/400.css';
+import '@fontsource/courier-prime/700.css';
+import '../styles/landing.css';
+
+const title = 'Neova Studio — Think. Build. Beyond.';
+const description =
+	'Plan the work, hand it to a team of AI agents, and stay in control. One calm workspace for Claude Code, Codex and Gemini.';
+---
+
+<!doctype html>
+<html lang="en" data-theme="light">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="color-scheme" content="light" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="canonical" href={Astro.site} />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>

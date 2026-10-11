@@ -1,0 +1,73 @@
+---
+// Row 07 (Penpot › Website). The hub connects line by line (0–40%), then tool calls travel
+// from each agent along its line (40–100%). Nodes, lines and pills are HTML/SVG.
+import Hub from '../../assets/landing/07-mcp/hub.light.svg';
+import HubIdle from '../../assets/landing/07-mcp/hub-idle.light.svg';
+
+const hub = { x: 940, y: 500 };
+// Node boxes and the tool call that travels on each line (from the 07 · end board).
+const nodes = [
+	{ name: 'Claude Code', x: 876, y: 208, w: 128, call: 'create_task', px: 888, py: 307, pw: 103 },
+	{ name: 'Codex', x: 1157, y: 395, w: 80, call: 'get_wiki', px: 1042, py: 441, pw: 81 },
+	{ name: 'Gemini CLI', x: 1039, y: 696, w: 120, call: 'chat_send', px: 1007, py: 641, pw: 89 },
+	{ name: 'Cursor', x: 737, y: 696, w: 88, call: 'ask_user', px: 805, py: 616, pw: 81 },
+	{ name: 'Your own agent', x: 607, y: 395, w: 152, call: 'complete_task', px: 704, py: 430, pw: 118 },
+].map((n) => {
+	const cx = n.x + n.w / 2;
+	const cy = n.y + 22;
+	// The pill starts on the agent and travels to its spot on the line.
+	return { ...n, cx, cy, fromX: cx - (n.px + n.pw / 2), fromY: cy - (n.py + 13) };
+});
+---
+
+<section id="mcp" class="section pin mcp" aria-labelledby="mcp-title">
+	<div class="pin-sticky">
+		<div class="stage">
+			<div class="copy mcp-copy">
+				<p class="eyebrow">MCP</p>
+				<h2 id="mcp-title">Built-in MCP server. Any agent can use it.</h2>
+				<p class="lede">
+					Neova runs an MCP server on your machine. Agents use it to read and write tasks, post to chat, look
+					up the wiki and ask you questions. No plugin per agent, no cloud.
+				</p>
+				<pre class="mcp-config"><code><span class="c">// .mcp.json, written for you</span>
+{"{"} "mcpServers": {"{"}
+    "neova": {"{"} "command": "node",
+<span class="a">      "args": ["…/mcp-connector/index.js",
+               "--port", "21702"] {"}"}</span>
+{"}"} {"}"}</code></pre>
+			</div>
+			<div class="art mcp-art">
+				<svg class="mcp-lines" viewBox="0 0 1440 900" aria-hidden="true">
+					{nodes.map((n) => <line class="mcp-line-idle" x1={hub.x} y1={hub.y} x2={n.cx} y2={n.cy} />)}
+					{
+						nodes.map((n, i) => (
+							<line class={`mcp-line mcp-line-${i + 1}`} x1={hub.x} y1={hub.y} x2={n.cx} y2={n.cy} pathLength="1" />
+						))
+					}
+				</svg>
+				{
+					nodes.map((n) => (
+						<span class="at mcp-node" style={`--x:${n.x};--y:${n.y};--w:${n.w}`}>
+							{n.name}
+						</span>
+					))
+				}
+				<div class="at mcp-hub" style="--x:870;--y:430;--w:140">
+					<HubIdle class="mcp-hub-idle" aria-hidden="true" />
+					<Hub class="mcp-hub-on" role="img" aria-label="Neova" />
+				</div>
+				{
+					nodes.map((n, i) => (
+						<code class={`at mcp-pill mcp-pill-${i + 1}`} style={`--x:${n.px};--y:${n.py};--w:${n.pw};--from-x:${n.fromX};--from-y:${n.fromY}`}>
+							{n.call}
+						</code>
+					))
+				}
+			</div>
+			<ul class="label-list">
+				{nodes.map((n) => <li>{n.name}: <code>{n.call}</code></li>)}
+			</ul>
+		</div>
+	</div>
+</section>

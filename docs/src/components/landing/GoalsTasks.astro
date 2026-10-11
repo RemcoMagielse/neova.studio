@@ -1,0 +1,59 @@
+---
+// Row 03 (Penpot › Website). One card travels Prepare → Implement → Verify → Done, snapping
+// per column; the steps on the left and the goal bar follow it.
+import Board from '../../assets/landing/03-goals-tasks/board.light.svg';
+import CardPrepare from '../../assets/landing/03-goals-tasks/card-prepare.light.svg';
+import CardImplement from '../../assets/landing/03-goals-tasks/card-implement.light.svg';
+import CardVerify from '../../assets/landing/03-goals-tasks/card-verify.light.svg';
+import CardDone from '../../assets/landing/03-goals-tasks/card-done.light.svg';
+
+const steps = [
+	{ title: 'Prepare', text: 'The Project Manager writes the spec into the task.' },
+	{ title: 'Implement', text: 'The Software Engineer picks it up and builds it.' },
+	{ title: 'Verify', text: 'You review. Approve, or send it back with a note.' },
+	{ title: 'Done', text: 'The goal moves forward. Everything is on record.' },
+];
+// Card slots, board-relative x = 34 + i × 219.5 at y 424 (UX delivery notes).
+const slots = [0, 1, 2].map((i) => 514 + i * 219.5);
+---
+
+<section id="goals-tasks" class="section pin joined goals" aria-labelledby="goals-title">
+	<div class="pin-sticky">
+		<div class="stage">
+			<div class="copy goals-copy">
+				<p class="eyebrow">Goals + Tasks</p>
+				<h2 id="goals-title">You set the goal. Agents do the work. You approve.</h2>
+				<ol class="steps">
+					{
+						steps.map((s, i) => (
+							<li class={`step step-${i + 1}`}>
+								<span class="step-dot" aria-hidden="true">
+									<span class="step-num">{i + 1}</span>
+									<span class="step-check">✓</span>
+								</span>
+								<strong>{s.title}</strong>
+								<span class="step-text">{s.text}</span>
+							</li>
+						))
+					}
+				</ol>
+			</div>
+			<div class="art goals-art">
+				<div class="at panel window gt-board" style="--x:480;--y:110;--w:912">
+					<Board role="img" aria-label="Task board for the goal “Ship the website redesign”" />
+				</div>
+				<div class="at gt-goal" style="--x:1142;--y:138;--w:200" aria-hidden="true"><i></i></div>
+				<p class="at gt-percent" style="--x:1350;--y:132;--w:40" aria-label="Goal progress">
+					<span class="gt-from">50%</span><span class="gt-to">75%</span>
+				</p>
+				{slots.map((x, i) => <i class={`at gt-slot gt-slot-${i + 1}`} style={`--x:${x};--y:534;--w:185`} />)}
+				<div class="at panel gt-card" style="--x:514;--y:534;--w:185">
+					<CardPrepare class="gt-v gt-v-prepare" aria-hidden="true" />
+					<CardImplement class="gt-v gt-v-implement" aria-hidden="true" />
+					<CardVerify class="gt-v gt-v-verify" aria-hidden="true" />
+					<CardDone class="gt-v gt-v-done" role="img" aria-label="Task “Download block shows the latest release”, done" />
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
