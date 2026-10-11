@@ -28,6 +28,8 @@ jobs:
         uses: withastro/action@v3
         with:
           path: docs
+          # Astro 7 needs Node 22.12+; the action defaults to Node 20.
+          node-version: 22
 
   deploy:
     needs: build
