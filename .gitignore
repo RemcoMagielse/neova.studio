@@ -17,3 +17,6 @@ releases/
 
 # Catalogue output (built by catalogue/build.mjs in the deploy workflow)
 docs/public/catalogue/
+
+# Neova project data for this repo stays local
+.neova/
