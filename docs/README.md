@@ -1,3 +1,5 @@
+<!-- Generated from neova-flows/website by .github/workflows/sync-website.yml. Edit it there; changes made in neova.studio/docs are overwritten. -->
+
 # Neova
 
 A workflow tool for developers who work with AI coding agents.

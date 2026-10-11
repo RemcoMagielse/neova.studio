@@ -11,7 +11,7 @@ When an agent connects via MCP, it can:
 
 - Read and create tasks
 - Move tasks through stages
-- Access project standards and snippets
+- Access the project wiki and snippets
 - Send notifications and questions to you
 
 ## Connecting
@@ -92,11 +92,11 @@ In Neova, the MCP connection status is visible in the sidebar. When agents conne
 
 ### get_project_info
 
-Get project metadata, folder structure, standards, and workflow stages.
+Get project metadata, folder structure, wiki pages, and workflow stages.
 
 **Parameters:** None
 
-**Returns:** Project paths, available standards, stages with their activities.
+**Returns:** Project paths, wiki pages, stages with their activities.
 
 ## Task Tools
 
@@ -189,51 +189,123 @@ Get full snippet content.
 |-----------|------|----------|-------------|
 | `id` | string | Yes | Snippet ID |
 
-## Standard Tools
+## Wiki Tools
 
-### list_standards
+The wiki holds durable project knowledge as markdown pages, grouped into
+categories. The "standards" category is the default.
 
-List all project standards with metadata.
+Reads resolve an approximate name; writes take the exact page id returned by
+`get_wiki` or `list_wiki`.
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `limit` | number | Maximum results (default: 100) |
+### list_wiki
 
-### get_standard
-
-Get full content of a project standard.
+List wiki pages with metadata. Omit the category to list every category.
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `id` | string | Yes | Standard ID (e.g., `architecture`) |
+| `category` | string | No | Restrict to one category id |
+| `limit` | number | No | Maximum results (default: 100) |
 
-### create_standard
+### list_wiki_categories
 
-Create a new project standard.
+List wiki categories with descriptions and page counts.
+
+**Parameters:** None
+
+### search_wiki
+
+Search the wiki by topic. The app ranks the pages and returns the best matches.
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `id` | string | Yes | Standard ID in kebab-case |
+| `query` | string | Yes | Free-text query |
+| `category` | string | No | Restrict to one category id |
+| `limit` | number | No | Maximum results (default: 6) |
+
+### get_wiki
+
+Fetch a page by id or name — approximate is fine. Returns candidates rather
+than guessing when the name is ambiguous.
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `page` | string | Yes | Page id or name |
+| `category` | string | No | Restrict to one category id |
+
+### get_section_from_wiki
+
+Read one section of a page, by heading or outline ref. Returns the content plus
+a `contentHash` for `replace_section_in_wiki`.
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `id` | string | Yes | Exact page id |
+| `heading` | string | No | `## Examples` pins the level; a bare title matches any |
+
+### create_wiki
+
+Create a page in the given category, or "standards" by default.
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `id` | string | Yes | Page id in kebab-case |
 | `content` | string | No | Markdown content |
-| `description` | string | No | Short description |
+| `description` | string | No | Short summary |
+| `category` | string | No | Category id (default: `standards`) |
 
-### update_standard
+### update_wiki
 
-Update an existing standard.
+Overwrite a page's content wholesale.
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `id` | string | Yes | Standard ID |
+| `id` | string | Yes | Exact page id |
 | `content` | string | Yes | New markdown content |
-| `description` | string | No | Short description |
+| `description` | string | No | Short summary |
+| `category` | string | No | Category id |
 
-### delete_standard
+### delete_wiki
 
-Delete a project standard.
+Delete a page.
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `id` | string | Yes | Standard ID |
+| `id` | string | Yes | Exact page id |
+| `category` | string | No | Category id |
+
+### append_to_wiki
+
+Append to the end of a page. Never clobbers; creates the page if missing.
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `page` | string | Yes | Page id to append to, or create |
+| `content` | string | Yes | Markdown to append |
+| `category` | string | No | Category id when creating (default: `standards`) |
+
+### replace_in_wiki
+
+Replace one exact occurrence of a string. Fails if it is missing or matches
+more than once.
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `id` | string | Yes | Exact page id |
+| `find` | string | Yes | Exact substring; must match once in scope |
+| `replace` | string | Yes | Replacement string |
+| `section` | string | No | Heading to scope the search to one section |
+| `expectedHash` | string | No | Body or section hash from a prior read |
+
+### replace_section_in_wiki
+
+Replace a whole section body, keeping its heading line.
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `id` | string | Yes | Exact page id |
+| `heading` | string | Yes | Section heading |
+| `content` | string | Yes | New section body (no heading line) |
+| `expectedHash` | string | Yes | Section hash from `get_section_from_wiki` |
 
 ## Workspace Tools
 
@@ -256,6 +328,34 @@ Post a notification to the user. Appears in the Agent Workspace timeline.
 | `message` | string | Yes | Notification message |
 | `taskId` | string | No | Link to related task |
 | `level` | string | No | `info`, `success`, or `warning` |
+| `actions` | array | No | Up to 4 buttons the user can click (see below) |
+| `images` | array | No | Up to 4 image file paths to show with the notification |
+
+Each action is `{ "type": "command" \| "link", "label": "…", "command": "…", "url": "…" }`.
+A `command` button opens a new terminal under **Tools › Terminal** and runs the
+command there; a `link` button opens an http(s) URL in the browser. Nothing runs
+until the user clicks, and the command is shown verbatim on the card so it can be
+read first.
+
+Each entry in `images` is a path to a `png`, `jpg` or `webp` file (absolute or
+project-relative, max 10MB). Files are **copied** into `.neova/images/`, so the
+original can be deleted afterwards. Thumbnails render on the card, the full image
+in the detail view, and the user can open it in their system image viewer.
+
+Malformed actions and unreadable images are dropped and reported in `warnings` —
+the notification is still delivered.
+
+```json
+{
+  "message": "Deploy finished, but two pods are crash-looping.",
+  "level": "warning",
+  "images": ["/tmp/pod-status.png"],
+  "actions": [
+    { "type": "command", "label": "Check pods", "command": "kubectl get pods -n neova" },
+    { "type": "link", "label": "Runbook", "url": "https://example.com/runbook" }
+  ]
+}
+```
 
 ### ask_user
 
