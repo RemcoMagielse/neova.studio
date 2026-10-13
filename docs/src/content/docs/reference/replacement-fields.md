@@ -1,130 +1,103 @@
 ---
-title: Replacement Fields
-description: Reference for dynamic replacement fields in activity templates.
+title: Replacement fields
+description: The fields you can put in a skill or snippet, and what Neova fills in for each.
 sidebar:
-  order: 6
+  order: 3
 ---
 
-Replacement fields are dynamic placeholders that get filled in automatically when you render an activity template. They let you create reusable prompts that pull in context from the current task, project, and snippets.
+Replacement fields are placeholders in a skill or snippet. When the skill runs, Neova replaces each field with a value from the task, the wiki, your snippets, the project folder or your project files.
 
-Syntax: `{variable.name}` or `@filename`
+Neova fills in fields when you send a skill to an agent, copy it as a prompt, run it as a Quick Action, run it from the chat with `/`, or use it in the Composer.
 
-## Task Variables
+## Write a field
 
-Insert information from the current task.
+| Syntax | Fills in |
+|---|---|
+| `{task.title}` | A task field |
+| `{wiki.<page-id>}`, `{wiki.<page-id>.content}` | A wiki page, or one of its fields |
+| `{app.tasksFolder}` | A project folder or file path |
+| `{<key>}` | The content of the snippet with that replacement key |
+| `@<filename>` | The path of a project file with that name |
+| `[if:task.description]…[/if]` | The text between the tags, only when the task or app field has a value |
 
-| Pattern | Description | Example Output |
-|---------|-------------|----------------|
-| `{task.id}` | Task ID | `1770562431528-8h` |
-| `{task.title}` | Task title | `Add user authentication` |
-| `{task.description}` | Full description | *(markdown content)* |
-| `{task.status}` | Current status | `pending` or `completed` |
-| `{task.tags}` | Tags as comma-separated list | `feature, backend, auth` |
-| `{task.stage}` | Current stage name | `Implement` |
-| `{task.createdAt}` | Creation timestamp | `2026-02-08T14:53:51.528Z` |
-| `{task.updatedAt}` | Last update timestamp | `2026-02-10T09:21:33.000Z` |
-| `{task.history}` | Full history log | *(JSON array)* |
-| `{task.lastActivity}` | Most recent history message | `Updated: description` |
-| `{task.lastActivityDate}` | Most recent activity date | `2026-02-10T09:21:33.000Z` |
+In the skill editor (**Settings › Skills**), type `{` to pick a field from a list, and `@` to pick a project file.
 
-## App Variables
+A field that has no value stays in the text as you typed it. For example, `{task.tags}` on a task without tags stays `{task.tags}`. Wrap such a field in an `[if:…]` block to leave it out.
 
-Insert paths and configuration from the project.
+## Task fields
 
-| Pattern | Description | Example Output |
-|---------|-------------|----------------|
-| `{app.neovaFolder}` | Neova data folder | `.neova` |
-| `{app.tasksFolder}` | Tasks folder path | `.neova/tasks` |
-| `{app.archiveFolder}` | Archive folder path | `.neova/tasks/archive` |
-| `{app.snippetsFolder}` | Snippets folder path | `.neova/snippets` |
-| `{app.stagesFile}` | Stages config path | `.neova/stages.json` |
+These fields take their value from the task the skill runs on.
 
-## Standards
+| Field | Fills in | Example |
+|---|---|---|
+| `{task.id}` | The task ID | `1770562431528-8h` |
+| `{task.title}` | The title | `Add user authentication` |
+| `{task.description}` | The full description, in Markdown | |
+| `{task.status}` | `pending` or `completed` | `pending` |
+| `{task.tags}` | The tags, separated by commas | `feature, backend, auth` |
+| `{task.stage}` | The name of the stage | `Implement` |
+| `{task.createdAt}` | When the task was created | `2026-02-08T14:53:51.528Z` |
+| `{task.updatedAt}` | When the task last changed | `2026-02-10T09:21:33.000Z` |
+| `{task.history}` | The change log, one line per entry: source, date in your system's format, and message | `- **[System]** 10-2-2026, 09:21:33: Task created` |
+| `{task.lastActivity}` | The message of the latest history entry | `Updated: description` |
+| `{task.lastActivityDate}` | The time of the latest history entry | `2026-02-10T09:21:33.000Z` |
 
-Insert project standard content. Replace `key` with your standard's ID (e.g., `ux-guidelines`).
+## Wiki fields
 
-| Pattern | Description |
-|---------|-------------|
-| `{standards.key}` | File path (default) |
-| `{standards.key.title}` | Display name |
-| `{standards.key.description}` | Short description |
-| `{standards.key.content}` | Full markdown content |
-| `{standards.key.id}` | Kebab-case ID |
+Use the page ID, as shown in the page's file name. A page in the Standards category with the ID `ux-guidelines` is stored as `.neova/wiki/standards/ux-guidelines.md`.
 
-**Example:**
+| Field | Fills in |
+|---|---|
+| `{wiki.ux-guidelines}` | The path of the page: `.neova/wiki/standards/ux-guidelines.md` |
+| `{wiki.ux-guidelines.title}` | The page name |
+| `{wiki.ux-guidelines.description}` | The short description of the page |
+| `{wiki.ux-guidelines.content}` | The full Markdown content |
+| `{wiki.ux-guidelines.id}` | The page ID |
 
-```
-Follow the guidelines in {standards.api-design.content}
-```
 
-## Snippets
+## App fields
 
-Insert reusable text snippets. Each snippet can have a **replacement key** set in Settings → Snippets.
+These fields fill in full paths in the open project.
 
-| Pattern | Description |
-|---------|-------------|
-| `{snippet-key}` | Inserts the snippet content |
+| Field | Fills in | Example |
+|---|---|---|
+| `{app.neovaFolder}` | The `.neova` folder | `/Users/you/code/my-project/.neova` |
+| `{app.tasksFolder}` | The tasks folder | `/Users/you/code/my-project/.neova/tasks` |
+| `{app.archiveFolder}` | The task archive | `/Users/you/code/my-project/.neova/tasks/archive` |
+| `{app.snippetsFolder}` | The snippets folder | `/Users/you/code/my-project/.neova/snippets` |
+| `{app.stagesFile}` | The stages file | `/Users/you/code/my-project/.neova/stages.json` |
 
-**Example:** If you have a snippet with key `read-task`:
+## Snippet fields
 
-```
-{read-task}
-```
+Give a snippet a replacement key in the snippet editor, for example `api-config`. `{api-config}` in a skill then fills in the content of that snippet.
 
-Becomes:
+A snippet can contain fields of its own, including other snippet keys. Neova keeps replacing until no field changes, up to 10 rounds.
 
-```
-Read the task description and understand the requirements.
-```
+## File references
 
-## File References
+`@` followed by a file name fills in the path of the project file with that name, for example `@package.json`. The name can contain letters, digits, `.`, `_` and `-`. When no file has that name, the text stays as you typed it.
 
-Reference project files by name. Returns the file path.
+## Conditional blocks
 
-| Pattern | Description |
-|---------|-------------|
-| `@filename` | Path to file |
+`[if:<field>]` and `[/if]` keep the text between them only when the field has a value. This works with task fields and app fields. Leave out the braces inside the tag.
 
-**Example:**
-
-```
-Check the configuration in @package.json
-```
-
-## Try It Yourself
-
-Copy this template into an activity to see all replacement fields in action:
-
-```markdown
-## Task Information
-- **ID:** {task.id}
-- **Title:** {task.title}
-- **Stage:** {task.stage}
-- **Status:** {task.status}
-- **Tags:** {task.tags}
-- **Created:** {task.createdAt}
-- **Updated:** {task.updatedAt}
-
-## Task Description
+```text
+Work on {task.title}.
+[if:task.description]
+Details:
 {task.description}
-
-## Last Activity
-{task.lastActivity} ({task.lastActivityDate})
-
-## Project Paths
-- Neova folder: {app.neovaFolder}
-- Tasks folder: {app.tasksFolder}
-- Archive folder: {app.archiveFolder}
-- Snippets folder: {app.snippetsFolder}
-- Stages file: {app.stagesFile}
+[/if]
 ```
 
-## Nested Replacements
+On a task without a description, Neova leaves out the whole block.
 
-Replacement fields are processed iteratively. If a snippet contains other replacement fields, they will also be resolved.
+## Order
 
-**Example:**
+Neova fills in fields in this order: app and wiki fields, file references, snippet fields, task fields. It then repeats the round until nothing changes, so a field that a snippet adds is filled in too. After that, it removes blank lines beyond one in a row and spaces at the end of lines.
 
-- Snippet `read-task` contains: `Read task {task.id} titled "{task.title}"`
-- Template contains: `{read-task}`
-- Final output: `Read task 1770562431528-8h titled "Add user authentication"`
+## Related
+
+- [Settings › Skills](/settings/agents/)
+- [Snippets](/tools/snippets/)
+- [Wiki](/project/wiki/)
+- [Composer](/tools/composer/)

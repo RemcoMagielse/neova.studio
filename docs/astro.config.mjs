@@ -5,6 +5,15 @@ import starlight from '@astrojs/starlight';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://neova.studio',
+	// Old docs URLs, plus /guides/introduction/ which the app's Help › Documentation opens.
+	redirects: {
+		'/guides/introduction': '/getting-started/introduction/',
+		'/reference/mcp-server': '/reference/mcp-tools/',
+		'/reference/file-structure': '/reference/neova-folder/',
+		'/reference/stages': '/settings/workflow/',
+		'/reference/tasks': '/tasks/task-editor/',
+		'/reference/standards': '/project/wiki/',
+	},
 	integrations: [
 		starlight({
 			title: 'Neova Studio',
@@ -32,14 +41,19 @@ export default defineConfig({
 				{
 					label: 'Getting Started',
 					items: [
-						{ label: 'Introduction', slug: 'getting-started/introduction' },
-						{ label: 'Quick Start', slug: 'getting-started/quick-start' },
+						{ label: 'What is Neova Studio', slug: 'getting-started/introduction' },
+						{ label: 'Install', slug: 'getting-started/install' },
+						{ label: 'Open a project', slug: 'getting-started/open-a-project' },
+						{ label: 'Find your way around', slug: 'getting-started/find-your-way-around' },
+						{ label: 'Quick start', slug: 'getting-started/quick-start' },
 					],
 				},
-				{
-					label: 'Reference',
-					items: [{ autogenerate: { directory: 'reference' } }],
-				},
+				{ label: 'Project', items: [{ autogenerate: { directory: 'project' } }] },
+				{ label: 'Agents', items: [{ autogenerate: { directory: 'agents' } }] },
+				{ label: 'Tasks', items: [{ autogenerate: { directory: 'tasks' } }] },
+				{ label: 'Tools', items: [{ autogenerate: { directory: 'tools' } }] },
+				{ label: 'Settings', items: [{ autogenerate: { directory: 'settings' } }] },
+				{ label: 'Reference', items: [{ autogenerate: { directory: 'reference' } }] },
 			],
 		}),
 	],
