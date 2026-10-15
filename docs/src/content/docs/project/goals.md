@@ -2,7 +2,7 @@
 title: Goals
 description: Group tasks under a goal, follow its progress, and give a goal its own folder and branch.
 sidebar:
-  order: 2
+  order: 3
 ---
 
 A goal is something you work toward that takes several tasks. Goals collects the tasks for each goal and shows how far along they are.

@@ -2,7 +2,7 @@
 title: Images
 description: See every image stored in the project, where each one is used, and clean up the ones nothing uses.
 sidebar:
-  order: 5
+  order: 6
 ---
 
 Images shows every image file stored in the project's `.neova/images/` folder, and where each one is used. Use it to find and remove images that nothing uses any more.

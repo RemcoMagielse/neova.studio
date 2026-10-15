@@ -2,7 +2,7 @@
 title: Files
 description: Browse the project folder, edit text files and star the files you use most.
 sidebar:
-  order: 4
+  order: 5
 ---
 
 Files shows the files in your project folder. You can open and edit text files, look at images, and star the files you use most.

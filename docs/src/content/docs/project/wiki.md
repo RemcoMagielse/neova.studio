@@ -2,7 +2,7 @@
 title: Wiki
 description: Pages of project knowledge in categories, that you and your agents read and write.
 sidebar:
-  order: 3
+  order: 4
 ---
 
 The Wiki holds pages of project knowledge, such as coding standards, how-tos and reference notes. You and your agents both read and write them.

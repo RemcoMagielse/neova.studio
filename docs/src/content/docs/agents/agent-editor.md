@@ -55,6 +55,16 @@ Below the header are the tabs:
 | **Start command** | The command Neova runs when the agent's terminal starts, for example `claude`. |
 | **Detection profile** | How Neova reads the agent's terminal output to tell whether it is working, idle or needs you. **Open profile in global Settings** goes to **Settings › Agents**. Not shown for library agents. |
 
+### Voice
+
+How the agent sounds when it speaks to you.
+
+| Field | What it does |
+|---|---|
+| **Can send voice messages** | Lets the agent send short spoken updates in the chat. Turning it on downloads the voice model if it isn't there yet. |
+| **Voice** | Choose one of ten voices, for example **Nova** or **Atlas**. Click the play button to hear it. The agent uses the same voice in every project, and for **Read aloud**. |
+| **Language** | **English** or **Dutch**. |
+
 ### Instructions
 
 The agent's role and how it should work, in a Markdown editor. Neova sends the instructions to the terminal when the agent starts.

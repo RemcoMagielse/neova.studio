@@ -17,7 +17,7 @@ Below that are the sections and their pages:
 
 | Section | Pages |
 |---|---|
-| **Project** | Overview, Goals, Wiki, Files, Images |
+| **Project** | Overview, Timeline, Goals, Wiki, Files, Images |
 | **Agents** | Assistant, Team, Sessions, Chat, Activity, Schedules |
 | **Tasks** | Boards, Tasks, Archive |
 | **Tools** | Snippets, Composer, Whiteboard, Terminal, Browser, Agent Insights, MCP Servers, Git, API Tester |

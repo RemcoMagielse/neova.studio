@@ -76,6 +76,7 @@ Hover over a message to see **React** and **Reply**.
 |---|---|
 | **+** | Attach a **Task**, **Goal** or **Image**. |
 | Text box | Type your message. It grows up to four lines. Your draft is kept when you leave the page. |
+| Microphone | Records a voice message. Hold to talk, or click for hands-free. See [Voice messages](/settings/general/#voice-messages). |
 | Send button | Sends the message. |
 
 Attached tasks and goals show as chips above the box. Click **×** on a chip to remove it. Images show as thumbnails above the box.

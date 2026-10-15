@@ -35,6 +35,7 @@ At the bottom is the message box.
 
 - The line above the box shows what the Assistant is told about where you are, for example a task, a goal or a wiki page. With two panes open, it describes the page in the other pane.
 - **Enter** sends the message. **⇧Enter** starts a new line.
+- Hold the microphone to ask out loud, or click it to talk hands-free. The Assistant answers out loud. See [Talking to the Assistant](/settings/general/#talking-to-the-assistant).
 - The box is disabled until the Assistant is running.
 
 ## Terminal
