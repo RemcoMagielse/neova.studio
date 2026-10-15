@@ -5,6 +5,7 @@
 import Mark from '../../assets/landing/brand/mark.svg';
 
 const releasesUrl = 'https://github.com/RemcoMagielse/neova.studio/releases/latest';
+const licenceUrl = 'https://github.com/RemcoMagielse/neova.studio/blob/main/LICENSE.txt';
 
 const platforms = [
 	{ id: 'mac', name: 'macOS', detail: 'Apple Silicon and Intel', label: 'Download for Mac' },
@@ -38,6 +39,10 @@ const platforms = [
 		<p>Send the link to your computer to install it there.</p>
 		<button class="button button-primary button-lg" type="button" data-copy-link>Copy download link</button>
 	</div>
+
+	<p class="dl-licence">
+		Free for individuals and organisations up to €10M / $10M annual revenue. Above that, a commercial licence, with 30 days free to evaluate. <a href={licenceUrl}>Licence</a>
+	</p>
 
 	<a class="dl-version" href={releasesUrl}>What's new →</a>
 </section>

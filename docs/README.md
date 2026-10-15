@@ -43,17 +43,17 @@ Download the latest release for macOS from [GitHub Releases](https://github.com/
 
 Visit [neova.studio](https://neova.studio) for full documentation.
 
-## License
+## Licence
 
-License & Terms
-This application is provided as Freeware for personal and professional use.
+From version 2.4.0, Neova Studio is free for individuals and for organisations with an annual revenue of €10M / $10M or less. Larger organisations need a commercial licence, and can evaluate Neova Studio free for 30 days first.
 
-✅ Permitted: You are free to use this tool within any organization, regardless of size.
+| Who | Licence |
+|---|---|
+| Individuals, freelancers, students | Free |
+| Organisations with €10M / $10M annual revenue or less | Free |
+| Non-profits and education | Free |
+| Organisations above €10M / $10M annual revenue | Commercial licence (30-day free evaluation) |
 
-❌ Prohibited: You may **not** sell, rent, lease, or redistribute this software for commercial gain.
+You may not sell, rent, redistribute, bundle or reverse engineer the software. The full terms are in the [licence](https://github.com/RemcoMagielse/neova.studio/blob/main/LICENSE.txt). Versions up to and including 2.3.0 stay under [licence version 1.0](https://github.com/RemcoMagielse/neova.studio/blob/main/LICENSE-1.0.txt).
 
-❌ No Derivatives: You may not decompile, reverse engineer, or bundle this application into other commercial products.
-
-© 2025 Neova. All rights reserved.
-
-This software is proprietary. Use of this application is subject to the End User License Agreement (EULA) included with the software.
+© 2026 Neova Studio. All rights reserved.

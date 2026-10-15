@@ -953,6 +953,16 @@ h3 {
 	font-family: inherit;
 	cursor: pointer;
 }
+.dl-licence {
+	max-width: 560px;
+	margin: 28px 0 0;
+	color: var(--muted);
+	font-size: 14px;
+}
+.dl-licence a {
+	color: var(--accent);
+	font-weight: 700;
+}
 .dl-version {
 	margin-top: 28px;
 	color: var(--accent);
@@ -1015,6 +1025,9 @@ h3 {
 	margin: 0;
 	color: #a89c8d;
 	font-size: 12px;
+}
+.footer-legal a {
+	color: inherit;
 }
 
 @media (min-width: 900px) {
