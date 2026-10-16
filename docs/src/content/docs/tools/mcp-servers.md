@@ -100,4 +100,4 @@ If the file changed on disk after the page read it, for example because an agent
 
 - [Settings › Server](/settings/system/#server) adds and repairs the Neova server in `.mcp.json`.
 - [Connect a coding agent](/reference/connect-a-coding-agent/)
-- [Agent Insights](/tools/agent-insights/): the **MCP servers & tools** permission rules.
+- [Agent Insights](/agents/agent-insights/): the **MCP servers & tools** permission rules.

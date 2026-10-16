@@ -87,7 +87,7 @@ When a project is new, Neova seeds the Wiki with two categories, **Standards** (
 | `quickactions.json` | The skills in Quick Actions, in order. | JSON |
 | `assistant-config.json` | The Assistant's settings: start command, whether it is on and starts with the project, and its prompt template. | JSON |
 | `agents-order.json` | The order of the agents on **Agents › Team**. | JSON |
-| `agent-memory-files.json` | The memory files you added in **Tools › Agent Insights**. | JSON |
+| `agent-memory-files.json` | The memory files you added in **Agents › Agent Insights**. | JSON |
 | `worktrees.json` | Whether goal worktrees are on, and which folder belongs to which goal. | JSON |
 | `editor-state.json` | The state of the Composer: selected skill, task and text. | JSON |
 | `whiteboard.excalidraw` | The whiteboard. | Excalidraw JSON |

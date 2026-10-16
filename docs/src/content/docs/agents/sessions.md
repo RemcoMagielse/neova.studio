@@ -71,7 +71,7 @@ When nothing is connected and nothing is linked, the menu says **No agents conne
 
 | Item | What it does |
 |---|---|
-| **Open conversation** | Opens the agent's conversation in **Tools › Agent Insights**. Shows when Neova has one. |
+| **Open conversation** | Opens the agent's conversation in **Agents › Agent Insights**. Shows when Neova has one. |
 | **Deploy instructions** | Sends the agent's instructions to the terminal. |
 | **Redeploy instructions** | Clears the agent's context, then sends its instructions again. |
 | **Capture terminal logs** / **Stop capturing logs** | Records the terminal output to a log file. When you stop, Neova shows the file name. |

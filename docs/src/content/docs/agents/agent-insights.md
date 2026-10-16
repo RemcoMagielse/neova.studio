@@ -2,12 +2,12 @@
 title: Agent Insights
 description: See the permission rules, memory files and past conversations your coding agents keep on disk.
 sidebar:
-  order: 6
+  order: 8
 ---
 
 Agent Insights shows what your coding agents keep on disk: Claude Code's permission rules, the memory and configuration files of your coding agents, and this project's Claude Code conversations.
 
-Open it from **Sidebar › Tools › Agent Insights**.
+Open it from **Sidebar › Agents › Agent Insights**.
 
 ## Header
 

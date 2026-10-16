@@ -18,9 +18,9 @@ Below that are the sections and their pages:
 | Section | Pages |
 |---|---|
 | **Project** | Overview, Timeline, Goals, Wiki, Files, Images |
-| **Agents** | Assistant, Team, Sessions, Chat, Activity, Schedules |
+| **Agents** | Assistant, Team, Sessions, Chat, Activity, Schedules, Agent Insights |
 | **Tasks** | Boards, Tasks, Archive |
-| **Tools** | Snippets, Composer, Whiteboard, Terminal, Browser, Agent Insights, MCP Servers, Git, API Tester |
+| **Tools** | Snippets, Whiteboard, Terminal, Browser, MCP Servers, Git, API Tester |
 | **Settings** | Pinned at the bottom of the sidebar |
 
 Click a section header to open or close it. Click a page to show it.
