@@ -9,13 +9,16 @@
  *
  * No dependencies on purpose: runs with plain Node 20+ in the deploy workflow.
  *
- * Usage: node catalogue/build.mjs [--check]   (--check validates, writes nothing)
+ * Usage: node catalogue/build.mjs [--check] [--against <index-url>]
+ *   --check    validates, writes nothing
+ *   --against  also fails items that changed since that index without a higher version
  */
 
 import { createHash } from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { compareToPublished } from './versions.mjs';
 
 export const SCHEMA_VERSION = 1;
 export const MAX_ITEM_BYTES = 256 * 1024;
@@ -389,6 +392,18 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     outDir: path.join(here, '..', 'docs', 'public', 'catalogue'),
     check,
   });
+  // --against <url>: refuse items that changed since that index without a higher version.
+  const againstAt = process.argv.indexOf('--against');
+  if (againstAt !== -1 && result.ok) {
+    const url = process.argv[againstAt + 1];
+    const res = await fetch(url).catch((err) => ({ ok: false, status: err.message }));
+    if (res.ok) {
+      result.errors.push(...compareToPublished(result.index, await res.json()));
+      result.ok = result.errors.length === 0;
+    } else {
+      console.warn(`Could not read the published index (${res.status}); skipping the version check.`);
+    }
+  }
   if (!result.ok) {
     console.error(`Catalogue build failed (${result.errors.length} problem(s)):`);
     for (const e of result.errors) console.error(`  - ${e}`);

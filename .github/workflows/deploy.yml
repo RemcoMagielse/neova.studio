@@ -21,9 +21,10 @@ jobs:
         with:
           node-version: '22'
       - name: Test catalogue build
-        run: node --test catalogue/build.test.mjs
+        run: node --test catalogue/build.test.mjs catalogue/versions.test.mjs
       - name: Build catalogue
-        run: node catalogue/build.mjs
+        # --against: an item that changed without a higher version stops the deploy.
+        run: node catalogue/build.mjs --against https://neova.studio/catalogue/index.json
       - name: Build with Astro
         uses: withastro/action@v3
         with:

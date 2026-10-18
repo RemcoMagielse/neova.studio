@@ -1,0 +1,3 @@
+#!/bin/sh
+# Raises the version of changed catalogue items. See catalogue/README.md.
+exec node catalogue/bump-changed.mjs

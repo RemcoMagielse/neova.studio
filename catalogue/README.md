@@ -4,12 +4,19 @@ The official catalogue of agents, skills, wiki pages, detection profiles and the
 
 ## How to publish
 
-1. Add or edit a file in the right folder (see below).
-2. If you changed an existing item, **raise its `version`**. The app offers an update only when the version goes up.
-3. Check it locally: `node catalogue/build.mjs --check`
-4. Commit and push to `main`. The deploy workflow runs the same check. A broken item stops the deploy, so nothing broken goes live.
+1. Add or edit a file in the right folder (see below). A new item starts at `version: "1.0.0"`.
+2. Check it locally: `node catalogue/build.mjs --check`
+3. Commit and push to `main`. The deploy workflow runs the same check. A broken item stops the deploy, so nothing broken goes live.
 
 The generated output (`docs/public/catalogue/`) is not committed. The workflow builds it on every deploy.
+
+### Versions
+
+The app offers an update only when the `version` goes up, so every change needs a higher version.
+
+- **Automatic:** a pre-commit hook raises the patch version (`1.0.0` → `1.0.1`) of every changed item whose version you did not raise yourself, and sets `updatedAt` to today (not for agents). Enable it once per clone: `git config core.hooksPath .githooks`
+- **Bigger steps** (`1.1.0`, `2.0.0`): set the version yourself; the hook leaves it alone.
+- **Safety net:** the deploy compares every item with the live `index.json`. An item that changed but kept its version, or went down, stops the deploy. Run the same check locally: `node catalogue/build.mjs --check --against https://neova.studio/catalogue/index.json`
 
 ## Folders
 
