@@ -1,11 +1,11 @@
 ---
 title: Team
-description: All agents in the project at a glance, with their status, tasks and live terminal output.
+description: All agents in the project on one board, grouped by what they need from you.
 sidebar:
   order: 2
 ---
 
-Team shows every agent in the project as a tile, with its status, its tasks and the latest output of its terminal. You add and start agents here.
+Team shows every agent in the project on a board, in a column for what it needs from you: an answer, your attention, nothing because it's working, or work because it's free. You add and start agents here.
 
 Open it from **Sidebar › Agents › Team**, or press **⌘2**.
 
@@ -13,41 +13,50 @@ Open it from **Sidebar › Agents › Team**, or press **⌘2**.
 
 | Control | What it does |
 |---|---|
-| **Search agents** | Filters the tiles and the Agent Library by name. |
-| Sort menu | Orders the tiles by **Status**, **Name** or **Order**. **Status** puts agents that need attention first, then agents with an error, then working, then idle. **Order** is the order you set by dragging agents in **Agents › Sessions**. |
+| **Search agents** | Filters the board and the Agent Library by name. |
+| Sort menu | Orders the cards in each column by **Name** or **Order**. **Order** is the order you set by dragging agents in **Agents › Sessions**. |
 | **Add Agent** | Opens the [Agent Editor](/agents/agent-editor/) to create a new agent. |
 | Arrow next to **Add Agent** | Opens a menu with **Add agent from catalogue**. When catalogue agents you installed have updates, the item shows the number, for example **Add agent from catalogue (1 update)**. |
 
-## Agent tiles
+## The board
 
-Running agents show first, in large tiles. Agents that aren't running show below the **Offline** line, in smaller tiles.
+Each running agent has one card, in exactly one column:
 
-Each tile shows:
+| Column | Who is in it | The card's button |
+|---|---|---|
+| **Waiting for you** | Agents that asked you a question, also while they keep working | **Answer**, on each question |
+| **Needs attention** | Agents that ask you to approve something in their terminal, or stopped with an error | **Open terminal** |
+| **Working** | Agents that are working and need nothing from you | None |
+| **Free** | Running agents that are idle with nothing open | **Assign a task** |
+
+An agent that asked you something is never under **Free**, so you don't hand it more work before you answer. Each column is at least 272 pixels wide. When they don't fit, for example with the chat open, the board scrolls sideways.
+
+Each card shows:
 
 | Part | What it shows or does |
 |---|---|
-| Avatar | Click it to open the agent in the Agent Editor. A ring around it shows the status. |
-| Name | A green link icon shows when the terminal is linked to the agent's MCP connection. A small label shows when the tile is another run of the same agent. |
-| Pencil (**Edit agent**) | Shows on hover. Opens the Agent Editor. |
-| Description | The agent's short description, or **No description**. |
-| **From catalogue · v1.0.0** | Shows when the agent came from the catalogue. **Update available** opens the update. |
-| Status badge | **Working**, **Needs Attention**, **Idle** or **Error**. Offline agents show a **Start** button instead. |
-| Context meter | How much of the agent's context is used. |
-| **User typing** | Shows when you have typed text in the agent's terminal that you haven't sent yet. |
-| **Current tasks** | Tasks assigned to the agent. A task the agent is working on now is highlighted and listed first. Click a task to open it in a new tab. **No tasks assigned** when there are none. |
-| Terminal preview | The last lines of the terminal and how long the agent has had its current status. Hover over it to see **Open in Sessions**. |
+| Avatar | A ring around it shows the status and whether the agent's prompt cache is still warm. |
+| Name | A small label shows when the card is another run of the same agent. The pencil (**Edit agent**) shows on hover and opens the Agent Editor. |
+| State | For example **working · 34 min** or **waiting on you · 4 min**. |
+| Goal and task | The task the agent works on, with its goal above it. Click it to open the task. |
+| Questions | One amber row per open question, with how long it has waited and **Answer**. **Answer** opens the same answer window as Activity. |
+| Last message | The agent's latest chat message on one line, and how long ago it was. |
+| **Up next** | The next task assigned to the agent, if there is one. |
+| Context meter | A thin line at the bottom shows how much of the agent's context is used. |
 
-The tile border is orange when the agent needs attention or has an error, and yellow while it works. When the agent posts in **Chat**, its message shows in a speech bubble next to the avatar for 10 seconds. When an agent celebrates a milestone, confetti bursts from its tile.
+A card has an amber edge on the left when it has something for you. Hover over a card to see **Run another**, which starts another run of the same agent, and **Stop**. Click a card to open the agent's terminal in **Agents › Sessions**. When an agent celebrates a milestone, confetti bursts from its card.
 
-Click a tile to open the agent's terminal in **Agents › Sessions**.
+### Not running
+
+Agents that aren't running are listed in one line under the board, after **Not running**, with their avatar and name. Click a name to start the agent. Click the arrow next to it to start it in a goal's folder instead.
 
 ## Agent Library
 
-Below the tiles, under the **Agent Library** line, are the global agents from your library that this project doesn't use yet. Global agents are shared by every project on this Mac.
+Below the board, under the **Agent Library** line, are the global agents from your library that this project doesn't use yet. Global agents are shared by every project on this Mac.
 
 - Click a card to edit the global agent in the Agent Editor. Saving updates it for every project that uses it.
 - Hover over a card to see its full description, start command and when it last changed.
-- Click **Add** to add the agent to this project. It moves up to the tiles.
+- Click **Add** to add the agent to this project. It moves up to the board.
 
 The section says **Every agent in your library is already in this project.** when there is nothing left to add.
 
@@ -75,7 +84,7 @@ An update shows **What changes**. If the start command changes, it shows the old
 1. Click **Add Agent**.
 2. Fill in the Agent Editor and click **Create Agent**. See [Agent Editor](/agents/agent-editor/).
 
-The new agent shows below the **Offline** line.
+The new agent shows under **Not running**.
 
 ## How to add an agent from the catalogue
 
@@ -86,10 +95,10 @@ The new agent shows below the **Offline** line.
 
 ## How to start an agent
 
-1. Find the agent below the **Offline** line.
-2. Click **Start** on its tile.
+1. Find the agent under **Not running**.
+2. Click its name.
 
-Neova opens a terminal for the agent, runs its start command and sends its instructions. When goals have their own folder, click the arrow next to **Start** to start the agent in a goal's folder instead. See [Sessions](/agents/sessions/#how-to-start-an-agent-in-a-goals-folder).
+Neova opens a terminal for the agent, runs its start command and sends its instructions. When goals have their own folder, click the arrow next to the name to start the agent in a goal's folder instead. See [Sessions](/agents/sessions/#how-to-start-an-agent-in-a-goals-folder).
 
 ## How to add a global agent to this project
 
