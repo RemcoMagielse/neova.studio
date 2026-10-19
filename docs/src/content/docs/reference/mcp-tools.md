@@ -33,6 +33,7 @@ A longer document comes back as page 1, with `pages` and `hasMore` set and an ou
 | `create_task` | Creates a task. The type must already be in use in the project. | `title`*, `description`, `tags`, `type`, `stage` (default: the default stage) |
 | `update_task` | Changes the fields you pass. Each field replaces the old value. | `id`*, `title`, `description`, `tags`, `type`, `stage`, `status` |
 | `complete_task` | Marks a task as completed. | `id`* |
+| `archive_tasks` | Archives completed tasks; refuses unfinished ones. The user gets one notification per call and can restore from Tasks › Archive. | `ids`* |
 | `move_to_stage` | Moves a task to another stage. | `id`*, `stage`* |
 | `link_task` | Links two tasks. Built-in types: `blocks`, `blocked-by`, `related`, `parent`, `child`, `duplicate`. Any other text also works. | `taskId`*, `targetTaskId`*, `type`* |
 | `unlink_task` | Removes a link between two tasks. | `taskId`*, `targetTaskId`* |
