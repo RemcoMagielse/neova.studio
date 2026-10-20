@@ -17,10 +17,9 @@ Neova fills in fields when you send a skill to an agent, copy it as a prompt, ru
 | `{wiki.<page-id>}`, `{wiki.<page-id>.content}` | A wiki page, or one of its fields |
 | `{app.tasksFolder}` | A project folder or file path |
 | `{<key>}` | The content of the snippet with that replacement key |
-| `@<filename>` | The path of a project file with that name |
 | `[if:task.description]…[/if]` | The text between the tags, only when the task or app field has a value |
 
-In the skill editor (**Settings › Skills**), type `{` to pick a field from a list, and `@` to pick a project file.
+In the skill editor (**Settings › Skills**), type `{` to pick a field from a list.
 
 A field that has no value stays in the text as you typed it. For example, `{task.tags}` on a task without tags stays `{task.tags}`. Wrap such a field in an `[if:…]` block to leave it out.
 
@@ -73,10 +72,6 @@ Give a snippet a replacement key in the snippet editor, for example `api-config`
 
 A snippet can contain fields of its own, including other snippet keys. Neova keeps replacing until no field changes, up to 10 rounds.
 
-## File references
-
-`@` followed by a file name fills in the path of the project file with that name, for example `@package.json`. The name can contain letters, digits, `.`, `_` and `-`. When no file has that name, the text stays as you typed it.
-
 ## Conditional blocks
 
 `[if:<field>]` and `[/if]` keep the text between them only when the field has a value. This works with task fields and app fields. Leave out the braces inside the tag.
@@ -93,7 +88,7 @@ On a task without a description, Neova leaves out the whole block.
 
 ## Order
 
-Neova fills in fields in this order: app and wiki fields, file references, snippet fields, task fields. It then repeats the round until nothing changes, so a field that a snippet adds is filled in too. After that, it removes blank lines beyond one in a row and spaces at the end of lines.
+Neova fills in fields in this order: app and wiki fields, snippet fields, task fields. It then repeats the round until nothing changes, so a field that a snippet adds is filled in too. After that, it removes blank lines beyond one in a row and spaces at the end of lines.
 
 ## Related
 

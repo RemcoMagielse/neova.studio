@@ -32,7 +32,6 @@ The left pane is where you write. It has line numbers and suggests fields while 
 - `{task.…}` for task fields
 - `{app.…}` for project folders and files
 - `{snippet-key}` for snippets that have a replacement key
-- `@filename` for project files
 
 The footer shows the number of characters and lines.
 
