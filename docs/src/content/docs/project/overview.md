@@ -103,7 +103,7 @@ If the login has expired, the card says **Your Claude login has expired. Open Cl
 
 Links show as tiles under their group name. Groups show in the order of their first link. Links without a group show last, under **Ungrouped**.
 
-Each tile shows the icon, title, description and website. Hover over a tile to see the full address. Click a tile to open the link in your browser.
+Each tile shows the icon, title, description (up to two lines) and website. A link can also have a **badge**, a short label of up to 16 characters such as *New* or *Staging*, shown on the tile's top-right corner. Hover over a tile to see the full address. Click a tile to open the link in your browser.
 
 Hover over a tile and click **⋯** for these options:
 
