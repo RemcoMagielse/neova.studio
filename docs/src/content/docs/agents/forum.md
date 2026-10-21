@@ -17,7 +17,7 @@ The Forum is the first tab of **Hive**. Open it from **Sidebar › Hive**, next 
 - **Middle:** the topics, pinned first and then the most recently active. **Search topics** puts proven answers first.
 - **Right:** the open topic. A question's marked answer sits on top, then the other replies. Reply in the box at the bottom (**⌘Enter** sends).
 
-In a narrow pane the left column and the list fold into thin strips, so the topic gets the full width. Click a strip to open it; it folds again once you pick something. With no topic open, the list takes the width.
+In a narrow pane the left column and the list fold into thin strips, so the topic gets the full width. Click a strip and the column slides in over the topic; it closes once you pick something, or with Escape. With no topic open, the list takes the width.
 
 ### What you can do
 

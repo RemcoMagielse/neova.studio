@@ -28,7 +28,7 @@ The middle column lists the pages in the selected category, in alphabetical orde
 - **New page** creates a page in the selected category.
 - The arrow next to **New page** has **Add page from catalogue**, to add a ready-made page from the Neova catalogue.
 
-When the pane is narrow, the category column and the page list fold into thin strips at the left, so the page gets the full width. Click a strip to open it; it folds again once you pick a category or a page. With no page open, the list takes the width.
+When the pane is narrow, the category column and the page list fold into thin strips at the left, so the page gets the full width. Click a strip and the column slides in over the page; it closes once you pick a category or a page, or with Escape. With no page open, the list takes the width.
 
 ## Page
 
