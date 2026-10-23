@@ -18,7 +18,6 @@ Neova creates the folder when you set up a project. It adds missing folders and 
 ├── tag-colors.json
 ├── links.json
 ├── starred-files.json
-├── quickactions.json
 ├── assistant-config.json
 ├── agents-order.json
 ├── agent-memory-files.json
@@ -34,6 +33,7 @@ Neova creates the folder when you set up a project. It adds missing folders and 
 ├── wiki/
 │   ├── assets/
 │   └── <category>/
+├── actions/
 ├── activities/
 ├── snippets/
 ├── agents/
@@ -58,6 +58,7 @@ Neova creates the folder when you set up a project. It adds missing folders and 
 | `wiki/` | The Wiki. One folder per category, one file per page: `wiki/<category>/<page-id>.md`. | Markdown with a `description` in the frontmatter |
 | `wiki/<category>/_category.md` | The category's `label`, `description` and `order`. | YAML frontmatter |
 | `wiki/assets/` | Images used across wiki pages. | Image files |
+| `actions/` | Actions. One file per action, named `<name>-<timestamp>.json`. Global actions are in the same format in Neova's own folder. | JSON: `id`, `name`, `description`, `template`, `isEnabled`, `order` |
 | `activities/` | Skills. One file per skill, named `<name>-<timestamp>.json`. | JSON: `id`, `name`, `description`, `template`, `isEnabled` |
 | `snippets/` | One file per snippet, named `<title>-<timestamp>.md`. | Markdown with YAML frontmatter |
 | `agents/` | One file per agent, named `<agent-name>.md`, with its settings and instructions. | Markdown with YAML frontmatter. The body is the instructions. |
@@ -80,11 +81,11 @@ When a project is new, Neova seeds the Wiki with two categories, **Standards** (
 | File | Holds | Format |
 |---|---|---|
 | `project.md` | The project description. Agents read it with `get_project_info`. | Markdown |
-| `stages.json` | The stages, in order, with their colours and skills. A new project gets Backlog (the default stage), Prepare, Implement, Verify and Done. | JSON |
+| `stages.json` | The stages, in order, with their colours and the actions shown as buttons on their tasks. A new project gets Backlog (the default stage), Prepare, Implement, Verify and Done. | JSON |
 | `tag-colors.json` | Each tag and its colour. | JSON |
 | `links.json` | The links on **Project › Overview**. | JSON |
 | `starred-files.json` | The starred files in **Project › Files**. | JSON |
-| `quickactions.json` | The skills in Quick Actions, in order. | JSON |
+| `quickactions.migrated.json` | The old Quick Actions list, kept after it was copied into `actions/`. Safe to delete. | JSON |
 | `assistant-config.json` | The Assistant's settings: start command, whether it is on and starts with the project, and its prompt template. | JSON |
 | `agents-order.json` | The order of the agents on **Agents › Team**. | JSON |
 | `agent-memory-files.json` | The memory files you added in **Agents › Agent Insights**. | JSON |

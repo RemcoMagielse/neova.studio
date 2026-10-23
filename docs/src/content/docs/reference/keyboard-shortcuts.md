@@ -166,14 +166,14 @@ The items are available when a task is open.
 | **Archive Task** | ⌘⇧A | Archives the task |
 | **Delete Task** | ⌘⌫ | Deletes the task |
 
-### Templates
+### Actions
 
 | Item | Action |
 |---|---|
-| **Browse Templates** | Opens **Settings › Skills** |
-| **Create New Template** | Opens **Settings › Skills** |
-| **Quick Actions** | Lists your Quick Actions. Pick one to copy it as a prompt for the open task. Without an open task, Neova copies the skill's text as it is. |
-| **Edit Quick Actions...** | Opens the Quick Actions in **Settings › Skills** |
+| *Your actions* | One item per action that is turned on. Pick one to copy its text, filled in for the open task. Without an open task, Neova copies the text as it is. |
+| **New Action...** | Opens **Settings › Actions** with a new action |
+| **Edit Actions...** | Opens **Settings › Actions** |
+| **Skills...** | Opens **Settings › Skills** |
 
 ### Connectors
 

@@ -59,7 +59,7 @@ A longer document comes back as page 1, with `pages` and `hasMore` set and an ou
 |---|---|---|
 | `list_stages` | Lists the stages with the names of their skills. | None |
 | `get_stage` | Returns one stage. | `stage`* |
-| `list_skills` | Lists the skills of the project stages and the global skills. | None |
+| `list_skills` | Lists the built-in, project and global skills. | None |
 | `get_skill` | Returns one skill in full, by ID or by part of its name. | `id` or `name` |
 
 ## Snippets

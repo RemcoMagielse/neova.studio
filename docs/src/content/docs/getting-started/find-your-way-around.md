@@ -73,7 +73,7 @@ Press **⌘K** or click the search button. Search finds tasks, goals, wiki pages
 
 Opening a result goes to the matching page: a task opens in the task editor, a wiki page in the Wiki, a link in your browser. An agent opens its terminal. If the agent isn't running, the result says **Start** and starts it.
 
-With an empty search box, search shows your **Quick Actions**. Choosing one copies its prompt for the task you're looking at.
+With an empty search box, search shows your **Actions**. Choosing one copies its text for the task you're looking at.
 
 ## Insert Reference
 

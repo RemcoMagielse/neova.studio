@@ -1,11 +1,11 @@
 ---
 title: Agents, Skills and Assistant
-description: Global agents, event messages, detection profiles, skills, Quick Actions and the Neova Assistant.
+description: Global agents, event messages, detection profiles, actions, skills and the Neova Assistant.
 sidebar:
   order: 3
 ---
 
-The **Agents** group in the Settings rail holds three pages: **Agents**, **Skills** and **Assistant**. They set how Neova talks to your agents, which instructions you can send them, and how the Assistant runs.
+The **Agents** group in the Settings rail holds four pages: **Agents**, **Actions**, **Skills** and **Assistant**. They set how Neova talks to your agents, which messages and know-how you can give them, and how the Assistant runs.
 
 ## Agents
 
@@ -75,11 +75,43 @@ Click a profile to edit it on the right:
 
 Each pattern list has **Add pattern**. A pattern has a name, an **Enabled** check box, a regular expression and a remove button. Patterns in one list are combined with OR: any one match is enough. Matching is case-sensitive. Enter the expression without surrounding slashes. Click **Test against recent terminal output** to try the expression on a running agent's output.
 
+## Actions
+
+Open it from **Settings › Actions**, or **Actions › Edit Actions...** in the menu bar.
+
+An action is a message you send often, such as "Brainstorm this task" or "Commit and close". It can contain replacement fields such as `{task.id}`, which Neova fills in when you use it. One list of actions feeds:
+
+- `/` in the [Chat](/agents/chat/#slash-commands) input,
+- [Search](/getting-started/find-your-way-around/#search) (⌘K), under **Actions**, before you type,
+- the **Actions** menu of the menu bar,
+- the buttons on a task, for the actions you add to its stage in [Settings › Stages](/settings/workflow/#how-to-add-an-action-to-a-stage).
+
+The page has two groups. **Project** actions belong to the open project; **Global** actions are available in every project. Project actions come first everywhere they are listed.
+
+Each row shows the action's name and description, and labels for the stages where it is a button on tasks. An action that is turned off is greyed out with **Off**: it stays in the list but is not offered in chat, ⌘K or the menu bar.
+
+| Control | What it does |
+|---|---|
+| Drag handle | Drag a row to change the order within its group. |
+| Row | Opens the action to edit it. |
+| **⋯** | **Edit**, **Turn off** or **Turn on**, and **Delete**. |
+| **New action** | Creates a project action. The arrow next to it has **New global action**. |
+
+### Action fields
+
+| Field | What it holds |
+|---|---|
+| **Title** | The action's name. This is what you type after `/`. |
+| **Description** | Optional. A short line shown under the name. |
+| **Text** | The message itself. The editor suggests replacement fields when you type `{`. Under it, a line says on which stages the action is a button. |
+
+Deleting an action that is a button on a stage leaves that button greyed out with **Action not available**.
+
 ## Skills
 
-Open it from **Settings › Skills**.
+Open it from **Settings › Skills**, or **Actions › Skills...** in the menu bar.
 
-A skill is a reusable instruction for an agent. It can contain replacement fields such as `{task.title}`, which Neova fills in when you use the skill. The page has three tabs at the top: **Global Skills**, **Project Skills** and **Quick Actions**.
+A skill is know-how an agent loads when it needs it, with `list_skills` and `get_skill`. It can contain replacement fields such as `{task.title}`. To send a message from chat or a task button, use an [action](#actions) instead; an action can ask the agent to use a skill. The page has two tabs at the top: **Global Skills** and **Project Skills**.
 
 ### Global Skills and Project Skills
 
@@ -92,24 +124,23 @@ Both tabs show the same table:
 | **Title** | The skill's name. Skills that ship with Neova show **System default**. A global skill from the catalogue shows **Update available** when there is a newer version. |
 | **Description** | A short description. |
 | **Skill** | The start of the skill's text. Hover to see all of it. |
-| **Stages** | The stages that use this skill as an activity. |
 | Buttons | **Duplicate skill** and **Delete skill**. A system default shows a lock instead: it is read-only. |
 
-Above the table, **Search skills...** filters by name and description, and the stage menu (**All Stages**) shows only skills used in one stage.
+Above the table, **Search skills...** filters by name and description.
 
-Click a row to open the skill. A system default opens in **View Skill**, read-only.
+Click a row to open the skill. A system default opens in **View skill**, read-only.
 
 On **Global Skills**, the arrow next to **Create Skill** has **Add skill from catalogue**. On **Project Skills**, **Import Skills** copies skills from another project folder: pick the folder, select the skills, and resolve any conflicts with skills you already have.
 
 ### Skill fields
 
-**Create Skill**, **Edit Skill** and **Duplicate Skill** show the same form. All three fields are required.
+**New skill**, **Edit skill** and **Duplicate skill** show the same form. All three fields are required.
 
 | Field | What it holds |
 |---|---|
 | **Title** | The skill's name, for example "Explain Task". |
 | **Description** | What the skill does, up to 120 characters. A counter shows how many you have used. |
-| **Skill Content** | The instruction itself. The editor suggests replacement fields when you type `{`, and project files when you type `@`. Below it, a counter shows characters and lines. When you edit a skill, the file name shows too; click it to reveal the file in Finder. |
+| **Skill Content** | The instruction itself. The editor suggests replacement fields when you type `{`. Below it, a counter shows characters and lines. When you edit a skill, the file name shows too; click it to reveal the file in Finder. |
 
 For the full list of fields you can use in **Skill Content**, see [Replacement fields](/reference/replacement-fields/).
 
@@ -118,28 +149,9 @@ For the full list of fields you can use in **Skill Content**, see [Replacement f
 1. Open **Global Skills** or **Project Skills**.
 2. Click **Create Skill**.
 3. Fill in **Title**, **Description** and **Skill Content**.
-4. Click **Create Skill**, or press ⌘S.
+4. Click **Create skill**, or press ⌘S.
 
-To change a skill, click its row, edit it and click **Save Changes**. To remove it, click **Delete Template** in the form or the bin in the table, then confirm. If you close the form with unsaved changes, Neova asks whether to discard them.
-
-To make a skill appear on tasks in a stage, add it as an activity in [Settings › Stages](/settings/workflow/#how-to-assign-a-skill-to-a-stage).
-
-### Quick Actions
-
-Quick Actions are the skills you reach most often. They show:
-
-- in [Search](/getting-started/find-your-way-around/#search) (⌘K), under **Quick Actions**, before you type,
-- as slash commands in the [Chat](/agents/chat/) input,
-- in the **Templates › Quick Actions** menu of the menu bar. **Templates › Edit Quick Actions...** opens this tab.
-
-The tab has two lists:
-
-| List | What it does |
-|---|---|
-| **Active Quick Actions** | Your Quick Actions, in order. Drag to reorder. Click the minus to remove one. A skill that no longer exists shows as **Missing skill**; remove it with the minus. |
-| **Available Templates** | All enabled global and project skills that are not Quick Actions yet. Click the plus to add one. |
-
-Each skill shows a **Global** or **Project** badge.
+To change a skill, click its row, edit it and click **Save Changes**. To remove it, click **Delete skill** in the form or the bin in the table, then confirm. If you close the form with unsaved changes, Neova asks whether to discard them.
 
 ## Assistant
 

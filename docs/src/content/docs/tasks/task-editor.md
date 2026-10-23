@@ -1,6 +1,6 @@
 ---
 title: Task editor
-description: Edit a task's title, details and description, run stage skills, and manage links, attachments and history.
+description: Edit a task's title, details and description, run stage actions, and manage links, attachments and history.
 sidebar:
   order: 3
 ---
@@ -40,7 +40,7 @@ The row under the title shows the task's details. Changes here save straight awa
 | **Goal** | Click **+ Goal** to add the task to an active goal. The goal's name then shows here, with **Remove from goal** (×) next to it. |
 | Contributors | Avatars of the agents that wrote content in the task, taken from its history. Hover over one to see who it is. |
 
-Assigning an agent here saves it to the task. It doesn't send the agent a message. To hand the task to an agent, use a stage skill with **Send to Agent**, or tell the agent in its terminal.
+Assigning an agent here saves it to the task. It doesn't send the agent a message. To hand the task to an agent, use a stage action with **Send to Agent**, or tell the agent in its terminal.
 
 ## Description
 
@@ -81,16 +81,16 @@ The rail on the right has four sections. Click a section header to open or close
 
 **Stage** shows the task's stage. Choose another stage to move the task. The change saves straight away.
 
-**Stage Actions** lists the skills attached to the current stage. Each skill is a split button:
+**Stage Actions** lists the [actions](/settings/agents/#actions) added to the current stage. Each action is a split button:
 
 | Part | What it does |
 |---|---|
-| Skill name | Fills in the skill's prompt for this task and copies it to the clipboard. |
-| **▾** › **Copy to clipboard** | The same as clicking the skill name. |
-| **▾** › **Edit template** | Opens the skill's template in [Composer](/tools/composer/) with this task. |
+| Action name | Fills in the action's text for this task and copies it to the clipboard. |
+| **▾** › **Copy to clipboard** | The same as clicking the action name. |
+| **▾** › **Edit action** | Opens the action in **Settings › Actions**. |
 | **▾** › **Send to Agent** | Fills in the prompt and sends it to an agent's terminal, then shows that terminal. If you have more than one agent, choose one in the **Send to Agent** window. If the agent isn't running, Neova starts it first. |
 
-A skill whose template can't be found is greyed out and shows **Template not available**. A stage without skills shows **No actions available**.
+An action that no longer exists is greyed out and shows **Action not available**. A stage without actions shows **No actions available**.
 
 ### Linked tasks
 
@@ -163,6 +163,6 @@ Neova shows the agent's terminal with the prompt sent. To paste the prompt yours
 
 - [Boards](/tasks/boards/): the task panel and the board.
 - [Settings › Stages, Types and Tags](/settings/workflow/).
-- [Settings › Agents](/settings/agents/): the skills attached to each stage.
+- [Settings › Actions](/settings/agents/#actions): the actions behind the stage buttons.
 - [Replacement fields](/reference/replacement-fields/): fields you can use in descriptions and skill templates.
 - [MCP tools](/reference/mcp-tools/#task-management): agents use `get_task`, `update_task`, `add_to_task`, `replace_section_in_task`, `link_task` and `assign_task` to work on tasks.

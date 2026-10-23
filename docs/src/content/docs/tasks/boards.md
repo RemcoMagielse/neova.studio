@@ -81,7 +81,7 @@ Right-click a card for these options:
 | **Copy Task ID** | Copies the task ID to the clipboard. |
 | **Move to stage** | Moves the task to the stage you choose. The current stage has a check mark. |
 | **Assign** | Adds or removes you or an agent as an assignee. |
-| *Stage skills* | One item per skill attached to the stage. Choosing one copies its prompt, filled in for this task, to the clipboard. With more than five skills they are under **Agent Prompts**. |
+| *Stage actions* | One item per action added to the stage. Choosing one copies its text, filled in for this task, to the clipboard. With more than five actions they are under **Agent Prompts**. |
 | **Mark as Done** / **Reopen Task** | Sets the status. |
 | **Archive** | Moves the task to the archive. If the task has images, choose **Delete images** or **Keep images**. |
 | **Delete** | Deletes the task after you confirm. This can't be undone. |
@@ -151,6 +151,6 @@ A skill whose template can't be found shows **unavailable** and can't be chosen.
 
 - [Task editor](/tasks/task-editor/): every area of an open task.
 - [Settings › Stages, Types and Tags](/settings/workflow/).
-- [Settings › Agents](/settings/agents/): the skills attached to stages.
+- [Settings › Actions](/settings/agents/#actions): the actions behind the stage buttons.
 - [Settings › General](/settings/general/): **Delete images when archiving**.
 - [MCP tools](/reference/mcp-tools/#task-management): agents use `list_tasks`, `create_task`, `move_to_stage` and `complete_task` to work with the board.

@@ -95,7 +95,7 @@ A message can be up to 4,000 characters. From 3,600 characters a counter shows.
 
 ### Slash commands
 
-Type `/` at the start of the message to see your **Quick Actions** under **Skills**. Keep typing to filter them by name. Choosing one replaces the `/` command with the skill's prompt. The prompt is filled in for the first attached task, or for the task you have open.
+Type `/` at the start of the message to see your [actions](/settings/agents/#actions) under **Actions**. Keep typing to filter them by name. Global actions are marked **Global**. Choosing one replaces the `/` command with the action's text, filled in for the first attached task, or for the task you have open.
 
 ### Attachments
 
@@ -122,11 +122,11 @@ Type `/` at the start of the message to see your **Quick Actions** under **Skill
 
 The task shows as a pill in the message. You can also press **⌘⇧K** in the message box to insert a reference.
 
-## How to use a Quick Action
+## How to use an action
 
 1. Open the task the action is for, or attach it with **+ › Task**.
-2. In the message box, type `/` and part of the skill name.
-3. Press **Enter**. The prompt replaces the command.
+2. In the message box, type `/` and part of the action's name.
+3. Press **Enter**. The action's text replaces the command.
 4. Add an `@` mention if needed and press **Enter** to send.
 
 ## How to reply to a message
@@ -138,6 +138,6 @@ Click **×** on the reply banner to cancel.
 
 ## Related
 
-- [Settings › Skills](/settings/agents/#quick-actions) to choose the Quick Actions for slash commands
+- [Settings › Actions](/settings/agents/#actions) to add and order the actions for slash commands
 - [Agent Editor](/agents/agent-editor/#events) to choose which chat events an agent receives
 - [MCP tools](/reference/mcp-tools/) agents use for chat: `chat_send`, `chat_history` and `chat_react`

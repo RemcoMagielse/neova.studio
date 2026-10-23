@@ -1,6 +1,6 @@
 ---
 title: Workflow
-description: Set up the stages of your board, attach skills to stages, and manage task types and tags.
+description: Set up the stages of your board, add actions to stages, and manage task types and tags.
 sidebar:
   order: 2
 ---
@@ -11,7 +11,7 @@ The **Workflow** group in the Settings rail holds three pages: **Stages**, **Typ
 
 Open it from **Settings › Stages**.
 
-Stages are the columns of your board. Each stage can have **Activities**: skills that show as one-click actions on tasks in that stage. A new project starts with the stages Backlog (the default), Prepare, Implement, Verify and Done.
+Stages are the columns of your board. Each stage can have **Activities**: [actions](/settings/agents/#actions) that show as one-click buttons on tasks in that stage. A new project starts with the stages Backlog (the default), Prepare, Implement, Verify and Done.
 
 Changes save as soon as you make them. The stages are stored in `.neova/stages.json`, shown at the bottom of the page as **Storage location**.
 
@@ -42,10 +42,10 @@ Each stage shows as a row, in board order:
 
 ### Activities
 
-Open a stage with its arrow to see its activities. Each activity is a skill from **Settings › Skills**. It shows:
+Open a stage with its arrow to see its activities. Each activity is an action from **Settings › Actions**. It shows:
 
-- Its display name, and a **Global** or **Project** badge for where the skill comes from.
-- The skill's name and description.
+- Its display name, and a **Global** or **Project** badge for where the action comes from.
+- The action's name and description.
 - A drag handle to reorder, **Edit activity** to change its display name, and **Delete activity** to remove it from the stage.
 
 The activities of a task's stage show in the task under **Agent Actions › Stage Actions**, and in the right-click menu of the task card. With more than five, the right-click menu groups them under **Agent Prompts**.
@@ -69,13 +69,13 @@ Click the check mark (**Set as default**) on the stage. The **Default** badge mo
 
 You cannot delete the last remaining stage.
 
-### How to assign a skill to a stage
+### How to add an action to a stage
 
 1. Click the arrow on the stage to open its **Activities**.
-2. Click **Add Activity**. The **Select Activity Template** dialog opens.
-3. Search with **Search templates...** or scroll the lists **Global Templates** and **Project Templates**. Only enabled skills are listed. Skills already in the stage are greyed out.
-4. Click a skill. It is added to the stage.
-5. To show a different name on tasks, click **Edit activity**, type a **Display Name** and click **Save**. Leave it empty to use the skill's name.
+2. Click **Add Activity**. The **Add an action** dialog opens.
+3. Search with **Search actions...** or scroll the lists **Global actions** and **Project actions**. Only actions that are turned on are listed. Actions already in the stage are greyed out.
+4. Click an action. It is added to the stage.
+5. To show a different name on tasks, click **Edit activity**, type a **Display Name** and click **Save**. Leave it empty to use the action's name.
 
 ## Types
 
@@ -110,5 +110,5 @@ Tag colours are stored in `.neova/tag-colors.json`, shown at the bottom of the p
 
 - [Boards](/tasks/boards/)
 - [Task editor](/tasks/task-editor/)
-- [Skills](/settings/agents/#skills)
+- [Actions](/settings/agents/#actions)
 - [MCP tools](/reference/mcp-tools/) such as `list_stages`, `move_to_stage` and `get_tags`

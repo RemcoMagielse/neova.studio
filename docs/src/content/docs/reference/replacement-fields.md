@@ -5,9 +5,9 @@ sidebar:
   order: 3
 ---
 
-Replacement fields are placeholders in a skill or snippet. When the skill runs, Neova replaces each field with a value from the task, the wiki, your snippets, the project folder or your project files.
+Replacement fields are placeholders in an action, skill or snippet. When it runs, Neova replaces each field with a value from the task, the wiki, your snippets, the project folder or your project files.
 
-Neova fills in fields when you send a skill to an agent, copy it as a prompt, run it as a Quick Action, run it from the chat with `/`, or use it in the Composer.
+Neova fills in fields when you send an action to an agent, copy it from a task, run it from ⌘K or the menu bar, run it from the chat with `/`, or use it in the Composer.
 
 ## Write a field
 
