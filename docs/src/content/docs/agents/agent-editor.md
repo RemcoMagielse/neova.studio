@@ -67,7 +67,7 @@ How the agent sounds when it speaks to you.
 
 ### Instructions
 
-The agent's role and how it should work, in a Markdown editor. Neova sends the instructions to the terminal when the agent starts.
+The agent's role and how it should work, in a Markdown editor. A Claude Code agent starts with its instructions built in, and its first message asks it to follow them. Other agents get the instructions sent to their terminal when they start.
 
 Click **Insert** to add a reference to a standard, skill, MCP tool or snippet at the cursor.
 

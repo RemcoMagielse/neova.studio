@@ -98,7 +98,7 @@ When you select an agent that isn't running, the page shows its overview instead
 1. Select the agent in the list, or hover over its row.
 2. Click **Start Terminal**, or **Start** on the row.
 
-Neova opens a terminal, runs the start command, waits for the agent to be ready and sends its instructions.
+Neova opens a terminal and runs the start command. A Claude Code agent gets its instructions with that command and starts on them straight away. Any other agent gets them sent once it is ready.
 
 ## How to start an agent in a goal's folder
 
