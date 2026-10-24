@@ -103,7 +103,7 @@ An agent that you start from Neova, on **Agents › Team** or **Agents › Sessi
 
 The agent passes both on to the connector. Neova checks the token and links the connection to that agent. The agent then works under the name it has on **Agents › Team**.
 
-An agent that you start in a terminal outside Neova connects as an external agent. Its name gets the suffix **(external)**, for example `claude-code (external)`. It can use the tools, but it is not linked to an agent on **Agents › Team**.
+An agent that you start in a terminal outside Neova connects as an external agent. Its name gets the name of its own project in brackets, for example `Designer (presenter)`, so you can see where it comes from. An agent whose project Neova can't tell gets **(external)**. It can use the tools, but it is not linked to an agent on **Agents › Team**.
 
 ## register_agent
 
