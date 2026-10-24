@@ -131,7 +131,7 @@ The block keeps these out of git:
 
 Everything else in `.neova` is kept in git: tasks, goals, the wiki, skills, snippets, agents and their notebooks, stages, tags, links and the other project files.
 
-In **Settings › Git** you can stop keeping a history of some folders. Each choice you turn off adds its patterns to the block:
+In **Settings › Version history** you can stop keeping a history of some folders. Each choice you turn off adds its patterns to the block:
 
 | Choice | Adds |
 |---|---|
@@ -147,7 +147,7 @@ When a project has no `.neova/.gitignore`, Neova creates it with the block when 
 
 Neova Git keeps a history of the `.neova` folder in its own git repository, in `.neova/.git`. It is separate from your code repository and uses the branch `neova`.
 
-Set it up in **Settings › Git** with **Set up Neova Git**. Setup adds `.neova/` to your code repository's `.git/info/exclude`. That file is local and is not committed.
+Set it up in **Settings › Version history** with **Set up Neova Git**. Setup adds `.neova/` to your code repository's `.git/info/exclude`. That file is local and is not committed.
 
 After setup, Neova commits changes in `.neova` by itself, 3 seconds after files stop changing. When you open the project, it also commits changes made while Neova was closed. Each commit records the name of the computer it was made on. The `.gitignore` block above decides which files Neova Git keeps.
 
@@ -155,7 +155,7 @@ Browse the history on **Tools › Git**. The **Neova Git** item in the status ba
 
 ## Related
 
-- [Settings › Git](/settings/system/)
+- [Settings › Version history](/settings/workflow/#version-history)
 - [Git](/tools/git/)
 - [Wiki](/project/wiki/)
 - [Settings › Skills](/settings/agents/)

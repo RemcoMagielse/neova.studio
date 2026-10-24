@@ -144,4 +144,4 @@ Agent Insights opens on the **Conversations** tab with that conversation selecte
 ## Related
 
 - [Sessions](/agents/sessions/): the agent terminals with the **Open conversation** menu item.
-- [MCP Servers](/tools/mcp-servers/): the servers your agents can use in this project.
+- [Settings › Agent tools](/settings/agents/#agent-tools): the servers your agents can use in this project.

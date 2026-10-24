@@ -171,8 +171,8 @@ The items are available when a task is open.
 | Item | Action |
 |---|---|
 | *Your actions* | One item per action that is turned on. Pick one to copy its text, filled in for the open task. Without an open task, Neova copies the text as it is. |
-| **New Action...** | Opens **Settings › Actions** with a new action |
-| **Edit Actions...** | Opens **Settings › Actions** |
+| **New Action...** | Opens **Settings › Skills** with a new action |
+| **Edit Actions...** | Opens **Settings › Skills**, where the actions are |
 | **Skills...** | Opens **Settings › Skills** |
 
 ### Connectors
@@ -180,7 +180,7 @@ The items are available when a task is open.
 | Item | Keys | Action |
 |---|---|---|
 | **Refresh email connectors** | ⌘⇧E | Imports new mail from every email connector into its stage |
-| **Manage connectors…** | | Opens **Settings › Connectors** |
+| **Manage connectors…** | | Opens **Settings › Apps** |
 
 ### Window
 

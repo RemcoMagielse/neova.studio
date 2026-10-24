@@ -96,7 +96,7 @@ A task counts as done when it is in the **Done** stage, marked done, or archived
 
 A goal can get its own folder and git branch. Agents working on the goal work in that folder, so their changes can't clash with work on other goals. Your main project folder is not touched.
 
-These options show when **Work on goals in separate folders** is on in **Settings › Git**, under **Goal worktrees**. The project must be a git repository.
+These options show when **Work on goals in separate folders** is on in **Settings › Version history**, under **Goal worktrees**. The project must be a git repository.
 
 With goal folders on:
 
@@ -140,7 +140,7 @@ You can also link a task to a goal from the task editor.
 
 ## How to start a goal in its own folder
 
-1. Turn on **Work on goals in separate folders** in **Settings › Git**.
+1. Turn on **Work on goals in separate folders** in **Settings › Version history**.
 2. Open a goal that is **Not started**.
 3. Click the arrow next to **Start working** and choose **Start in its own folder…**.
 4. Click **Start in own folder**.
@@ -166,7 +166,7 @@ Closing is refused while an agent is still working in the folder.
 
 ## Related
 
-- [Settings › Git](/settings/system/#git) to turn on goal folders.
+- [Settings › Version history](/settings/workflow/#goal-worktrees) to turn on goal folders.
 - [Boards](/tasks/boards/) to move a goal's tasks between columns.
 - [Git](/tools/git/) for the goal branches and **Worktrees**.
 - MCP tools for goals: `create_goal`, `get_goal`, `list_goals`, `update_goal`, `delete_goal`, `link_task_to_goal`, `unlink_task_from_goal`, `get_goal_progress`, `enter_goal` and `request_merge`. See [MCP tools](/reference/mcp-tools/).

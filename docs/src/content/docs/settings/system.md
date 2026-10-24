@@ -1,17 +1,17 @@
 ---
-title: Connectors, Server and Git
-description: Connect email, Telegram, GitHub and Stream Deck, run the MCP server and connect coding agents, and set up goal worktrees and Neova Git.
+title: Connections
+description: Connect email, Telegram, GitHub, Stream Deck and your phone, hand work to other Neova projects, and open Neova from another device.
 sidebar:
   order: 4
 ---
 
-The **System** group in the Settings rail holds three pages: **Connectors**, **Server** and **Git**. They connect Neova to outside services, to your coding agents, and to git.
+The **Connections** group in the Settings rail holds three pages: **Apps**, **Other projects** and **Phone & browser**. They connect Neova to the apps you use, to other Neova projects, and to your other devices.
 
-## Connectors
+## Apps
 
-Open it from **Settings › Connectors**.
+Open it from **Settings › Apps**, or click **Email**, **Telegram** or **GitHub** in the status bar.
 
-Connectors bring outside sources into Neova. Click **Add connection** and pick one:
+Bring the apps you already use into Neova: turn emails and GitHub issues into tasks, chat with your agents from Telegram, and reach them from a Stream Deck or your phone. Click **Add connection** and pick one:
 
 | Option | What it does |
 |---|---|
@@ -19,8 +19,9 @@ Connectors bring outside sources into Neova. Click **Add connection** and pick o
 | **Telegram bot** | Chat with your agents from your phone. |
 | **GitHub repo** | Pull issues into a stage. |
 | **Stream Deck** | A key per running agent; press it to open the agent's terminal. |
+| **Neova Capsule** | Your phone: voice notes and the Assistant. |
 
-The page lists your connections in sections: **Email**, **Telegram** and **GitHub**.
+The page lists your connections in sections: **Email**, **Telegram**, **GitHub** and **Neova Capsule**.
 
 ### Email
 
@@ -109,167 +110,67 @@ The Stream Deck connection shows a key for each running agent, with its status. 
 4. **Place the keys**: in the Stream Deck app, open the **Neova Studio** category and drag **Neova Agent** onto as many keys as you like. The keys fill with the running agents of the project in front, in sidebar order.
 5. When the plugin connects, the dialog shows **Connected**. Click **Done**.
 
-## Server
+### Neova Capsule
 
-Open it from **Settings › Server**.
+Neova Capsule puts Neova on your phone. Record voice notes on the go and talk to the Assistant. Notes go to the Assistant when you send them. Your phone must be on the same Wi-Fi as this Mac.
 
-The **MCP Server** is how coding agents connect to Neova. Each open project runs its own server.
+The **Neova Capsule** section lists your paired phones, with when each was paired and last seen. **Remove** unpairs a phone. **Pair another phone** adds one.
 
-### Server status
+### How to pair a phone
 
-The top card shows **Server running** with the port and the number of connected agents, or **Server stopped**.
+1. Click **Add connection › Neova Capsule**, or **Pair a phone**.
+2. **Get the app**: Neova Capsule is an Android app for now. Install the APK on your phone. No app? It also works in your phone's browser.
+3. **Same Wi-Fi**: put your phone on the same Wi-Fi as this Mac. If Neova only accepts this Mac, click **Allow phones on this network**. macOS may ask once to allow incoming connections.
+4. **Scan or type the code**: click **Show pairing code**. In Neova Capsule, tap **Pair** and point the camera at the code, or type it. The code is valid for 10 minutes.
+5. When the dialog says the phone is paired, click **Done**.
 
-| Part | What it does |
+A notice shows each time a phone pairs, with **Remove** in case you did not expect it.
+
+## Other projects
+
+Open it from **Settings › Other projects**.
+
+Let your agents hand work to the agents of another Neova project, for example another team's. Your agents get access to that project's board, with only the tools its owner allows.
+
+The page lists your connections. Each shows its state:
+
+| State | What it means |
 |---|---|
-| **Port (leave empty for auto)** | Shown while the server is stopped. Type a port from 21700 to 21899, or leave it empty and Neova picks one. If another project uses the port, its name shows under the field. |
-| **Projects** | Lists all known projects with their port and when they were opened. |
-| **Start Server** / **Stop Server** | Starts or stops the server. |
+| **Waiting for approval** | You sent a request. The other project approves it in their **Settings › Agent tools**. **Cancel request** withdraws it. |
+| **Approved — finish setup** | They approved. Click **Finish setup** to give your agents access. |
+| **Connected** | Your agents can reach the other project. |
+| **Declined** | They said no. |
+| **Access withdrawn** | They withdrew access. Your agents can no longer reach it. |
 
-To change the port, click **Stop Server**, type the new port and click **Start Server**.
+Removing a working connection asks you to confirm. Neova removes the entry from `.mcp.json`, and the other project withdraws the key. To connect again, send a new request.
 
-### Access
+Requests from other projects to reach yours show at the top of this page, and on [Agent tools › Access](/settings/agents/#access). Click **Review** to choose what they may do, or **Decline**.
 
-**Access** sets who can connect to this server and which tools they get. Every connection presents a key.
+### How to connect to another project
 
-| Part | What it does |
-|---|---|
-| **Require access keys** | When on, a connection with no key or a revoked key is refused. When off, any client that reaches the server gets every tool. Start the server before you turn it on. |
-| **Grants** tab | The keys you have issued. |
-| **Presets** tab | Named sets of tools that you apply to grants. |
-| **Recent refusals** | Connections that were refused, with the agent's name, the reason and when. Shown when there are any. |
+1. Open the other project in its own Neova window on this computer.
+2. Click **Connect to a team**. The dialog lists the Neova windows that are open now.
+3. Pick the project. Under **Your team's name, as they will see it**, check the name.
+4. Click **Send request**.
+5. When they approve, the connection shows **Approved — finish setup**. Click **Finish setup**. The dialog shows what they allowed and the entry Neova adds to `.mcp.json`. The key is stored for you and never shown.
+6. Restart your agents. They reach the other project under the server name shown.
 
-When you turn on **Require access keys**, Neova asks you to confirm. It then gives this project's own agents a key and adds it to `.mcp.json`. Agents that are running stay connected and use the key after their next restart. Config files of other tools, such as Cursor's or Gemini's, are not changed.
+## Phone & browser
 
-If this project's agents use a key from one of your grants, a banner says so. Click **Use this project's key** to give them the project's own key.
+Open it from **Settings › Phone & browser**, or click **Web** in the status bar.
 
-### Grants
-
-The table shows each grant's name (**Grant**), its **Scope preset**, how many connections are live (**Connected**) and when it was last used (**Last used**). The **⋯** menu on a grant has:
-
-- **Change scope**: apply another preset. This replaces the grant's tool list with a copy of the preset's.
-- **Rotate key**: issue a new key for the grant.
-- **Revoke**: the key stops working at once and cannot be restored.
-
-Changing or revoking a grant closes its live connections. They reconnect under the new scope.
-
-### How to issue a key
-
-1. On the **Grants** tab, click **New grant**.
-2. Type a **Name**, for example "Team B".
-3. Pick a **Scope preset**, or choose **New preset — pick the tools yourself…**.
-4. Click **Create grant**.
-5. Copy the **Key**. It is shown only once. Neova keeps a hash of it, so if the key is lost, rotate the grant.
-6. Copy the snippet under **Add this to the other project's .mcp.json**, or click **Or write it into a project for me…** and pick a project folder. Neova merges the entry into that folder's `.mcp.json`.
-7. Click **Done**, and restart the other project's agents.
-
-### Presets
-
-A preset is a named set of tools. Neova ships the presets **Read-only board**, **Tasks**, **Collaborate** and **Full**, marked **Built-in**. Each preset shows its number of tools. Presets that include tools which control the machine (`terminal_send`, `schedule_action`, `restart_agent`, `start_agent`) are flagged.
-
-Applying a preset copies its tools into the grant. Editing the preset later does not change grants that already use it.
-
-Click **New preset**, or **Edit**, **Duplicate** or **Delete** on a preset. In the preset dialog, type a **Name**, filter with **Filter tools**, tick the tools to allow, and click **Save preset**. Tools you do not tick are denied.
-
-### Agent Configuration
-
-Add Neova as an MCP server in your coding agent's configuration. Pick your agent from the tabs: **Claude Code**, **Cursor**, **Gemini**, **Mistral Vibe** or **OpenCode**.
-
-Each tab shows the configuration to add, with a **Copy** button, a line that says where it goes, and a **View docs** link to the agent's own documentation.
-
-| Tab | Where the configuration goes |
-|---|---|
-| **Claude Code** | `.mcp.json` in your project |
-| **Cursor** | `.cursor/mcp.json` in your project |
-| **Gemini** | Your Gemini CLI configuration |
-| **Mistral Vibe** | Your Mistral Vibe configuration |
-| **OpenCode** | Your OpenCode MCP configuration |
-
-On **Claude Code** and **Cursor**, a card writes the file for you:
-
-| Card says | Button | What it does |
-|---|---|---|
-| **Configure the MCP connection in this project directory** | **Add to Project** | Creates the file with the Neova entry. |
-| **Add Neova to your existing MCP configuration** | **Add Neova** | Adds the Neova entry to your existing file. |
-| **Update Neova in your MCP configuration** | **Update** | Replaces an old Neova entry. |
-| **Neova is configured in this project** | **Configured** | Nothing to do. |
-
-On **Claude Code**, a second card, **Report agent status for Claude sessions you start yourself**, adds Neova's status hooks to `.claude/settings.local.json`. Agents that Neova starts already report their status. Click **Add to settings**, or **Update** when the hooks are out of date.
-
-For a step-by-step guide per agent, see [Connect a coding agent](/reference/connect-a-coding-agent/).
-
-### Available Tools
-
-A list of all MCP tools that coding agents can use, grouped by category. Search with **Search tools…**. Click a category to see its tools and their descriptions. See [MCP tools](/reference/mcp-tools/).
-
-## Git
-
-Open it from **Settings › Git**.
-
-### Goal worktrees
+Open Neova from a browser on your phone, tablet or another computer. Your agents keep running on this Mac. This setting applies to every project.
 
 | Setting | What it does |
 |---|---|
-| **Work on goals in separate folders** | When on, each goal you open work on gets its own folder and branch, so agents on different goals never touch each other's files. Tasks that are not on a goal stay on the branch you have checked out. Off by default. |
-| **Where the folders live** | Shown when on. The folders are next to the project, outside it, in `../<project>.worktrees/`. Hover to see the full path. |
-| **How it works** | Shown when on. Opens five steps, from opening work on a goal to closing it. |
+| **Web access** | Turns the web server on or off. Shows **Running** when it is on. |
+| **Address** | Shown while web access is on: the address to open on the other device. Click **Copy** to copy it. |
+| **Who can connect** | **Only this Mac** is the safest. **Devices on my network** lets phones and browsers on the same Wi-Fi reach Neova. They see nothing until paired with a code. |
 
-The switch is unavailable when no project is open, when the project is not a git repository, when it sits inside a larger repository, or when git is not installed. The page then says which.
-
-The five steps:
-
-1. **Open work** on a goal in **Project › Goals**. It gets its own folder and a fresh branch from what your main folder has checked out.
-2. **Put an agent there**: on an offline agent's page, use **Start Terminal ▾** and pick the goal. A running Claude agent can also switch itself when it picks up a task on that goal.
-3. **Update from main** when main has moved on. If files clash, nothing changes and the goal's agent resolves them.
-4. **Merge into main**, one goal at a time. Your own unsaved edits in the main folder are never touched. **Push to GitHub** to back up or share the branch.
-5. **Close work** to remove the folder. This is refused while there is uncommitted work or an agent inside. The branch is kept if it has commits that main does not.
-
-Every goal folder is listed under **Tools › Git › Worktrees**. See [Goals](/project/goals/) and [Git](/tools/git/).
-
-### Neova Git repository
-
-Neova Git keeps a version history of your project data. It commits your tasks, wiki pages, agent notes, goals and skills to a git repository inside `.neova/`, on a branch named `neova`. Everything stays on this computer. Your code repository is not touched.
-
-| State | What you see |
-|---|---|
-| Not set up | **Set up Neova Git**. |
-| Project files still tracked by your code repository | How many files, and the commands to run in the project folder to untrack them. Neova notices when you have run them. |
-| Git not installed | **Git is not installed on this computer**. |
-| Set up | A **Set up** badge, the **Repository** row (`.neova/.git`, branch `neova`) and **Open in Tools › Git**. |
-
-### How to set up Neova Git
-
-1. Click **Set up Neova Git**. A dialog lists what Neova will do.
-2. Click **Set up**. This usually takes a few seconds.
-3. When it says **Neova Git is set up**, click **Done**. From now on, every change is recorded automatically.
-
-If set-up does not finish, Neova undoes what it had created and shows what went wrong. Click **Try again**.
-
-### Back up to GitHub
-
-Shown once Neova Git is set up.
-
-| Row | What it shows |
-|---|---|
-| Backup status | **Backing up to** *remote*, or **Not backed up**. Backing up pushes the history to the `neova` branch. Anyone who can read that repository can read your tasks, wiki pages and agent notebooks. |
-| **This computer’s name** | The name shown next to each change, so you can tell your machines apart. Click **Change**, type a name and click **Save**. |
-
-### What gets backed up
-
-Tick the folders to include. All are ticked by default.
-
-- `tasks/`
-- `wiki/`
-- `agents/ (incl. notebooks)`
-- `goals/ · skills/`
-- `snippets/`
-
-These are never included: `logs/ · workspace/` (runtime state), `connectors/` (personal and infrastructure details), `editor-state.json` (specific to this computer) and `images/`.
+To pair a phone with Neova Capsule, use [Apps › Neova Capsule](#neova-capsule).
 
 ## Related
 
+- [Assistant](/agents/assistant/), which uses the Telegram bot and Neova Capsule
+- [Agent tools](/settings/agents/#agent-tools), where requests from other projects are approved
 - [Connect a coding agent](/reference/connect-a-coding-agent/)
-- [MCP tools](/reference/mcp-tools/)
-- [MCP Servers](/tools/mcp-servers/)
-- [Git](/tools/git/)
-- [Goals](/project/goals/)
-- [Assistant](/agents/assistant/), which uses the Telegram bot and the MCP server

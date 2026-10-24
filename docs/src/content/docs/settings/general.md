@@ -1,93 +1,53 @@
 ---
-title: General, Themes, Sounds and Voice
-description: Appearance, tabs, task files, notifications, message routing, debugging, colours and fonts, sounds, and voice.
+title: You · all projects, and Advanced
+description: Your profile, how Neova looks, sounds and alerts, voice, and the advanced settings you rarely change.
 sidebar:
   order: 1
 ---
 
-These settings pages hold your personal preferences: how Neova looks, how it behaves, which sounds it plays, and how you talk to it.
+Settings has a rail on the left. Each group caption says who a change affects:
 
-Settings has a rail on the left with four groups. **Profile**, **General**, **Themes**, **Sounds** and **Voice** sit at the top of the rail, without a group caption. Click a page in the rail to show it on the right.
+| Group | Pages |
+|---|---|
+| **You · all projects** | **Profile**, **Appearance**, **Sounds & alerts**, **Voice** |
+| **This project** | **Board**, **Version history**. See [This project](/settings/workflow/). |
+| **Agents** | **Agents**, **Skills**, **Assistant**, **Agent tools**. See [Agents, Skills, Assistant and Agent tools](/settings/agents/). |
+| **Connections** | **Apps**, **Other projects**, **Phone & browser**. See [Connections](/settings/system/). |
 
-## General
+**Advanced** sits last, without a caption. Click a page in the rail to show it on the right. Settings opens on **Profile**.
 
-Open it from **Settings › General**.
+This page covers the **You · all projects** pages and **Advanced**. They hold your personal preferences, and they apply in every project.
 
-Changes on this page save as soon as you make them.
+## Profile
 
-### Appearance
+Open it from **Settings › Profile**.
+
+Tell your agents who you are, so they can address you properly and pitch their answers right.
+
+| Field | What it's for |
+|---|---|
+| **Name** | Your name. |
+| **Photo** | Click **Upload** to pick a photo and crop it. **Remove** takes it away. |
+| **How agents address you** | What agents call you. Leave it empty to use your name. |
+| **About you** | Your role and background, and how you like answers: short or detailed, plain language or technical, which language. |
+
+The Assistant's own name and voice are on [Settings › Assistant](/settings/agents/#assistant).
+
+## Appearance
+
+Open it from **Settings › Appearance**.
+
+Make Neova look the way you like. Changes apply and save immediately.
+
+### Theme
 
 | Setting | What it does |
 |---|---|
 | **Theme** | Choose **Light**, **Dark** or **System**. **System** follows your Mac's appearance. The default is **Light**. |
 
-### Tabs
-
-| Setting | What it does |
-|---|---|
-| **Reopen my tabs when I open a project** | When on, each project opens with the tabs and split view you left it with. On by default. |
-
-### Tasks
-
-| Setting | What it does |
-|---|---|
-| **Task file naming** | How new task files are named on disk. Choose **Timestamp + ID** (for example `1740000000000-ab.json`), **Human-readable Date** (`20260220-1430.json`) or **Title-based** (`my-task-title.json`). An example of the chosen format shows under the setting. |
-| **Delete images when archiving** | When on, images attached to a task are deleted when you archive the task. On by default. |
-
-### Notifications
-
-| Setting | What it does |
-|---|---|
-| **Notification position** | Where toast notifications appear: **Top Left**, **Top Center**, **Top Right**, **Bottom Left**, **Bottom Center** or **Bottom Right**. The default is **Top Right**. |
-
-### Message Routing
-
-| Setting | What it does |
-|---|---|
-| **Routing mode** | How messages are delivered to agent terminals. |
-
-- **Direct** (the default): a message is written into the agent's terminal right away, also while the agent is working.
-- **Smart**: while the agent is working, a message goes to the agent's backlog instead of the terminal.
-
-In both modes, Neova does not write into a terminal while you are typing in it.
-
-### Onboarding
-
-| Setting | What it does |
-|---|---|
-| **Reset welcome tour** | Click **Reset Tour**. The welcome tour shows again the next time you start Neova. |
-
-### Debugging
-
-| Setting | What it does |
-|---|---|
-| **Performance logging** | When on, Neova writes timing data to log files. |
-| **Performance logs folder** | Click **Open Folder** to open the folder with the performance log files. |
-| **Developer Tools** | Click **Open DevTools** to open Chrome DevTools. |
-
-### About
-
-| Row | What it shows |
-|---|---|
-| **Version** | The installed version, with a **Check for updates** button. |
-| **Build date** | The date this version was built. |
-| **Data storage** | `.neova/`, the folder in your project where Neova keeps its data. See [The .neova folder](/reference/neova-folder/). |
-
-Below the rows is a link to the Neova website.
-
-Click **Check for updates**. The result shows under the version:
-
-- **You're up to date.**
-- **Neova *x.y.z* is available.** with the links **What's new** and **Download**.
-- **Couldn't check for updates.** followed by the reason.
-
-## Themes
-
-Open it from **Settings › Themes**.
-
-Pick colours and fonts from fixed presets. Changes apply and save immediately.
-
 ### Colours
+
+Pick colours from fixed presets.
 
 | Setting | What it changes | Options |
 |---|---|---|
@@ -104,9 +64,26 @@ A dot next to **Accent colour** shows the current accent.
 | **Document font** | Task titles and cards, and the text of tasks, wiki pages and other documents | **Lusitana (default)**, **Source Serif 4**, **Lora**, **Merriweather**, **Same as interface font** |
 | **Code font** | Code, file paths and other monospaced text | **Courier Prime (default)**, **JetBrains Mono**, **Fira Code**, **IBM Plex Mono**, **System monospace** |
 
-## Sounds
+### Notifications
 
-Open it from **Settings › Sounds**.
+| Setting | What it does |
+|---|---|
+| **Notification position** | Where toast notifications appear: **Top Left**, **Top Center**, **Top Right**, **Bottom Left**, **Bottom Center** or **Bottom Right**. The default is **Top Right**. |
+
+### Tabs
+
+The **Tabs** section is folded shut. Click it to open it.
+
+| Setting | What it does |
+|---|---|
+| **Reopen my tabs when I open a project** | Each project comes back with the tabs and split view you left it with. On by default. |
+| **Where a page opens** | When two panes are open, where each page opens: **Wide** in the wider pane, **Narrow** in the smaller one, **Anywhere** in the pane you are working in. One row per page. |
+
+See [Find your way around](/getting-started/find-your-way-around/) for tabs and split view.
+
+## Sounds & alerts
+
+Open it from **Settings › Sounds & alerts**.
 
 Neova plays short chimes when something happens that you may want to know about. Changes save immediately.
 
@@ -182,7 +159,7 @@ While a voice message plays, the status bar shows who is speaking and the time. 
 
 ### Talking to the Assistant
 
-The Assistant's message box has the same microphone. When you stop talking, your message is sent. The Assistant answers out loud, and briefly says something like **Got it.** as soon as your message arrives. When you type, it answers in text only.
+The Assistant's message box has the same microphone. When you stop talking, your message is sent. The Assistant answers out loud, and briefly says something like **Got it.** as soon as your message arrives. When you type, it answers in text only. Pick the Assistant's voice on [Settings › Assistant](/settings/agents/#assistant).
 
 ### Agents that speak
 
@@ -196,6 +173,66 @@ An agent can send you a voice message in the chat when **Can send voice messages
 2. Under **Speech model**, click **Download**. Wait until it shows **✓ Installed**.
 3. To hear agents, click **Download** under **Voices** too.
 4. Click in a field, hold **⌥ Space** and talk. Let go to stop.
+
+## Advanced
+
+Open it from **Settings › Advanced**.
+
+The settings you rarely change. Changes save as soon as you make them.
+
+### Claude usage
+
+| Setting | What it does |
+|---|---|
+| **Show Claude usage** | Shows your Claude session and weekly limits in the status bar and on [Overview](/project/overview/#claude-usage-limits). Neova reads Claude Code's login from your Keychain for this; macOS asks you once. Off by default. |
+
+### Chat
+
+| Setting | What it does |
+|---|---|
+| **Only suggest my own agents** | Agents started outside Neova stay out of the @ list and @Everyone. Type a full name to reach one. Off by default. |
+
+### Tasks
+
+| Setting | What it does |
+|---|---|
+| **Task file naming** | How new task files are named on disk. Choose **Timestamp + ID** (for example `1740000000000-ab.json`), **Human-readable Date** (`20260220-1430.json`) or **Title-based** (`my-task-title.json`). An example of the chosen format shows under the setting. |
+| **Delete images when archiving** | When on, images attached to a task are deleted when you archive the task. On by default. |
+
+### Message Routing
+
+| Setting | What it does |
+|---|---|
+| **Routing mode** | How messages are delivered to agent terminals. |
+
+- **Direct** (the default): a message is written into the agent's terminal right away, also while the agent is working.
+- **Smart**: while the agent is working, a message goes to the agent's backlog instead of the terminal.
+
+In both modes, Neova does not write into a terminal while you are typing in it.
+
+### Debugging
+
+| Setting | What it does |
+|---|---|
+| **Performance logging** | When on, Neova writes timing data to log files. |
+| **Performance logs folder** | Click **Open Folder** to open the folder with the performance log files. |
+| **Developer Tools** | Click **Open DevTools** to open Chrome DevTools. |
+
+### About
+
+| Row | What it shows |
+|---|---|
+| **Version** | The installed version, with a **Check for updates** button. |
+| **Build date** | The date this version was built. |
+| **Data storage** | `.neova/`, the folder in your project where Neova keeps its data. See [The .neova folder](/reference/neova-folder/). |
+
+Below the rows is a link to the Neova website.
+
+Click **Check for updates**. The result shows under the version:
+
+- **You're up to date.**
+- **Neova *x.y.z* is available.** with the links **What's new** and **Download**.
+- **Couldn't check for updates.** followed by the reason.
 
 ## Related
 

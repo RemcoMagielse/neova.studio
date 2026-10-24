@@ -13,6 +13,8 @@ export default defineConfig({
 		'/reference/stages': '/settings/workflow/',
 		'/reference/tasks': '/tasks/task-editor/',
 		'/reference/standards': '/project/wiki/',
+		// Tools › MCP Servers moved into Settings › Agent tools.
+		'/tools/mcp-servers': '/settings/agents/#agent-tools',
 	},
 	integrations: [
 		starlight({

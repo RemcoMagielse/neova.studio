@@ -17,7 +17,7 @@ In the **Welcome to Neova** window:
 2. Under **Let it reach Neova**, click **Add Neova to .mcp.json**.
 3. Click **Done**.
 
-If you skipped the Welcome window, go to **Settings › Server**. Under **Agent Configuration**, choose **Claude Code** and click **Add to Project**.
+If you skipped the Welcome window, go to **Settings › Agent tools**. Under **Agent Configuration**, choose **Claude Code** and click **Add to Project**.
 
 ## 3. Start the Assistant
 

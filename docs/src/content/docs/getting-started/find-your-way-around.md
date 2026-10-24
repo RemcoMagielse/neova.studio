@@ -20,7 +20,7 @@ Below that are the sections and their pages:
 | **Project** | Overview, Timeline, Goals, Wiki, Files, Images |
 | **Agents** | Assistant, Team, Sessions, Chat, Activity, Schedules, Agent Insights |
 | **Tasks** | Boards, Tasks, Archive |
-| **Tools** | Snippets, Whiteboard, Terminal, Browser, MCP Servers, Git, API Tester |
+| **Tools** | Snippets, Whiteboard, Terminal, Browser, Git, API Tester |
 | **Settings** | Pinned at the bottom of the sidebar |
 
 Click a section header to open or close it. Click a page to show it.
@@ -54,7 +54,7 @@ Drag a tab to move it along the tab bar. Click the **×** on a tab to close it. 
 
 Neova keeps up to 12 tabs open. When you open a 13th, it closes the tab you haven't used for the longest time. It never closes a tab with unsaved changes or a tab that is on screen.
 
-When you open a project again, Neova restores its tabs and split view. Turn this off in **Settings › General** with **Reopen my tabs when I open a project**.
+When you open a project again, Neova restores its tabs and split view. Turn this off in **Settings › Appearance**, under **Tabs**, with **Reopen my tabs when I open a project**.
 
 ## Split view
 
@@ -107,10 +107,10 @@ The status bar shows the state of Neova and your agents. Hover over an item for 
 | **Activity** | Open questions and notifications | Agents › Activity |
 | **Agents** | Which agents are running | Agents › Team |
 | **Terminals** | Running tool terminals | Tools › Terminal |
-| **Email**, **Telegram**, **GitHub** | Connected apps | Settings › Connectors |
-| **Web** | The web server and its port | Settings › Server |
+| **Email**, **Telegram**, **GitHub** | Connected apps | Settings › Apps |
+| **Web** | The web server and its port | Settings › Phone & browser |
 | **Neova Git** | Backups of the `.neova/` folder | Tools › Git |
-| **MCP** | The MCP server, its port and the connected agents | Settings › Server |
+| **MCP** | The MCP server, its port and the connected agents | Settings › Agent tools |
 
 The dot next to **Activity** is amber when a question is waiting for you. The dot next to **Agents** is green when an agent is running, amber when one needs your attention, and red when one has an error.
 

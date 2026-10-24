@@ -16,8 +16,8 @@ The sidebar has five sections. The docs follow the same order.
 | **Project** | See the project at a glance, set goals, keep the wiki, browse files and images. |
 | **Agents** | Talk to the Assistant, manage your team of agents, watch their terminals, chat with them, answer their questions, schedule prompts and see what they keep on disk. |
 | **Tasks** | Plan work on boards with stages, open and edit tasks, and look up archived tasks. |
-| **Tools** | Snippets, Whiteboard, Terminal, Browser, MCP Servers, Git and API Tester. |
-| **Settings** | Appearance, workflow (stages, types, tags), agents and skills, and connections to other apps. |
+| **Tools** | Snippets, Whiteboard, Terminal, Browser, Git and API Tester. |
+| **Settings** | Your profile and appearance, your board (stages, types, tags), agents, skills and agent tools, and connections to other apps, projects and devices. |
 
 ## Where your data lives
 

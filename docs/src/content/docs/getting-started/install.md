@@ -34,4 +34,4 @@ Each version is announced once. Install it the same way as above: drag the new a
 To check yourself, use either of these:
 
 - **Neova Studio › Check for Updates…** in the menu bar. It always tells you the result, including **You're up to date**.
-- **Settings › General › About**. Click **Check for updates** next to **Version**. The result appears in the row.
+- **Settings › Advanced › About**. Click **Check for updates** next to **Version**. The result appears in the row.

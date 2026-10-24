@@ -34,7 +34,7 @@ The first time you use Neova, a **Welcome to Neova** window asks two things:
 1. **How do you start your coding agent?** Type the command you use in your terminal, for example `claude` or `claude --permission-mode auto`. The Assistant uses this command.
 2. **Let it reach Neova.** Click **Add Neova to .mcp.json**. Neova adds its MCP server to `.mcp.json` in the project folder, so your agent can use Neova's tools. Anything already in that file is kept.
 
-Click **Done** to save, or **Skip for now** to close the window without saving. You can set both later: the start command in **Settings › Assistant** and the MCP entry in **Settings › Server**.
+Click **Done** to save, or **Skip for now** to close the window without saving. You can set both later: the start command in **Settings › Assistant** and the MCP entry in **Settings › Agent tools**.
 
 The Welcome window shows once per installation.
 

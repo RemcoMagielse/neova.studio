@@ -67,5 +67,5 @@ You can also press **⌘T** from anywhere in Neova.
 - [Task editor](/tasks/task-editor/): edit the task you open.
 - [Boards](/tasks/boards/): see all tasks by stage.
 - [Archive](/tasks/archive/): search archived tasks.
-- [Settings › Stages](/settings/workflow/#stages): set the default stage for new tasks.
+- [Settings › Board](/settings/workflow/#stages): set the default stage for new tasks.
 - [MCP tools](/reference/mcp-tools/#task-management): agents use `list_tasks`, `get_task` and `search` to find tasks.

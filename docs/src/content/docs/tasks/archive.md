@@ -62,6 +62,6 @@ When you archive a single task that has images, choose **Delete images** or **Ke
 ## Related
 
 - [Boards](/tasks/boards/): archive tasks from the board.
-- [Settings › General](/settings/general/): **Delete images when archiving**.
+- [Settings › Advanced](/settings/general/#advanced): **Delete images when archiving**.
 - [The .neova folder](/reference/neova-folder/): archived tasks are kept in `.neova/tasks/archive`.
 - [MCP tools](/reference/mcp-tools/#search): agents search archived tasks with `search` using the `archive` scope, and read one with `get_task`.

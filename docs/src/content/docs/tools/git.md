@@ -17,7 +17,7 @@ The subtitle sums up the open tab. **Refresh** reads the repository again. The p
 |---|---|
 | **Project** | Your code repository. The subtitle shows the number of branches, commits and unpushed commits. |
 | **Neova** | The Neova repository in `.neova/`, on the branch `neova`. The subtitle shows the number of commits and whether the history is synced or on this machine only. |
-| **Worktrees** | The folders where goals have open work, with a count. This tab appears when **Work on goals in separate folders** is on in **Settings › Git**, or when a goal folder exists. |
+| **Worktrees** | The folders where goals have open work, with a count. This tab appears when **Work on goals in separate folders** is on in **Settings › Version history**, or when a goal folder exists. |
 
 ## Repository view
 
@@ -88,11 +88,11 @@ When Neova Git is not set up, the **Neova** tab shows **Neova Git is not set up 
 
 If set-up fails, Neova undoes the parts it already created and shows what went wrong. Click **Try again** when it is offered.
 
-You can also start set-up from **Settings › Git**.
+You can also start set-up from **Settings › Version history**.
 
 ## Neova Git settings
 
-**Settings › Git** has these cards for Neova Git:
+**Settings › Version history** has these cards for Neova Git:
 
 | Card | What it shows |
 |---|---|
@@ -129,6 +129,6 @@ Open and close work on a goal from [Goals](/project/goals/).
 
 ## Related
 
-- [Settings › Git](/settings/system/#git) turns goal worktrees on and sets up Neova Git.
+- [Settings › Version history](/settings/workflow/#version-history) turns goal worktrees on and sets up Neova Git.
 - [Goals](/project/goals/): open and close work on a goal.
 - [MCP tools](/reference/mcp-tools/#goals): `enter_goal` and `request_merge` let agents work in a goal's folder and merge it.

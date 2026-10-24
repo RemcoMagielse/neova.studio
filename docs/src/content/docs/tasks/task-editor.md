@@ -87,7 +87,7 @@ The rail on the right has four sections. Click a section header to open or close
 |---|---|
 | Action name | Fills in the action's text for this task and copies it to the clipboard. |
 | **▾** › **Copy to clipboard** | The same as clicking the action name. |
-| **▾** › **Edit action** | Opens the action in **Settings › Actions**. |
+| **▾** › **Edit action** | Opens the action in **Settings › Skills**, under **Actions**. |
 | **▾** › **Send to Agent** | Fills in the prompt and sends it to an agent's terminal, then shows that terminal. If you have more than one agent, choose one in the **Send to Agent** window. If the agent isn't running, Neova starts it first. |
 
 An action that no longer exists is greyed out and shows **Action not available**. A stage without actions shows **No actions available**.
@@ -162,7 +162,7 @@ Neova shows the agent's terminal with the prompt sent. To paste the prompt yours
 ## Related
 
 - [Boards](/tasks/boards/): the task panel and the board.
-- [Settings › Stages, Types and Tags](/settings/workflow/).
-- [Settings › Actions](/settings/agents/#actions): the actions behind the stage buttons.
+- [Settings › Board](/settings/workflow/#board): stages, task types and tags.
+- [Settings › Skills › Actions](/settings/agents/#actions): the actions behind the stage buttons.
 - [Replacement fields](/reference/replacement-fields/): fields you can use in descriptions and skill templates.
 - [MCP tools](/reference/mcp-tools/#task-management): agents use `get_task`, `update_task`, `add_to_task`, `replace_section_in_task`, `link_task` and `assign_task` to work on tasks.

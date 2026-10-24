@@ -21,7 +21,7 @@ The toolbar runs along the top of the board.
 | **Sort** | Sorts the cards in every column by **Recent Activity**, **Name** or **Created Date**. Choose the same option again to flip the direction. |
 | **Switch to compact view** / **Switch to normal view** | Compact view shows only the title of each card. |
 | **Hide empty columns** / **Show empty columns** | Hides the columns that have no cards. |
-| **Configure stages** | Opens the **Stages** panel, with the same stage settings as [Settings › Stages](/settings/workflow/#stages), without the skills. |
+| **Configure stages** | Opens the **Stages** panel, with the same stage settings as [Settings › Board](/settings/workflow/#stages), without the skills. |
 | **Refresh tasks** | Reloads all tasks from disk. |
 
 Neova remembers compact view and hidden empty columns the next time you open the board.
@@ -47,7 +47,7 @@ A goal's **Open on board** action opens the board filtered to that goal.
 
 ## Columns
 
-Each column is a stage, in the order set in **Settings › Stages**. The column header shows:
+Each column is a stage, in the order set in **Settings › Board**. The column header shows:
 
 - The stage name, with a **Default** badge on the stage new tasks go to.
 - **+** (**Add task**): creates a task called **New Task** in this stage and opens it.
@@ -150,7 +150,7 @@ A skill whose template can't be found shows **unavailable** and can't be chosen.
 ## Related
 
 - [Task editor](/tasks/task-editor/): every area of an open task.
-- [Settings › Stages, Types and Tags](/settings/workflow/).
-- [Settings › Actions](/settings/agents/#actions): the actions behind the stage buttons.
-- [Settings › General](/settings/general/): **Delete images when archiving**.
+- [Settings › Board](/settings/workflow/#board): stages, task types and tags.
+- [Settings › Skills › Actions](/settings/agents/#actions): the actions behind the stage buttons.
+- [Settings › Advanced](/settings/general/#advanced): **Delete images when archiving**.
 - [MCP tools](/reference/mcp-tools/#task-management): agents use `list_tasks`, `create_task`, `move_to_stage` and `complete_task` to work with the board.

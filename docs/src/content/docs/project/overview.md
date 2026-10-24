@@ -88,7 +88,7 @@ See [Goals](/project/goals/) for how progress is counted.
 
 ## Claude usage limits
 
-The **Claude usage limits** card shows how much of your Claude plan you have used. Neova reads this from the Claude Code login on this computer. The card is hidden when Claude Code isn't logged in.
+The **Claude usage limits** card shows how much of your Claude plan you have used. Neova reads this from the Claude Code login on this computer. Turn it on in [Settings › Advanced](/settings/general/#claude-usage) with **Show Claude usage**. The card is hidden when Claude Code isn't logged in.
 
 - The badge in the header shows your plan.
 - Each limit has a bar, the percentage used, and when it resets. **Current session** comes first, then the **Weekly limits**.
@@ -164,6 +164,6 @@ To rename a group, give each of its links the new group name. A group disappears
 
 ## Related
 
-- [Assistant](/agents/assistant/) and [Settings › Agents](/settings/agents/) to set up the Assistant.
+- [Assistant](/agents/assistant/) and [Settings › Assistant](/settings/agents/#assistant) to set up the Assistant.
 - [Goals](/project/goals/), [Wiki](/project/wiki/) and [Files](/project/files/).
 - MCP tools: agents read the project description with `get_project_info` and the links with `list_links`. See [MCP tools](/reference/mcp-tools/).

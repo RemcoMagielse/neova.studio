@@ -138,6 +138,6 @@ Click **×** on the reply banner to cancel.
 
 ## Related
 
-- [Settings › Actions](/settings/agents/#actions) to add and order the actions for slash commands
+- [Settings › Skills › Actions](/settings/agents/#actions) to add and order the actions for slash commands
 - [Agent Editor](/agents/agent-editor/#events) to choose which chat events an agent receives
 - [MCP tools](/reference/mcp-tools/) agents use for chat: `chat_send`, `chat_history` and `chat_react`

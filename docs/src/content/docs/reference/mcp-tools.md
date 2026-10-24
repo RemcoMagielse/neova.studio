@@ -1,11 +1,11 @@
 ---
 title: MCP tools
-description: Every tool Neova's MCP server offers to coding agents, grouped as in Settings › Server.
+description: Every tool Neova's MCP server offers to coding agents, grouped as in Settings › Agent tools.
 sidebar:
   order: 2
 ---
 
-Neova's MCP server offers 115 tools in 18 groups. This page lists them in the same groups and order as **Available Tools** in **Settings › Server**. There you can also search the list.
+Neova's MCP server offers 115 tools in 18 groups. This page lists them in the same groups and order as **Available Tools** in **Settings › Agent tools**. There you can also search the list.
 
 Parameters marked with * are required. A connection that uses an access key with a limited preset sees only the tools that preset allows.
 
@@ -235,4 +235,4 @@ These tools work on the sessions in **Tools › Browser**. `session` is optional
 ## Related
 
 - [Connect a coding agent](/reference/connect-a-coding-agent/)
-- [Settings › Server](/settings/system/)
+- [Settings › Agent tools](/settings/agents/#agent-tools)
