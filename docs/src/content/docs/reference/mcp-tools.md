@@ -67,6 +67,7 @@ A longer document comes back as page 1, with `pages` and `hasMore` set and an ou
 | Tool | What it does | Main parameters |
 |---|---|---|
 | `list_snippets` | Lists snippets. | `tag`, `limit` (default 100) |
+| `list_secrets` | Lists the names and notes of the project's and global [secrets](/project/secrets/). Never returns a value. | None |
 | `get_snippet` | Returns a snippet's content, by ID or title. | `id`*, `page`, `maxChars` |
 | `create_snippet` | Creates a snippet. A `replacementKey` of `my-key` makes `{my-key}` work in prompts. | `title`*, `content`*, `language` (default `text`), `tags`, `replacementKey` |
 | `update_snippet` | Changes the fields you pass. Each field replaces the old value. | `id`*, `title`, `content`, `language`, `tags`, `replacementKey` |
