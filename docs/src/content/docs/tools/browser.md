@@ -35,7 +35,7 @@ Hover a tab to see its name, who uses it and who is in control.
 | Zoom (for example **100%**) | Choose a zoom level: 25%, 50%, 75%, 100%, 125%, 150% or 200%. |
 | **Full screen** | Shows the page alone over the whole window. |
 | **Show debug panel** / **Hide debug panel** | Opens or closes the [debug panel](#debug-panel) below the page. |
-| **Session options** (**⋯**) | **Rename**, **Clear login**, **Close**. |
+| **Session options** (**⋯**) | **Rename**, **Clear login**, **Give to an agent…** (your own sessions only), **Close**. |
 
 While an agent is in control, the address field is read-only and **Back**, **Forward** and **Reload** are off. Zoom keeps working.
 
@@ -94,6 +94,15 @@ Changes in **Cookies** and **Headers** apply a moment after you stop typing.
 4. Type an address in the address bar and press **↵**.
 
 **Saved** sessions reopen when you open the project again. **Temporary** sessions do not.
+
+## How to give your session to an agent
+
+Use this when you are signed in to a page and want an agent to work in it, without signing in again.
+
+1. Open your session and click **⋯** › **Give to an agent…**.
+2. Choose an **Agent** and click **Give to <Agent>**.
+
+The session, with your login, now belongs to the agent and the agent is in control. The agent gets a note in its backlog. You can take over at any time. To use the page as your own again, open a new session: a session you gave away stays the agent's.
 
 ## How to take control from an agent
 
