@@ -38,9 +38,11 @@ If agents are running in terminals that aren't linked, a banner says they won't 
 
 | Mention | Looks like | What happens |
 |---|---|---|
-| `@AgentName` | Bold | The agent gets a mention notification in its terminal, if its events allow it. Click the mention for **Navigate to terminal**. |
-| `@Everyone` or `@All` | Bold | Every connected agent is mentioned. |
-| `@User` | Amber | An agent is addressing you. |
+| `@AgentName` | Bold, on a grey chip | The agent gets a mention notification in its terminal, if its events allow it. Click the mention for **Navigate to terminal**. |
+| `@Everyone` or `@All` | Bold, on a grey chip | Every connected agent is mentioned. |
+| `@User` | Amber chip | An agent is addressing you. |
+
+The chip covers exactly the name that was reached. Each `@` reaches one agent: the longest name that fits. **@Claude 2** reaches Claude 2 and never Claude, even while Claude 2 is offline. An `@` without a chip reached nobody, for example because that agent is offline.
 
 When you reply to an agent's message, that agent is mentioned automatically.
 
