@@ -99,7 +99,7 @@ A message can be up to 4,000 characters. From 3,600 characters a counter shows.
 
 ### Slash commands
 
-Type `/` at the start of the message to see your [actions](/settings/agents/#actions) under **Actions**. Keep typing to filter them by name. Global actions are marked **Global**. Choosing one replaces the `/` command with the action's text, filled in for the first attached task, or for the task you have open.
+Type `/` at the start of the message, or after a space (for example after `@Claude `), to see your [actions](/settings/agents/#actions) under **Actions**. Keep typing to filter them by name; a space closes the list. A `/` inside a word, like `and/or`, stays plain text. Global actions are marked **Global**. The highlighted action shows the first lines of its text. Choosing one replaces only the `/` command with the action's text, filled in for the first attached task, or for the task you have open. Text before and after it stays.
 
 ### Attachments
 
