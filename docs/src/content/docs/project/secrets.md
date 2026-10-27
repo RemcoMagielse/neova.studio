@@ -22,13 +22,15 @@ Each row shows the name, the note and `••••••••`. **Copy value**
 
 ## How agents use a secret
 
-Every terminal Neova starts in the project gets each secret as an environment variable with its name. An agent uses it by name, and the terminal fills in the value:
+In an agent's terminal, `neova-secret NAME` gives the secret's current value. An agent puts it inside a command, so the value goes to the command and never into the agent's conversation:
 
 ```sh
-curl -H "Authorization: Bearer $MY_API_KEY" https://api.example.com/items
+curl -H "Authorization: Bearer $(neova-secret MY_API_KEY)" https://api.example.com/items
 ```
 
-Code reads it from the environment, for example `process.env.MY_API_KEY`. Command-line tools that read a variable, such as `gh` with `GH_TOKEN`, pick it up by themselves.
+It always gives the value as it is now, so a secret you add or change works on the agent's next command, without a restart. An unknown name gives nothing and an error.
+
+Every terminal Neova starts in the project also gets each secret as an environment variable with its name, such as `$MY_API_KEY`. Code reads it from the environment, for example `process.env.MY_API_KEY`. Command-line tools that read a variable, such as `gh` with `GH_TOKEN`, pick it up by themselves. These variables are set when the terminal starts.
 
 Agents can list the names with `list_secrets`. No tool gives them a value.
 
@@ -36,7 +38,7 @@ Agents can list the names with `list_secrets`. No tool gives them a value.
 This keeps keys out of chat, tasks and files by accident. An agent could still print a variable on purpose, so only add the keys your agents need.
 :::
 
-Agents that were already running don't get a new or changed secret. The page then says how many running agents don't have it yet; click **Restart** to start them again. They start fresh: their conversation starts over, as when you stop and start an agent yourself.
+Environment variables don't change in an agent that was already running. If a program reads the variable rather than using `neova-secret`, the page says how many running agents don't have the change yet; click **Restart** to start them again. They start fresh: their conversation starts over, as when you stop and start an agent yourself.
 
 ## How to add a secret
 
