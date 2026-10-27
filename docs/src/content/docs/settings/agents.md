@@ -54,11 +54,11 @@ Which events an agent receives is set per agent in the [Agent Editor](/agents/ag
 
 ### Detection profiles
 
-A detection profile tells Neova how to read a CLI's terminal output, so it can show whether an agent is working, idle or needs your attention. The built-in **Generic** profile detects working and idle from the flow of output alone. Changes take effect immediately, without restarting the agent.
+A detection profile tells Neova how to read a CLI's terminal output, so it can show whether an agent is working, idle or needs your attention. The built-in **Generic** profile detects working and idle from the flow of output alone. Changes take effect immediately, without restarting the agent. **How detection works**, next to the intro, explains profiles and how to write a pattern.
 
 The **Profiles** list is on the left. Click **New** to create a profile, or use the arrow next to it and choose **Add profile from catalogue**. **Starter patterns for common CLIs** opens a set of ready-made Claude Code patterns with a **Copy** button for each.
 
-Click a profile to edit it on the right:
+Click a profile to edit it on the right. The four pattern lists fold; each title shows how many patterns it holds, and **Attention patterns** starts open. Point at ⓘ next to a title for the full explanation.
 
 | Part | What it does |
 |---|---|
@@ -68,12 +68,12 @@ Click a profile to edit it on the right:
 | **Delete** | Deletes the profile after you confirm. Not available on **Generic**, which every agent falls back to. A profile that agents use cannot be deleted; a dialog lists those agents. |
 | **Attention patterns** | Text that means the agent is waiting for you, such as a permission prompt. Any match shows **Needs Attention**, even while output is still flowing. |
 | **Working patterns** | Text that means the agent is producing output. |
-| **Byte-flow window (ms)** and **Byte-flow threshold** | How much output, over what time, counts as working. |
+| **Byte-flow window (ms)** and **Byte-flow threshold** | Inside **Working patterns**. How much output, over what time, counts as working. |
 | **Idle patterns** | Text that means the agent is back at its ready prompt. A match shows **Idle** right away. |
 | **Input ready patterns** | Text that means the CLI is ready for the next message. Neova waits for it before it sends a message. |
-| **Ready-signal timeout (ms)** | How long Neova waits for the input-ready signal before it sends anyway. From 500 to 30000. The default is 10000. |
+| **Ready-signal timeout (ms)** | Inside **Input ready patterns**. How long Neova waits for the input-ready signal before it sends anyway. From 500 to 30000. The default is 10000. |
 
-Each pattern list has **Add pattern**. A pattern has a name, an **Enabled** check box, a regular expression and a remove button. Patterns in one list are combined with OR: any one match is enough. Matching is case-sensitive. Enter the expression without surrounding slashes. Click **Test against recent terminal output** to try the expression on a running agent's output.
+Each pattern list has **Add pattern**. A pattern is one row: a switch to turn it on or off, its name, the regular expression, **Test** and a remove button. Patterns in one list are combined with OR: any one match is enough. Matching is case-sensitive. Enter the expression without surrounding slashes. Click **Test** to try the expression on a running agent's output, right under that row.
 
 ## Skills
 
@@ -83,26 +83,22 @@ One place for what your agents know and what you ask them to do. The page has tw
 
 ### Skills
 
-A skill is know-how an agent loads when it needs it, with `list_skills` and `get_skill`. It can contain replacement fields such as `{task.title}`. To send a message from chat or a task button, use an [action](#actions) instead; an action can ask the agent to use a skill. The section has two tabs at the top: **Global Skills** and **Project Skills**.
+A skill is know-how an agent loads when it needs it, with `list_skills` and `get_skill`. It can contain replacement fields such as `{task.title}`. To send a message from chat or a task button, use an [action](#actions) instead; an action can ask the agent to use a skill.
 
-#### Global Skills and Project Skills
+#### Project and Global skills
 
-**Global Skills** are available in every project. **Project Skills** belong to the open project.
+The page lists both kinds, like **Actions** below it: **Project** (this project only) first, then **Global** (every project). Each skill is one row: its name, a badge when it has one, and the description on one line.
 
-Both tabs show the same table:
-
-| Column | What it shows |
+| Badge or sign | Meaning |
 |---|---|
-| **Title** | The skill's name. Skills that ship with Neova show **System default**. A global skill from the catalogue shows **Update available** when there is a newer version. |
-| **Description** | A short description. |
-| **Skill** | The start of the skill's text. Hover to see all of it. |
-| Buttons | **Duplicate skill** and **Delete skill**. A system default shows a lock instead: it is read-only. |
+| **System default** and a lock | Ships with Neova. It opens in **View skill**, read-only, and can't be deleted. |
+| **From catalogue · v1.2** | Added from the catalogue. **Update available** shows when there is a newer version. |
 
-Above the table, **Search skills...** filters by name and description.
+Click a row to open the skill. Hover a row and click **⋯** for **Edit**, **Duplicate** and **Delete**.
 
-Click a row to open the skill. A system default opens in **View skill**, read-only.
+**Search skills...** filters both groups by name and description. A group without matches is hidden while you search.
 
-On **Global Skills**, the arrow next to **Create Skill** has **Add skill from catalogue**. On **Project Skills**, **Import Skills** copies skills from another project folder: pick the folder, select the skills, and resolve any conflicts with skills you already have.
+The arrow next to **New skill** has **New global skill** and **From catalogue…**. **Import Skills**, next to **Project**, copies skills from another project folder: pick the folder, select the skills, and resolve any conflicts with skills you already have.
 
 #### Skill fields
 
@@ -118,12 +114,12 @@ For the full list of fields you can use in **Skill Content**, see [Replacement f
 
 #### How to create a skill
 
-1. Open **Global Skills** or **Project Skills**.
-2. Click **Create Skill**.
+1. Click **New skill** for a project skill, or the arrow next to it and **New global skill**.
+2. A form opens.
 3. Fill in **Title**, **Description** and **Skill Content**.
 4. Click **Create skill**, or press ⌘S.
 
-To change a skill, click its row, edit it and click **Save Changes**. To remove it, click **Delete skill** in the form or the bin in the table, then confirm. If you close the form with unsaved changes, Neova asks whether to discard them.
+To change a skill, click its row, edit it and click **Save Changes**. To remove it, click **Delete skill** in the form, or **⋯** › **Delete** on its row, then confirm. If you close the form with unsaved changes, Neova asks whether to discard them.
 
 ### Actions
 
