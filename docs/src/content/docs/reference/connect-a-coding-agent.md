@@ -88,7 +88,7 @@ The card shows the state of the target file in the project folder:
 | **Update Neova in your MCP configuration** | **Update**. The entry exists but points to another connector path or project folder. |
 | **Neova is configured in this project** | **Configured**. Nothing to do. |
 
-On the **Claude Code** tab, a second card, **Report agent status for Claude sessions you start yourself**, adds status hooks to `.claude/settings.local.json`. Click **Add to settings**. Agents that Neova starts report their status without it.
+On the **Claude Code** tab, the row **Status for a Claude you start yourself** adds status hooks to `.claude/settings.local.json`. It shows three checks; click the button it offers (**Create the file**, **Add the hooks** or **Update the hooks**) until it says **All set**. Agents that Neova starts report their status without it.
 
 Restart the agent after you add or update the entry, so it reads the new configuration. Claude Code asks whether to use the servers in `.mcp.json`; approve **neova**.
 

@@ -316,7 +316,7 @@ On **Claude Code** and **Cursor**, a card writes the file for you:
 | **Update Neova in your MCP configuration** | **Update** | Replaces an old Neova entry. |
 | **Neova is configured in this project** | **Configured** | Nothing to do. |
 
-On **Claude Code**, a second card, **Report agent status for Claude sessions you start yourself**, adds Neova's status hooks to `.claude/settings.local.json`. Agents that Neova starts already report their status. Click **Add to settings**, or **Update** when the hooks are out of date.
+On **Claude Code**, the row **Status for a Claude you start yourself** adds Neova's status hooks to `.claude/settings.local.json`, so a `claude` you start by hand in a Neova terminal shows working and idle too. Agents that Neova starts already report their status. The row shows three checks: the settings file is in the project, Neova's status hooks are in it, and they are up to date with this version of Neova. When all three are ticked it says **All set**. Otherwise one button says what it will do: **Create the file**, **Add the hooks** or **Update the hooks**. Once the hooks are in, Neova updates them by itself when you open the project after an app update.
 
 For a step-by-step guide per agent, see [Connect a coding agent](/reference/connect-a-coding-agent/).
 
