@@ -90,6 +90,15 @@ test('agent with app-owned fields or a local image avatar fails', () => {
   assert.ok(validateItem('agent', 'helper.md', withImage).errors.some((e) => e.includes('imagePath')));
 });
 
+test('contextThreshold is accepted, but only with a minAppVersion that knows it', () => {
+  const withAlert = AGENT.replace('  - type: agentMentioned\n', '  - type: agentMentioned\n  - type: contextThreshold\n');
+  assert.ok(validateItem('agent', 'helper.md', withAlert).errors.some((e) => e.includes('minAppVersion "2.5.1"')));
+  const tooOld = withAlert.replace('name: "Helper"', 'minAppVersion: "2.5.0"\nname: "Helper"');
+  assert.ok(validateItem('agent', 'helper.md', tooOld).errors.some((e) => e.includes('minAppVersion "2.5.1"')));
+  const ok = withAlert.replace('name: "Helper"', 'minAppVersion: "2.5.1"\nname: "Helper"');
+  assert.deepEqual(validateItem('agent', 'helper.md', ok).errors, []);
+});
+
 test('catalogueId must match the folder type and version must be semver', () => {
   const wrongType = SKILL.replace('skill.thing', 'agent.thing');
   assert.ok(validateItem('skill', 'thing.md', wrongType).errors.some((e) => e.includes('must start with "skill."')));

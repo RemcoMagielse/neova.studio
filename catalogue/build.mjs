@@ -18,7 +18,7 @@ import { createHash } from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { compareToPublished } from './versions.mjs';
+import { compareToPublished, compareVersions } from './versions.mjs';
 
 export const SCHEMA_VERSION = 1;
 export const MAX_ITEM_BYTES = 256 * 1024;
@@ -39,8 +39,10 @@ const SLUG_RE = new RegExp(`^${SLUG}$`);
 const SEMVER_RE = /^\d+\.\d+\.\d+$/;
 const EVENT_TYPES = new Set([
   'agentMentioned', 'questionAnswered', 'taskAssigned', 'taskUnassigned',
-  'backlogReminder', 'scheduleFired', 'stageTaskEntered',
+  'backlogReminder', 'scheduleFired', 'stageTaskEntered', 'contextThreshold',
 ]);
+// Event types older apps reject: an agent using one must not be offered to them.
+const EVENT_MIN_APP = { contextThreshold: '2.5.1' };
 // Must match AVATAR_ICONS / AVATAR_COLORS in neova-flows src/components/AgentAvatar.tsx.
 const AVATAR_ICONS = new Set([
   'bot', 'code', 'bug', 'palette', 'shield', 'terminal', 'wrench', 'search', 'cpu', 'database',
@@ -191,6 +193,11 @@ function validateAgent(meta, body, errors) {
           errors.push(`unknown event subscription: ${JSON.stringify(sub)}`);
         } else if (sub.stages !== undefined && !Array.isArray(sub.stages)) {
           errors.push(`"stages" of ${sub.type} must be a list`);
+        } else if (EVENT_MIN_APP[sub.type]) {
+          const min = EVENT_MIN_APP[sub.type];
+          const ok = typeof meta.minAppVersion === 'string' && SEMVER_RE.test(meta.minAppVersion)
+            && compareVersions(meta.minAppVersion, min) >= 0;
+          if (!ok) errors.push(`${sub.type} needs minAppVersion "${min}" or higher; older apps reject it`);
         }
       }
     }
