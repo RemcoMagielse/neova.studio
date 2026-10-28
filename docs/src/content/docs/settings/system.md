@@ -132,7 +132,17 @@ Open it from **Settings › Other projects**.
 
 Let your agents hand work to the agents of another Neova project, for example another team's. Your agents get access to that project's board, with only the tools its owner allows.
 
-The page lists your connections. Each shows its state:
+The page has two groups.
+
+### Incoming
+
+The projects whose agents can hand work to yours. Requests waiting for you come first: click **Review** to choose what they may do, or **Decline**. You can also decide them on [Agent tools › Access](/settings/agents/#access).
+
+Below them are the projects you accepted, each with what they may do, when their key was last used, and **Connected now** while one of their agents is connected. **Remove** withdraws their key after you confirm; to connect again, they send a new request.
+
+### Outgoing
+
+The projects your agents can hand work to. Each shows its state:
 
 | State | What it means |
 |---|---|
@@ -143,8 +153,6 @@ The page lists your connections. Each shows its state:
 | **Access withdrawn** | They withdrew access. Your agents can no longer reach it. |
 
 Removing a working connection asks you to confirm. Neova removes the entry from `.mcp.json`, and the other project withdraws the key. To connect again, send a new request.
-
-Requests from other projects to reach yours show at the top of this page, and on [Agent tools › Access](/settings/agents/#access). Click **Review** to choose what they may do, or **Decline**.
 
 ### How to connect to another project
 
