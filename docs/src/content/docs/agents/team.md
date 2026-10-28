@@ -75,7 +75,12 @@ The list shows each agent's name, description and version, with one of these on 
 
 The details show the **Start command** and the **Instructions**. Adding an agent does not start it.
 
-If an agent with the same name already exists, Neova offers **Install as "…"** with a new name. Nothing is overwritten.
+If you already have an agent with that name, you choose:
+
+- **Replace mine**: the catalogue version takes over your agent in every project that uses it. Your agent keeps its name. Only offered when your agent is in your Agent Library.
+- **Install as new**: under another name. Neova fills in a free one, like "Coach 2", which you can change.
+
+Changes you make to an agent never go back to the catalogue.
 
 An update shows **What changes**. If the start command changes, it shows the old and the new command. Click **Update**, or **Skip this version**. If you changed your copy since you installed it, the buttons are **Update and replace my changes** and **Keep mine**.
 
