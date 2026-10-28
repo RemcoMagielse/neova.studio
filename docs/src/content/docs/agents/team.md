@@ -46,6 +46,8 @@ Each card shows:
 
 A card has an amber edge on the left when it has something for you. Hover over a card to see **Run another**, which starts another run of the same agent, and **Stop**. Click a card to open the agent's terminal in **Agents › Sessions**. When an agent celebrates a milestone, confetti bursts from its card.
 
+Right-click a card for **Start**, **Start on goal**, **Edit** and **Delete**. The Start items are greyed out while the agent runs. **Delete** asks first; a global agent only leaves this project and stays in your Agent Library.
+
 ### Not running
 
 Agents that aren't running are listed in one line under the board, after **Not running**, with their avatar and name. Click a name to start the agent. Click the arrow next to it to start it in a goal's folder instead.

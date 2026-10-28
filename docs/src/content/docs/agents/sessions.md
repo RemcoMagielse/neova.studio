@@ -36,6 +36,8 @@ Hover over a row for its buttons:
 | **Run another** | The agent is running | Starts a second run of the same agent and selects it. |
 | **Stop** | The agent is running | Stops the agent's terminal. |
 
+Right-click a row for **Start**, **Start on goal**, **Edit** and **Delete**, the same menu as on **Agents › Team**. The Start items are greyed out while the agent runs; a folded list adds **Run another** and **Stop** for a running agent. **Delete** asks first; a global agent only leaves this project and stays in your Agent Library.
+
 Drag a row by its handle to change the order. The order is also used by **Order** sorting on **Agents › Team**. Dragging is off while you search.
 
 ## Agent header
@@ -91,7 +93,7 @@ When you select an agent that isn't running, the page shows its overview instead
 - The name, description, when it was last active and its start command.
 - **Instructions**: the first line, with **Edit instructions**.
 - **Events**, **Backlog** and **Notebook** cards, with **Manage**, **Open backlog** and **Open notebook**. Each opens that tab in the Agent Editor.
-- **Edit Agent** and **Start Terminal** buttons.
+- **Edit Agent** and **Start Terminal** buttons, and **⋯** with **Delete**.
 
 ## How to start an agent
 
