@@ -38,7 +38,7 @@ Agents can list the names with `list_secrets`. No tool gives them a value.
 This keeps keys out of chat, tasks and files by accident. An agent could still print a variable on purpose, so only add the keys your agents need.
 :::
 
-Environment variables don't change in an agent that was already running. If a program reads the variable rather than using `neova-secret`, the page says how many running agents don't have the change yet; click **Restart** to start them again. They start fresh: their conversation starts over, as when you stop and start an agent yourself.
+Environment variables don't change in an agent that was already running. A program that reads `$NAME` instead of using `neova-secret` gets the new value after you restart that agent.
 
 ## How to add a secret
 
