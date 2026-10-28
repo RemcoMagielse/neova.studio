@@ -156,7 +156,7 @@ Shared experience: short lessons from earlier sessions, kept across projects. Us
 |---|---|---|
 | `register_agent` | Sets the agent's name. Returns `success: false` when the name is taken. See [Connect a coding agent](/reference/connect-a-coding-agent/#register_agent). | `preferredName` |
 | `notify_user` | Posts a notification to **Agents › Activity**. Depending on your connector settings, it also goes to Telegram. Can carry up to 4 buttons and 4 images. | `message`*, `level` (`info`, `success`, `warning`), `taskId`, `actions`, `images` |
-| `ask_user` | Asks you a question in **Agents › Activity**. Returns a `questionId` right away; the agent checks for your answer with `get_response`. | `question`*, `options`, `allowFreeform` (default true), `allowMultiple` (default false), `taskId`, `priority` (`normal`, `high`) |
+| `ask_user` | Asks you a question in **Agents › Activity**. Returns a `questionId` right away; the agent checks for your answer with `get_response`. | `question`*, `options`, `allowFreeform` (default true), `allowMultiple` (default false), `taskId`, `priority` (`normal`, `high`), `images` (up to 4 screenshots, shown with the question) |
 | `get_response` | Returns your answer to one question, or `null` when you have not answered yet. | `questionId`* |
 | `get_responses` | Returns all answered questions for this agent. | None |
 | `get_agent_instructions` | Returns an agent's instructions. Without parameters, returns the calling agent's own. | `agentId`, `agentName` |
