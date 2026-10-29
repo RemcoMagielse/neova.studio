@@ -109,7 +109,7 @@ The status bar shows the state of Neova and your agents. Hover over an item for 
 | **Terminals** | Running tool terminals | Tools › Terminal |
 | **Email**, **Telegram**, **GitHub** | Connected apps | Settings › Apps |
 | **Web** | The web server and its port | Settings › Phone & browser |
-| **Neova Git** | Backups of the `.neova/` folder | Tools › Git |
+| **Git** | Your code's branch and uncommitted changes, and backups of the `.neova/` folder | Tools › Git |
 | **MCP** | The MCP server, its port and the connected agents | Settings › Agent tools |
 
 The dot next to **Activity** is amber when a question is waiting for you. The dot next to **Agents** is green when an agent is running, amber when one needs your attention, and red when one has an error.
