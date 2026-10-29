@@ -66,6 +66,12 @@ Agents can post a card: a title, an optional short line and description, and a l
 
 An item can carry a task or goal pill. A card with more than six items shows **+n more**.
 
+### Canvases
+
+An agent can show you a small interactive page: a demo, a mock-up or a simulation. The card shows its name and which agent made it. Nothing runs until you click **Run**. **Expand** opens it over the whole window, where **Download** saves the page.
+
+A canvas runs sealed off. It can't reach the app, your files, the internet or other agents, and it can't open windows. It can send a short result back to the agent that made it, such as the option you picked. The card lists what it sent.
+
 ### Reactions
 
 Hover over a message to see **React** and **Reply**.

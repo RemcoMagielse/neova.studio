@@ -36,6 +36,8 @@ An open question shows the agent's name with **needs input**, the question, up t
 - **View related task** opens the task the question is about.
 - **×** (**Ignore**) ignores the question. The agent gets no answer.
 
+Some questions ask you to fill something in: a checklist to tick off, or a box for an ID or a number. When the question has no options, you fill it in right on the card and click **Send**. **Send** stays off until everything is filled in correctly, and a wrong entry tells you what is expected. If the question also has options, click it to answer in the answer window. These questions can't be answered from the phone.
+
 An answered question collapses to **You responded:** with your answer. An ignored question collapses to **Ignored**.
 
 ### Notifications
@@ -75,7 +77,7 @@ Clicking a question opens a window titled **[Agent] is asking:**. The question s
 | **Cancel** | Closes the window. If you started an answer, Neova asks **Discard response?** |
 | **Send Response** | Sends your answer to the agent. |
 
-An answered question opens read-only with **You selected:**, **Your feedback:** and the time. An ignored question says **No response was sent to the agent.** Click **Respond anyway** to answer it after all.
+An answered question opens read-only with **You selected:**, **You filled in:**, **Your feedback:** and the time. An ignored question says **No response was sent to the agent.** Click **Respond anyway** to answer it after all.
 
 Clicking a notification opens **Message from [Agent]** with the whole message, its images and buttons. Click **Dismiss** or **Close**.
 
