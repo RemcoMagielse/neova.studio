@@ -255,7 +255,7 @@ To change the port, click **Stop Server**, type the new port and click **Start S
 | **Presets** tab | Named sets of tools that you apply to grants. |
 | **Recent refusals** | Connections that were refused, with the agent's name, the reason and when. Shown when there are any. |
 
-When another Neova project asks to connect, **Connection requests** shows at the top of **Access**. Click **Review** to choose what they may do and approve, or **Decline**. See [Other projects](/settings/system/#other-projects).
+When another Neova project asks to connect, **Connection requests** shows at the top of **Access**. Click **Review** to choose what they may do and approve, or **Decline**. A request sent **Both ways** says so: approving it also connects this project to theirs, with the access they chose. See [Other projects](/settings/system/#other-projects).
 
 When you turn on **Require access keys**, Neova asks you to confirm. It then gives this project's own agents a key and adds it to `.mcp.json`. Agents that are running stay connected and use the key after their next restart. Config files of other tools, such as Cursor's or Gemini's, are not changed.
 

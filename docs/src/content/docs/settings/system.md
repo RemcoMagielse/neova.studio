@@ -172,9 +172,12 @@ Removing a working connection asks you to confirm. Neova removes the entry from 
 1. Open the other project in its own Neova window on this computer.
 2. Click **Connect to a team**. The dialog lists the Neova windows that are open now.
 3. Pick the project. Under **Your team's name, as they will see it**, check the name.
-4. Click **Send request**.
-5. When they approve, the connection shows **Approved — finish setup**. Click **Finish setup**. The dialog shows what they allowed and the entry Neova adds to `.mcp.json`. The key is stored for you and never shown.
-6. Restart your agents. They reach the other project under the server name shown.
+4. Leave **Both ways: their agents can hand work to us too** on to connect both projects, and choose under **What they may do here**. Turn it off to connect one way only.
+5. Click **Send request**.
+6. When they approve, the connection shows **Approved — finish setup**. Click **Finish setup**. The dialog shows what they allowed and the entry Neova adds to `.mcp.json`. The key is stored for you and never shown.
+7. Restart your agents. They reach the other project under the server name shown.
+
+With **Both ways**, the other project's approve dialog says so, and **Approve** also writes your project into their `.mcp.json`: their agents can reach yours after a restart. If they decline, or don't approve within a day, your project withdraws their access again. Each side's access lists under **Incoming** on the other side, and can be removed there on its own.
 
 ## Phone & browser
 
