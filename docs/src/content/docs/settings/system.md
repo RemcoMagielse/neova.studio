@@ -1,6 +1,6 @@
 ---
 title: Connections
-description: Connect email, Telegram, GitHub, Stream Deck and your phone, hand work to other Neova projects, and open Neova from another device.
+description: Connect email, Telegram, GitHub, Forgejo, Stream Deck and your phone, hand work to other Neova projects, and open Neova from another device.
 sidebar:
   order: 4
 ---
@@ -11,17 +11,18 @@ The **Connections** group in the Settings rail holds three pages: **Apps**, **Ot
 
 Open it from **Settings › Apps**, or click **Email**, **Telegram** or **GitHub** in the status bar.
 
-Bring the apps you already use into Neova: turn emails and GitHub issues into tasks, chat with your agents from Telegram, and reach them from a Stream Deck or your phone. Click **Add connection** and pick one:
+Bring the apps you already use into Neova: turn emails and GitHub or Forgejo issues into tasks, chat with your agents from Telegram, and reach them from a Stream Deck or your phone. Click **Add connection** and pick one:
 
 | Option | What it does |
 |---|---|
 | **Email account** | Emails in a chosen folder become tasks. |
 | **Telegram bot** | Chat with your agents from your phone. |
-| **GitHub repo** | Pull issues into a stage. |
+| **GitHub repo** | Pull issues into a stage, and see pull requests in **Tools › Git**. |
+| **Forgejo repo** | The same for a repository on a Forgejo server, such as Codeberg. |
 | **Stream Deck** | A key per running agent; press it to open the agent's terminal. |
 | **Neova Capsule** | Your phone: voice notes and the Assistant. |
 
-The page lists your connections in sections: **Email**, **Telegram**, **GitHub** and **Neova Capsule**.
+The page lists your connections in sections: **Email**, **Telegram**, **GitHub**, **Forgejo** and **Neova Capsule**.
 
 ### Email
 
@@ -79,7 +80,7 @@ Neova renames the bot to match the project.
 
 ### GitHub
 
-A GitHub connection pulls issues from one repository into a stage when you ask. Each task links back to its issue. Issues already imported are skipped. Nothing is sent to GitHub.
+A GitHub connection pulls issues from one repository into a stage when you ask. Each task links back to its issue. Issues already imported are skipped. Nothing is sent to GitHub. Its token also lets [Tools › Git](/tools/git/#pull-requests) show each branch's pull request.
 
 Each repository shows which issues it pulls (**All open issues** or **Issues labelled** *label*) and its status.
 
@@ -93,10 +94,22 @@ Each repository shows which issues it pulls (**All open issues** or **Issues lab
 
 1. Click **Add connection › GitHub repo**.
 2. Fill in **Repository** as `owner/name`, or paste the repository's web address.
-3. Paste an **Access token**: a fine-grained token with read-only access to Issues on this repository. **Create one on GitHub** opens the page to make one. The token is stored in your Keychain.
+3. Paste an **Access token**: a fine-grained token with read-only access to Issues and Pull requests on this repository. **Create one on GitHub** opens the page to make one. The token is stored in your Keychain.
 4. Under **Which issues**, choose **All open issues** or **Only open issues with the label** and type the label.
 5. Under **Add new issues to Stage**, pick a stage.
 6. Click **Test connection** to see how many issues match, or click **Save**. Save checks the connection first.
+
+### Forgejo
+
+A Forgejo connection works like a GitHub one, for a repository on a Forgejo server, such as Codeberg or your own. It lists under **Forgejo** with the same buttons.
+
+### How to add a Forgejo repo
+
+1. Click **Add connection › Forgejo repo**.
+2. Fill in **Server**, for example `codeberg.org`.
+3. Fill in **Repository** as `owner/name`, or paste the repository's web address.
+4. Paste an **Access token** with read access to issues and repositories. Make one on your Forgejo under **Settings › Applications**. The token is stored in your Keychain.
+5. Choose **Which issues** and the stage, and click **Save**. Save checks the connection first.
 
 ### Stream Deck
 

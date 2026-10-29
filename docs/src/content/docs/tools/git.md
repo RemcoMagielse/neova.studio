@@ -13,6 +13,8 @@ Open it from **Sidebar › Tools › Git**.
 
 The subtitle sums up the open tab. **Refresh** reads the repository again. The page also refreshes each time you open it.
 
+On the **Project** tab, when the checked-out branch has a pull request, the header shows **Open PR #**_n_ with the pull request's state. See [Pull requests](#pull-requests).
+
 | Tab | Shows |
 |---|---|
 | **Project** | Your code repository. The subtitle shows the number of branches, commits and unpushed commits. |
@@ -28,6 +30,8 @@ The **Project** and **Neova** tabs use the same layout: branches and working tre
 **Branches** lists the local branches. The checked-out branch is bold and has a **HEAD** badge. ↑ and ↓ show how many commits the branch is ahead of or behind its remote.
 
 Click a branch to highlight its line in the graph. The other lines fade and the graph scrolls to the branch's latest commit. Click the branch again to clear the highlight.
+
+A branch with a pull request shows a chip with its number. See [Pull requests](#pull-requests).
 
 ### Working tree
 
@@ -111,7 +115,7 @@ When goal worktrees are on, each goal you open work on gets its own folder next 
 | **Not on a goal** | A folder whose name matches no goal, with the commits it has that its base doesn't. **Link to goal…** links it to a goal. |
 | Folder is gone | A folder that no longer exists but git still lists. **Clean up** removes git's record of it. The branch and its commits stay. |
 
-Every row with a folder has **Copy path** and **Reveal in Finder**. Click the branch chip to copy the branch name.
+Every row with a folder has **Copy path** and **Reveal in Finder**. Click the branch chip to copy the branch name. A branch with a pull request shows its chip next to the branch chip.
 
 A goal row also shows a sketch of its branch against the base branch, a line such as **Started from main at a1b2c3d** with whether the branch is on GitHub, and the result of the last action you ran.
 
@@ -127,8 +131,28 @@ Hover over a button to preview what it will do in the sketch. A greyed-out butto
 
 Open and close work on a goal from [Goals](/project/goals/).
 
+## Pull requests
+
+When your code is on GitHub or on a Forgejo server, such as Codeberg, the **Project** and **Worktrees** tabs show each branch's pull request. Neova only reads pull requests. Click a chip, or **Open PR #**_n_ in the header, to open the pull request in your browser.
+
+The chip shows the number and an icon for the state:
+
+| State | Icon |
+|---|---|
+| Open | Green pull request icon |
+| Draft | Grey draft icon |
+| Merged | Merge icon in your accent colour |
+| Closed | Grey closed icon |
+
+A dot after the number shows the checks: green when they pass, yellow while they run, red when one fails. Hover over the chip to see the state, the checks and the title. When a branch has more than one pull request, the chip shows the newest open one, otherwise the most recently updated one.
+
+Neova looks up pull requests when you open the page, when you click **Refresh**, and once a minute while the page is on screen. It never looks in the background. When the lookup fails, for example offline, the chips stay as they were.
+
+Public repositories work without signing in. For a private repository, Neova uses the token of a GitHub or Forgejo connection in [Settings › Apps](/settings/system/#apps). Without one, there are no chips: the header shows **Pull requests**, which opens the host's list of pull requests for the checked-out branch. An expired token shows the same.
+
 ## Related
 
 - [Settings › Version history](/settings/workflow/#version-history) turns goal worktrees on and sets up Neova Git.
+- [Settings › Apps](/settings/system/#apps): GitHub and Forgejo connections, whose tokens show pull requests here.
 - [Goals](/project/goals/): open and close work on a goal.
 - [MCP tools](/reference/mcp-tools/#goals): `enter_goal` and `request_merge` let agents work in a goal's folder and merge it.
