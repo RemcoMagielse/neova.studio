@@ -7,7 +7,7 @@ sidebar:
 
 Git shows the history of two repositories: your project's code, and the Neova repository that versions your tasks, wiki pages, agent notes, goals and skills. It also lists the folders where agents work on goals. The page reads history. It does not check out branches or change your code repository.
 
-Open it from **Sidebar › Tools › Git**.
+Open it from **Sidebar › Tools › Git**. It opens in the [bottom panel](/getting-started/find-your-way-around/#bottom-panel), next to Terminal, so you can see your changes while you work on another page.
 
 ## Header and tabs
 

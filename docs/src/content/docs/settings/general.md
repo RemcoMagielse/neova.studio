@@ -77,7 +77,7 @@ The **Tabs** section is folded shut. Click it to open it.
 | Setting | What it does |
 |---|---|
 | **Reopen my tabs when I open a project** | Each project comes back with the tabs and split view you left it with. On by default. |
-| **Where a page opens** | When two panes are open, where each page opens: **Wide** in the wider pane, **Narrow** in the smaller one, **Anywhere** in the pane you are working in. One row per page. |
+| **Where a page opens** | Where each page opens: **Wide** in the wider pane, **Narrow** in the smaller one, **Anywhere** in the pane you are working in, **Bottom panel** in the [bottom panel](/getting-started/find-your-way-around/#bottom-panel). Wide and Narrow apply when two panes are open. Terminal and Git open in the bottom panel by default. One row per page. |
 
 See [Find your way around](/getting-started/find-your-way-around/) for tabs and split view.
 

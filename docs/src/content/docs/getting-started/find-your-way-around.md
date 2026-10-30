@@ -1,6 +1,6 @@
 ---
 title: Find your way around
-description: The sidebar, tabs and split view, search, Insert Reference, the Assistant and the status bar.
+description: The sidebar, tabs, split view and the bottom panel, search, Insert Reference, the Assistant and the status bar.
 ---
 
 The Neova window has three parts: the **sidebar** on the left, the **tabs** with the page you're working on in the middle, and the **status bar** at the bottom.
@@ -62,6 +62,19 @@ Click the **Split the view** button at the right end of the tab bar. A second pa
 
 - To move a tab to the other pane, click the arrow on the active tab (**Move this tab to the right pane** or **Move this tab to the left pane**).
 - To go back to one pane, click **Close the split**. The tabs from the right pane move to the left pane.
+
+## Bottom panel
+
+The bottom panel sits under the panes, across the full width, and keeps pages in view while you switch tabs above. **Terminal** and **Git** open there. The panel has its own tab bar.
+
+- **Ctrl+`** shows the panel, or folds it to a thin bar. When the panel is closed and empty, Ctrl+` opens Terminal in it.
+- **Fold the panel** (at the right of its tab bar) folds it to a bar that shows the open page and the number of tabs. Click the bar to bring the panel back as it was.
+- **Close the panel** hides it. Its pages keep running, so a terminal goes on with what it was doing. Ctrl+` brings it back. Closing the panel's last tab also closes it.
+- Drag the line above the panel to change its height. Neova remembers the height.
+- To move a page into the panel, right-click its tab and choose **Move to bottom panel**. From the panel, choose **Move to main pane**.
+- **Always open in bottom panel** in the same menu makes a page open there from now on.
+
+Pages you open from the sidebar still open in the panes above, also while you are working in the panel.
 
 ## Search
 

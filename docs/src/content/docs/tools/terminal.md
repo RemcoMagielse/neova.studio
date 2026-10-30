@@ -7,7 +7,9 @@ sidebar:
 
 Terminal gives you plain shells inside Neova, for example a dev server in one and free commands in another. No agent runs in them.
 
-Open it from **Sidebar › Tools › Terminal**. The first time you open it, one terminal starts.
+Open it from **Sidebar › Tools › Terminal**, or press **Ctrl+`**. The first time you open it, one terminal starts.
+
+Terminal opens in the [bottom panel](/getting-started/find-your-way-around/#bottom-panel), under your other pages, so it stays in view while you switch tabs. To have it open in a pane instead, right-click its tab and choose **Move to main pane**, then **Always open in this pane**.
 
 ## Terminal tabs
 

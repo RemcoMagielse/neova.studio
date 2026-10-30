@@ -15,6 +15,7 @@ This page lists every keyboard shortcut in Neova, grouped by where it works, fol
 | ⌘⇧K | Insert Reference. Also works while a terminal has focus. |
 | ⌘J | Open or close the Assistant |
 | ⌘\ | Collapse or expand the sidebar |
+| Ctrl+` | Show or fold the [bottom panel](/getting-started/find-your-way-around/#bottom-panel). When it is closed and empty, opens Terminal in it. Also works while a terminal has focus. |
 | ⌘1 to ⌘5 | Go to Project, Agents, Tasks, Tools or Settings |
 | ⌘⌥← / ⌘⌥→ | Go to the previous or next page in the sidebar. After the last page it continues at the first. |
 | ⌘-click | Open a page, search result, task card or task link in a new tab |
