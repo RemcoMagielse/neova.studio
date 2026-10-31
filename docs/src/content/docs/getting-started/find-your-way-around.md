@@ -65,7 +65,7 @@ Click the **Split the view** button at the right end of the tab bar. A second pa
 
 ## Bottom panel
 
-The bottom panel sits under the panes, across the full width, and keeps pages in view while you switch tabs above. **Terminal** and **Git** open there. The panel has its own tab bar.
+The bottom panel sits under the left pane and keeps pages in view while you switch tabs above. With the view split, the right pane (often Chat) keeps its full height. **Terminal** and **Git** open there. The panel has its own tab bar.
 
 - **Ctrl+`** shows the panel, or folds it to a thin bar. When the panel is closed and empty, Ctrl+` opens Terminal in it.
 - **Show the bottom panel**, the button at the top right next to **Split the view**, opens the panel the same way. Click it again to close the panel.

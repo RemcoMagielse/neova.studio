@@ -11,6 +11,8 @@ Open it from **Sidebar › Tools › Terminal**, or press **Ctrl+`**. The first 
 
 Terminal opens in the [bottom panel](/getting-started/find-your-way-around/#bottom-panel), under your other pages, so it stays in view while you switch tabs. To have it open in a pane instead, right-click its tab and choose **Move to main pane**, then **Always open in this pane**.
 
+In the bottom panel, Terminal is compact so the terminal itself gets the room: one slim row with the terminal's name, **×** and **+**. With several terminals open, click the name to switch between them. Hover over the name to see the shell and its process number.
+
 ## Terminal tabs
 
 A row of tabs runs along the top. Each tab is one terminal.
