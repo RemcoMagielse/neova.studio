@@ -68,6 +68,7 @@ Click the **Split the view** button at the right end of the tab bar. A second pa
 The bottom panel sits under the panes, across the full width, and keeps pages in view while you switch tabs above. **Terminal** and **Git** open there. The panel has its own tab bar.
 
 - **Ctrl+`** shows the panel, or folds it to a thin bar. When the panel is closed and empty, Ctrl+` opens Terminal in it.
+- **Show the bottom panel**, the button at the top right next to **Split the view**, opens the panel the same way. Click it again to close the panel.
 - **Fold the panel** (at the right of its tab bar) folds it to a bar that shows the open page and the number of tabs. Click the bar to bring the panel back as it was.
 - **Close the panel** hides it. Its pages keep running, so a terminal goes on with what it was doing. Ctrl+` brings it back. Closing the panel's last tab also closes it.
 - Drag the line above the panel to change its height. Neova remembers the height.
