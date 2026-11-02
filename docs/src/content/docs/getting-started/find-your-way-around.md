@@ -67,15 +67,16 @@ Click the **Split the view** button at the right end of the tab bar. A second pa
 
 The bottom panel sits under the left pane and keeps pages in view while you switch tabs above. With the view split, the right pane (often Chat) keeps its full height. **Terminal** and **Git** open there. The panel has its own tab bar.
 
-- **Ctrl+`** shows the panel, or folds it to a thin bar. When the panel is closed and empty, Ctrl+` opens Terminal in it.
-- **Show the bottom panel**, the button at the top right next to **Split the view**, opens the panel the same way. Click it again to close the panel.
+- **Show the bottom panel**, the button at the top right next to **Split the view**, opens the panel as it was, or with Terminal when it is empty. Click it again to close the panel.
 - **Fold the panel** (at the right of its tab bar) folds it to a bar that shows the open page and the number of tabs. Click the bar to bring the panel back as it was.
-- **Close the panel** hides it. Its pages keep running, so a terminal goes on with what it was doing. Ctrl+` brings it back. Closing the panel's last tab also closes it.
+- **Close the panel** hides it. Its pages keep running, so a terminal goes on with what it was doing. **Show the bottom panel** brings it back. Closing the panel's last tab also closes it.
 - Drag the line above the panel to change its height. Neova remembers the height.
 - To move a page into the panel, right-click its tab and choose **Move to bottom panel**. From the panel, choose **Move to main pane**.
 - **Always open in bottom panel** in the same menu makes a page open there from now on.
 
 Pages you open from the sidebar still open in the panes above, also while you are working in the panel.
+
+For a quick word with an agent without changing your layout, use the [console](/agents/sessions/#console) instead: **Ctrl+`** drops it over any page.
 
 ## Search
 

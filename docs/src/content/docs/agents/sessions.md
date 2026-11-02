@@ -136,6 +136,16 @@ The dot turns green and the name shows. To undo it, choose **Unlink agent**.
 
 While you type, the agent shows **User typing** on Team and in the list. To add an image, drag it onto the terminal (**Drop image here**). Neova saves it and types a reference to it at the cursor, without sending. To add a task, wiki page or other item, press **⌘⇧K**. See [Insert Reference](/getting-started/find-your-way-around/#insert-reference).
 
+## Console
+
+The console drops an agent's terminal over whatever page you are on, for a quick check-in. Your page stays as it is underneath.
+
+- Press **Ctrl+`** or **Ctrl+§** (the key under Esc) to open it. Press it again, click the page behind it, or click **×** to close it.
+- It opens on the agent that is waiting for you. Otherwise it opens on the one you used last. It always shows the latest output.
+- The row at the top shows every running agent with its status, and **Shell**: your most recent [terminal](/tools/terminal/), or a new one. Click one, or press **Ctrl+1** to **Ctrl+9**.
+- It is the agent's real terminal: type into it as you would on Sessions. **Esc** goes to the agent, for example to interrupt it, and does not close the console.
+- **Open in Sessions** takes you to the agent on this page.
+
 ## Related
 
 - [Team](/agents/team/) and [Agent Editor](/agents/agent-editor/)
