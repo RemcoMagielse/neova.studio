@@ -91,6 +91,17 @@ Opening a result goes to the matching page: a task opens in the task editor, a w
 
 With an empty search box, search shows your **Actions**. Choosing one copies its text for the task you're looking at.
 
+### Message an agent
+
+Type **@** at the start of the search box to send an agent a quick message from any page, without opening Chat.
+
+1. Type **@**. The results become your agents, the one waiting for you first, with what each is working on and how full its context is.
+2. Pick an agent with **↵**. The box turns into a message to that agent.
+3. Type your message. Paste or drop images to add them.
+4. Press **↵**. The message goes to [Chat](/agents/chat/) as `@Agent your message`, and search closes.
+
+**⇧↵** starts a new line. **⌫** in an empty message goes back to the agents.
+
 ## Insert Reference
 
 Press **⌘⇧K** to insert a reference to a task, wiki page, goal, agent, skill or image. Agents can look up anything you reference this way. A snippet goes in as its text.

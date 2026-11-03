@@ -11,7 +11,7 @@ This page lists every keyboard shortcut in Neova, grouped by where it works, fol
 
 | Keys | Action |
 |---|---|
-| ⌘K | Open or close Search |
+| ⌘K | Open or close Search. Type @ first to [message an agent](/getting-started/find-your-way-around/#message-an-agent). |
 | ⌘⇧K | Insert Reference. Also works while a terminal has focus. |
 | ⌘J | Open or close the Assistant |
 | ⌘\ | Collapse or expand the sidebar |
