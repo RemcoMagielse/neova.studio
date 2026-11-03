@@ -9,7 +9,7 @@ Git has two tabs. **Project** is a small Git desktop app for your code: see whic
 
 It works with code on GitHub, GitLab and Forgejo (such as Codeberg). Committing, branches and sync work with any Git server.
 
-Open it from **Sidebar › Tools › Git**. It opens in the [bottom panel](/getting-started/find-your-way-around/#bottom-panel), next to Terminal, so you can see your changes while you work on another page.
+Open it from **Sidebar › Tools › Git**. It opens in the main pane. To keep it in view while you work on another page, right-click its tab and choose **Move to bottom panel**.
 
 ## Header and tabs
 
