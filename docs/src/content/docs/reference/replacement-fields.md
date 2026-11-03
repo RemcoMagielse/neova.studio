@@ -1,13 +1,13 @@
 ---
 title: Replacement fields
-description: The fields you can put in a skill or snippet, and what Neova fills in for each.
+description: The fields you can put in an action or skill, and what Neova fills in for each.
 sidebar:
   order: 3
 ---
 
-Replacement fields are placeholders in an action, skill or snippet. When it runs, Neova replaces each field with a value from the task, the wiki, your snippets, the project folder or your project files.
+Replacement fields are placeholders in an action or skill. When it runs, Neova replaces each field with a value from the task, the wiki or the project folder.
 
-Neova fills in fields when you send an action to an agent, copy it from a task, run it from ⌘K or the menu bar, run it from the chat with `/`, or use it in the Composer.
+Neova fills in fields when you send an action to an agent, copy it from a task, run it from ⌘K or the menu bar, or run it from the chat with `/`.
 
 ## Write a field
 
@@ -16,7 +16,6 @@ Neova fills in fields when you send an action to an agent, copy it from a task, 
 | `{task.title}` | A task field |
 | `{wiki.<page-id>}`, `{wiki.<page-id>.content}` | A wiki page, or one of its fields |
 | `{app.tasksFolder}` | A project folder or file path |
-| `{<key>}` | The content of the snippet with that replacement key |
 | `[if:task.description]…[/if]` | The text between the tags, only when the task or app field has a value |
 
 In the skill editor (**Settings › Skills**), type `{` to pick a field from a list.
@@ -66,12 +65,6 @@ These fields fill in full paths in the open project.
 | `{app.snippetsFolder}` | The snippets folder | `/Users/you/code/my-project/.neova/snippets` |
 | `{app.stagesFile}` | The stages file | `/Users/you/code/my-project/.neova/stages.json` |
 
-## Snippet fields
-
-Give a snippet a replacement key in the snippet editor, for example `api-config`. `{api-config}` in a skill then fills in the content of that snippet.
-
-A snippet can contain fields of its own, including other snippet keys. Neova keeps replacing until no field changes, up to 10 rounds.
-
 ## Conditional blocks
 
 `[if:<field>]` and `[/if]` keep the text between them only when the field has a value. This works with task fields and app fields. Leave out the braces inside the tag.
@@ -88,11 +81,9 @@ On a task without a description, Neova leaves out the whole block.
 
 ## Order
 
-Neova fills in fields in this order: app and wiki fields, snippet fields, task fields. It then repeats the round until nothing changes, so a field that a snippet adds is filled in too. After that, it removes blank lines beyond one in a row and spaces at the end of lines.
+Neova fills in fields in this order: app and wiki fields, then task fields. It then repeats the round until nothing changes, so a field that a wiki page adds is filled in too. After that, it removes blank lines beyond one in a row and spaces at the end of lines.
 
 ## Related
 
 - [Settings › Skills](/settings/agents/)
-- [Snippets](/tools/snippets/)
 - [Wiki](/project/wiki/)
-- [Composer](/tools/composer/)

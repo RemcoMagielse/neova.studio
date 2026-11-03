@@ -92,7 +92,7 @@ With an empty search box, search shows your **Actions**. Choosing one copies its
 
 ## Insert Reference
 
-Press **⌘⇧K** to insert a reference to a task, wiki page, goal, snippet, agent, skill or image. Agents can look up anything you reference this way.
+Press **⌘⇧K** to insert a reference to a task, wiki page, goal, agent, skill or image. Agents can look up anything you reference this way. A snippet goes in as its text.
 
 1. Click where the reference should go: an editor, a text field or an agent's terminal.
 2. Press **⌘⇧K** and search for the item.
