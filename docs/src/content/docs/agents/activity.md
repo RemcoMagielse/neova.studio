@@ -30,9 +30,11 @@ Items are in time order, newest first, with the agent's avatar on the line. A di
 
 ### Questions
 
-An open question shows the agent's name with **needs input**, the question, up to three options and **Click to respond**. High-priority questions are tinted.
+An open question shows the agent's name with **needs input** and the question. High-priority questions are tinted.
 
-- Click the card to answer it.
+- When the agent offers up to four choices and you pick one, the choices are buttons on the card. Click one to answer; the card doesn't open. **Open to read all or comment** opens the full question, for long text or to add a comment.
+- An approval shows **Allow** and **Deny**. Agents send one when they only need your go-ahead, for example before a push.
+- With more choices, or when you can pick several, the card shows up to three of them and **Click to respond**. Click the card to answer it.
 - **View related task** opens the task the question is about.
 - **×** (**Ignore**) ignores the question. The agent gets no answer.
 
@@ -82,6 +84,8 @@ An answered question opens read-only with **You selected:**, **You filled in:**,
 Clicking a notification opens **Message from [Agent]** with the whole message, its images and buttons. Click **Dismiss** or **Close**.
 
 ## How to answer a question
+
+For a question with buttons, such as **Allow** and **Deny**, click the button on the card. Otherwise:
 
 1. Open **Action Required**.
 2. Click the question.
