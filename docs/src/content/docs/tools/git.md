@@ -1,11 +1,13 @@
 ---
 title: Git
-description: Browse the commit history of your code and of Neova's own project data, and follow work on goal branches.
+description: Commit, switch branches, sync and handle pull requests for your code, see which agent works where, and browse the history of Neova's own project data.
 sidebar:
   order: 8
 ---
 
-Git shows the history of two repositories: your project's code, and the Neova repository that versions your tasks, wiki pages, agent notes, goals and skills. It also lists the folders where agents work on goals. The page reads history. It does not check out branches or change your code repository.
+Git has two tabs. **Project** is a small Git desktop app for your code: see which agent works in which folder and on which branch, commit your changes, switch branches, sync with the server and handle pull requests. **Neova** shows the history of the Neova repository that versions your tasks, wiki pages, agent notes, goals and skills. It only reads.
+
+It works with code on GitHub, GitLab and Forgejo (such as Codeberg). Committing, branches and sync work with any Git server.
 
 Open it from **Sidebar › Tools › Git**. It opens in the [bottom panel](/getting-started/find-your-way-around/#bottom-panel), next to Terminal, so you can see your changes while you work on another page.
 
@@ -17,13 +19,83 @@ On the **Project** tab, when the checked-out branch has a pull request, the head
 
 | Tab | Shows |
 |---|---|
-| **Project** | Your code repository. The subtitle shows the number of branches, commits and unpushed commits. |
+| **Project** | Your code repository, as a Git desktop. The subtitle shows the number of branches, commits and unpushed commits. |
 | **Neova** | The Neova repository in `.neova/`, on the branch `neova`. The subtitle shows the number of commits and whether the history is synced or on this machine only. |
-| **Worktrees** | The folders where goals have open work, with a count. This tab appears when **Work on goals in separate folders** is on in **Settings › Version history**, or when a goal folder exists. |
 
-## Repository view
+## Set up Git
 
-The **Project** and **Neova** tabs use the same layout: branches and working tree on the left, the commit graph in the middle, commit details on the right. In a narrow pane, the commit details replace the graph. Click **All commits** to go back.
+When something is missing for everyday Git, **Set up Git** sits at the top of the **Project** tab. It lists only what is missing, with one button per row, and goes away once everything is done:
+
+| Row | Button | What it does |
+|---|---|---|
+| **Git repository** | **Start one** | Makes the project folder a Git repository, on `main`. |
+| **Your name and email** | **Add** | Sets the name and email Git puts on your commits, for every repository on this computer. |
+| **Connected to** _server_ | **Connect** | Points the project at its repository online. Paste the address from the **Code** or **Clone** button on GitHub, GitLab or Forgejo. |
+| **Access to** _server_ | **Add token** | Gives Neova a token for this repository. See [How to give Neova access](#how-to-give-neova-access-to-your-repository). **Not now** hides this row. |
+
+## How to give Neova access to your repository
+
+The repository you work in has its own connection, separate from the Issues connections in [Settings › Apps](/settings/system/#apps). One token lets Neova pull, push and handle pull requests for this repository only.
+
+1. Under **Set up Git**, click **Add token**.
+2. If Neova can't tell which service hosts your code, pick **GitHub**, **GitLab** or **Forgejo**.
+3. Click **Open GitHub** (or GitLab, Forgejo). GitHub and GitLab open with the right settings filled in:
+   - **GitHub**: pick this repository and keep **Contents** and **Pull requests** on **Read and write**.
+   - **GitLab**: keep the scopes **api** and **write_repository**.
+   - **Forgejo**: under **Generate new token**, give **repository** Read and write.
+4. Copy the token, paste it into Neova and click **Check token**. Neova asks the service what the token may do, and says so in plain words when it can't push or can't see the repository.
+5. Click **Done**.
+
+The token is kept in your computer's keychain, never in the project. Without a token, Git uses your computer's own sign-in, such as an SSH key. With a token, Neova uses it for its own pulls and pushes, also when your repository's address is an SSH one.
+
+## Where work happens
+
+The top of the **Project** tab lists every folder work happens in:
+
+- The **Project folder**: your project itself.
+- Each **Goal worktree**: a copy of the project for one goal, on its own branch, so agents on different goals don't get in each other's way. Worktrees appear when **Work on goals in separate folders** is on in **Settings › Version history**.
+
+Each row shows the branch **checked out** there, how many commits it is behind (↓) or ahead (↑) of the server, how many files changed, and the agents working in it, with their avatars. Click a row to look at that folder: the toolbar and the views below follow it.
+
+A worktree's **⋯** menu has **Open in Finder**, **Open the goal**, **Update from main**, **Merge into main**, **Push to the server** and **Close worktree…**. A folder that is gone shows **Clean up**; a folder that matches no goal shows **Open in Finder**.
+
+## Toolbar
+
+| Item | What it does |
+|---|---|
+| **Checked out** _branch_ ▾ | Switch to another branch, or **New branch…**, which starts from the checked-out branch and takes your changes along. A branch in use by another folder says so and can't be picked. |
+| **Sync** ↓ ↑ | Pulls what the server has, then pushes your commits. **Up to date** when there is nothing to do; **Push branch** when the branch isn't on the server yet. |
+| **Checked** _time_ **ago** | When Neova last asked the server for new commits. Click it to check now. |
+| **Changes** · **History** · **Pull requests** | The three views. GitLab calls them **Merge requests**. |
+
+Neova asks the server for new commits when you open Git, and every 5 minutes while Neova is open. It never changes your files when it checks. The status bar's Git item shows ↓ and a number when commits are waiting.
+
+When agents work in the folder, switching branch or throwing away changes first names them and shows their avatars. **Switch anyway** (or **Discard anyway**) goes ahead; the safer route is to give the work a goal with its own folder.
+
+## Changes
+
+**Changes** works like Forgejo's **Files changed**:
+
+- On the left, the changed files grouped by folder, each with a tick box and a letter: **M** changed, **A** new, **D** deleted, **R** renamed, **U** conflict. Click a file to jump to its changes.
+- On the right, every file's changes one after another, with old and new line numbers. Each file has a header with the number of lines changed, a small green and red bar and its state. Click the header to fold it. **Collapse all** folds every file.
+
+To commit:
+
+1. Untick the files you want to leave out. All files are ticked to start with.
+2. Write what you changed.
+3. Click **Commit**. The ▾ menu has **Commit and push**, and **Amend last commit**, which adds the files to your last commit with this message.
+
+Right-click a file and choose **Discard changes…** to throw its changes away. This can't be undone.
+
+## Coming from the server
+
+When the server has commits you don't have yet, **Coming from** _GitHub_ lists them above the view, with who made them and when. Click **Pull** to bring them in, or **Sync**.
+
+When a pull hits a conflict, it stops with **Pull stopped: 2 files conflict** and **Open Terminal**. Sort out the conflict there, or ask an agent. Neova doesn't resolve conflicts itself.
+
+## History
+
+**History** shows the repository view below. The **Neova** tab uses the same layout: branches and working tree on the left, the commit graph in the middle, commit details on the right. In a narrow pane, the commit details replace the graph. Click **All commits** to go back.
 
 ### Branches
 
@@ -104,36 +176,24 @@ You can also start set-up from **Settings › Version history**.
 | **Back up to GitHub** | Whether the history is pushed to a remote (**Backing up to …** or **Not backed up**), and **This computer’s name**, which is shown next to each change. Click **Change** to rename it. |
 | **What gets backed up** | Checkboxes for `tasks/`, `wiki/`, `agents/ (incl. notebooks)`, `goals/ · skills/` and `snippets/`, and the folders that are never included. |
 
-## Worktrees
-
-When goal worktrees are on, each goal you open work on gets its own folder next to the project and its own branch. The **Worktrees** tab lists every folder:
-
-| Row | Shows and offers |
-|---|---|
-| **Your main folder** | The **MAIN** folder and branch, and how many files are uncommitted. |
-| A goal | The goal title, the initials of agents working there, the branch and folder, and **N uncommitted**. Hover over the count to see the files. **Go to goal** opens the goal. |
-| **Not on a goal** | A folder whose name matches no goal, with the commits it has that its base doesn't. **Link to goal…** links it to a goal. |
-| Folder is gone | A folder that no longer exists but git still lists. **Clean up** removes git's record of it. The branch and its commits stay. |
-
-Every row with a folder has **Copy path** and **Reveal in Finder**. Click the branch chip to copy the branch name. A branch with a pull request shows its chip next to the branch chip.
-
-A goal row also shows a sketch of its branch against the base branch, a line such as **Started from main at a1b2c3d** with whether the branch is on GitHub, and the result of the last action you ran.
-
 ## How to bring a goal's work into main
 
-On the goal's row in **Worktrees**, the buttons name the branch the goal started from, usually `main`:
+In **Where work happens**, open the goal worktree's **⋯** menu:
 
-1. If main has moved on, click **Update from main**. This brings main's new commits into the goal branch. Main is not touched.
-2. Click **Merge into main**. This moves your local main forward by the goal's commits. Nothing is sent to GitHub.
-3. To back up or share the branch, click **Push to GitHub**.
-
-Hover over a button to preview what it will do in the sketch. A greyed-out button shows why it can't run when you hover over it. Click **Show in graph** to open the **Project** tab with the goal's branch highlighted.
+1. If main has moved on, choose **Update from main**. This brings main's new commits into the goal branch. Main is not touched.
+2. Choose **Merge into main**. This moves your local main forward by the goal's commits. Nothing is sent to the server.
+3. To back up or share the branch, choose **Push to the server**.
 
 Open and close work on a goal from [Goals](/project/goals/).
 
 ## Pull requests
 
-When your code is on GitHub or on a Forgejo server, such as Codeberg, the **Project** and **Worktrees** tabs show each branch's pull request. Neova only reads pull requests. Click a chip, or **Open PR #**_n_ in the header, to open the pull request in your browser.
+When your code is on GitHub, GitLab or a Forgejo server such as Codeberg, the **Pull requests** view lists every open pull request (merge request on GitLab), the checked-out branch's first, and **History** shows each branch's chip. Click a chip, or **Open PR #**_n_ in the header, to open it in your browser.
+
+With a token (see [Set up Git](#set-up-git)) you can also:
+
+- **Create pull request**: for the checked-out branch, once it is on the server. Give it a title and a description; it goes into `main`.
+- **Merge**: on an open pull request whose checks aren't failing or running. Its changes go into `main` on the server; pull afterwards to have them here.
 
 The chip shows the number and an icon for the state:
 
@@ -146,13 +206,13 @@ The chip shows the number and an icon for the state:
 
 A dot after the number shows the checks: green when they pass, yellow while they run, red when one fails. Hover over the chip to see the state, the checks and the title. When a branch has more than one pull request, the chip shows the newest open one, otherwise the most recently updated one.
 
-Neova looks up pull requests when you open the page, when you click **Refresh**, and once a minute while the page is on screen. It never looks in the background. When the lookup fails, for example offline, the chips stay as they were.
+Neova looks up pull requests when you open the page, when you click **Refresh**, and once a minute while the page is on screen. When the lookup fails, for example offline, the chips stay as they were.
 
-Public repositories work without signing in. For a private repository, Neova uses the token of a GitHub or Forgejo connection in [Settings › Apps](/settings/system/#apps). Without one, there are no chips: the header shows **Pull requests**, which opens the host's list of pull requests for the checked-out branch. An expired token shows the same.
+Public repositories work without signing in. For a private repository, Neova uses the repository's own token, or else the token of a GitHub or Forgejo connection in [Settings › Apps](/settings/system/#apps). Without one, there are no chips: the header shows **Pull requests**, which opens the host's list of pull requests for the checked-out branch. An expired token shows the same.
 
 ## Related
 
 - [Settings › Version history](/settings/workflow/#version-history) turns goal worktrees on and sets up Neova Git.
-- [Settings › Apps](/settings/system/#apps): GitHub and Forgejo connections, whose tokens show pull requests here.
+- [Settings › Apps](/settings/system/#apps): GitHub and Forgejo Issues connections. Their tokens show pull requests here when the repository has no token of its own.
 - [Goals](/project/goals/): open and close work on a goal.
 - [MCP tools](/reference/mcp-tools/#goals): `enter_goal` and `request_merge` let agents work in a goal's folder and merge it.

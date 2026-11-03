@@ -130,7 +130,7 @@ The five steps:
 4. **Merge into main**, one goal at a time. Your own unsaved edits in the main folder are never touched. **Push to GitHub** to back up or share the branch.
 5. **Close work** to remove the folder. This is refused while there is uncommitted work or an agent inside. The branch is kept if it has commits that main does not.
 
-Every goal folder is listed under **Tools › Git › Worktrees**. See [Goals](/project/goals/) and [Git](/tools/git/).
+Every goal folder is listed under **Tools › Git › Project › Where work happens**. See [Goals](/project/goals/) and [Git](/tools/git/).
 
 ### Neova Git repository
 

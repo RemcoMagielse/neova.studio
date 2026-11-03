@@ -22,6 +22,7 @@ Neova creates the folder when you set up a project. It adds missing folders and 
 ├── agents-order.json
 ├── agent-memory-files.json
 ├── worktrees.json
+├── repo-connection.json
 ├── editor-state.json
 ├── whiteboard.excalidraw
 ├── mcp-port
@@ -90,6 +91,7 @@ When a project is new, Neova seeds the Wiki with two categories, **Standards** (
 | `agents-order.json` | The order of the agents on **Agents › Team**. | JSON |
 | `agent-memory-files.json` | The memory files you added in **Agents › Agent Insights**. | JSON |
 | `worktrees.json` | Whether goal worktrees are on, and which folder belongs to which goal. | JSON |
+| `repo-connection.json` | Which service hosts your code (GitHub, GitLab or Forgejo), when you picked it in **Tools › Git**. The token itself is in your keychain, never here. | JSON |
 | `editor-state.json` | The state of the Composer: selected skill, task and text. | JSON |
 | `whiteboard.excalidraw` | The whiteboard. | Excalidraw JSON |
 | `mcp-port` | The port of this project's MCP server. Agents' connectors read it to find the server. | Text |

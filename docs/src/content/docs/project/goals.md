@@ -168,5 +168,5 @@ Closing is refused while an agent is still working in the folder.
 
 - [Settings › Version history](/settings/workflow/#goal-worktrees) to turn on goal folders.
 - [Boards](/tasks/boards/) to move a goal's tasks between columns.
-- [Git](/tools/git/) for the goal branches and **Worktrees**.
+- [Git](/tools/git/) for the goal branches and **Where work happens**.
 - MCP tools for goals: `create_goal`, `get_goal`, `list_goals`, `update_goal`, `delete_goal`, `link_task_to_goal`, `unlink_task_from_goal`, `get_goal_progress`, `enter_goal` and `request_merge`. See [MCP tools](/reference/mcp-tools/).
