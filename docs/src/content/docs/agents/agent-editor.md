@@ -149,6 +149,14 @@ A running agent gets the new instructions when you redeploy them. See [Sessions]
 
 To use it in another project, open that project and click **Add** on the agent under **Agents › Team › Agent Library**.
 
+## How to let an agent create or change agents
+
+Ask any agent in chat, for example *"Create a Release Manager that cuts our releases"* or *"Give the Reviewer a shorter description"*. The agent asks you first and shows what it will create or change. It can set an agent's description, instructions, start command and events. Renaming and deleting stay with you, here in the Agent Editor.
+
+To have every new agent set up your way, write your standard setup on the wiki page **Agent Template** (under **Standards**). Agents that create an agent start from that page and fill in the role. Without the page, they use Neova's standard setup.
+
+When an agent changes a global agent, your other projects see **Updated elsewhere** and you review the change there.
+
 ## How to choose which events an agent receives
 
 1. Open the agent and click **Events**.
