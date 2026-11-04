@@ -61,7 +61,7 @@ The **Tasks** section lists the tasks linked to the goal. Its header shows how m
 
 | Control | What it does |
 |---|---|
-| **List** / **Board** | Switches between the list and the board view. |
+| **List** / **Board** / **Chart** | Switches between the list, the board and the chart view. |
 | **Create** | Creates a task called **New Task** in the default stage, links it to the goal and opens it in a side panel. |
 | **Link** | Opens a picker with your other tasks. Choose one to link it to the goal. |
 
@@ -81,6 +81,17 @@ Open tasks come first, then done tasks. Done tasks show with a line through them
 The board view shows the goal's tasks in the board columns they are in. Only columns with tasks show. The line below says how many empty columns are hidden.
 
 Click a card to open the task. To move cards between columns, click **Open on board**.
+
+### Chart view
+
+The chart view shows the order of the goal's tasks: what is done, what can start now and what is waiting. It counts in steps, not dates. A task moves one step to the right for every task that has to finish before it, so tasks that can start at the same time line up on the same step.
+
+- A filled bar is done, an outlined bar can start now, a dashed bar is waiting.
+- An arrow runs from a task to the task it blocks.
+- A task that waits on a task outside the goal shows **waits on** and that task's name.
+- Click a row or a bar to open the task.
+
+The order comes from task links of the type **Blocks** or **Blocked by**. Add them in a task's linked tasks. Without such links, every task starts at step 1. When tasks block each other in a loop, they share one step and a warning shows above the chart.
 
 ## Progress
 
