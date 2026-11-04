@@ -122,7 +122,7 @@ The arrow next to **New skill** has **New global skill** and **From catalogue…
 |---|---|
 | **Title** | The skill's name, for example "Explain Task". |
 | **Description** | What the skill does, up to 120 characters. A counter shows how many you have used. |
-| **Skill Content** | The instruction itself. The editor suggests replacement fields when you type `{`. Below it, a counter shows characters and lines. When you edit a skill, the file name shows too; click it to reveal the file in Finder. |
+| **Skill Content** | The instruction itself, in the same rich text editor as agent instructions. The editor suggests replacement fields when you type `{`. Below it, a counter shows characters. When you edit a skill, the file name shows too; click it to reveal the file in Finder. |
 
 For the full list of fields you can use in **Skill Content**, see [Replacement fields](/reference/replacement-fields/).
 
@@ -163,7 +163,7 @@ Each row shows the action's name and description, and labels for the stages wher
 |---|---|
 | **Title** | The action's name. This is what you type after `/`. |
 | **Description** | Optional. A short line shown under the name. |
-| **Text** | The message itself. The editor suggests replacement fields when you type `{`. Under it, a line says on which stages the action is a button. |
+| **Text** | The message itself, in the same rich text editor as skills. The editor suggests replacement fields when you type `{`. Under it, a line says on which stages the action is a button. |
 
 Deleting an action that is a button on a stage leaves that button greyed out with **Action not available**.
 
