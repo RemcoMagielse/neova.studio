@@ -45,12 +45,26 @@ The messages Neova types into an agent's terminal when something happens. The li
 | **Tasks** | **Task assigned**, **Task unassigned** |
 | **Stages** | **Task entered stage** |
 | **Agent Workspace** | **Question answered**, **Backlog reminder** |
+| **Context** | One item per context level, for example **At 70% context** |
+| **Cache** | **Keep cache warm** |
 
 Click an event to edit its message on the right. Under the text box, **Variables:** lists the variables this event can fill in. Click a variable to insert it at the cursor. If you type a `{token}` that is not a variable for this event, a warning shows: the token is sent to the agent exactly as written.
 
 An event with unsaved changes shows a dot in the list. Click **Save** at the top of the section to save all changed messages. **Reset** puts one event's message back to the default: click it, then click **Confirm**.
 
 Which events an agent receives is set per agent in the [Agent Editor](/agents/agent-editor/).
+
+#### Keep cache warm
+
+Claude keeps an agent's conversation in a prompt cache for 5 minutes or 1 hour after its last message. A message after that costs more, because Claude processes the whole conversation again. With **Keep cache warm** on, Neova sends an idle agent a short message just before its cache goes cold. Each one costs about a tenth of a cold start.
+
+| Part | What it does |
+|---|---|
+| **On** | Off by default. |
+| **Stop after … in a row** | How many keep-alives an agent gets before it works again, from 1 to 24. The default is 6. After that the cache goes cold, and the bar above its terminal turns amber first. |
+| Message | The text Neova sends. Keep it short: the agent should only answer "ok". |
+
+Only for agents that run Claude Code. To leave one agent out, turn off **Keep cache warm** for it in the Agent Editor.
 
 ### Detection profiles
 

@@ -105,6 +105,8 @@ The events Neova types into the agent's terminal. Check an event to turn it on. 
 | **Agent Workspace** | **Question answered** | You answer a question the agent asked. | Yes |
 | | **Backlog reminder** | The agent is idle and has items waiting in its backlog. | Yes |
 | | **Scheduled actions** | A schedule runs on this agent. Turn it off and the agent skips its schedules. | Yes |
+| | **Context alerts** | The agent's context use passes a level set in **Settings › Agents**. | Yes |
+| | **Keep cache warm** | The agent is idle and its prompt cache is about to go cold. Only when **Keep cache warm** is on in **Settings › Agents**. | Yes |
 
 The text of each message is set in **Settings › Agents › Event Messages**.
 

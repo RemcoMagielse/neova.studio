@@ -48,12 +48,11 @@ Above a running terminal:
 |---|---|
 | Avatar | The agent's avatar. |
 | Name menu | The name of the linked agent with a green dot, or **No agent linked** with a grey dot. Click it for the agent menu. See [Name menu](#name-menu). |
-| Status | The agent's status. Click it to open **Session details**, with tabs **Overview**, **Signals**, **Patterns** and **Raw**. |
-| Prompt cache | The time left on the prompt cache, for example `42 min left`. |
+| Status | The agent's status. Once it has been idle for a minute, how long, for example `Idle · 12m`. Click it to open **Session details**, with tabs **Overview**, **Signals**, **Patterns** and **Raw**. |
+| Prompt cache | The time left on the prompt cache, for example `42 min left`. When the cache is about to go cold, the bar above the terminal turns amber, so you can spot it in the grid too. Not when Neova keeps that agent's cache warm; see [Keep cache warm](/settings/agents/#keep-cache-warm). |
 | Context meter | How much of the context is used, for example `62% context`. From 75% it turns amber. Click it to **Redeploy instructions**. |
 | **Recording** | Shows while terminal logs are captured. |
 | Backlog button | The number of items in the agent's backlog. Hover to preview, click to open the backlog in a side panel. You can add, edit, remove and reorder items there. |
-| Notebook button | Hover to preview, click to read the agent's notebook in a side panel. |
 | **Requests** | The agent's open questions and notifications. The badge counts questions. See [Activity](/agents/activity/). |
 | **⋮** | The terminal menu. See [Terminal menu](#terminal-menu). |
 
@@ -73,6 +72,8 @@ When nothing is connected and nothing is linked, the menu says **No agents conne
 
 | Item | What it does |
 |---|---|
+| **Notebook** | Opens the agent's notebook in a side panel. |
+| **Keep cache warm now** | Sends the agent a short keep-alive, so its prompt cache stays warm a while longer. Shows while the agent is idle and its cache is warm. |
 | **Open conversation** | Opens the agent's conversation in **Agents › Agent Insights**. Shows when Neova has one. |
 | **Deploy instructions** | Sends the agent's instructions to the terminal. |
 | **Redeploy instructions** | Clears the agent's context, then sends its instructions again. |
