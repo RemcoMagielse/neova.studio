@@ -50,7 +50,7 @@ Above a running terminal:
 | Name menu | The name of the linked agent with a green dot, or **No agent linked** with a grey dot. Click it for the agent menu. See [Name menu](#name-menu). |
 | Status | The agent's status. Once it has been idle for a minute, how long, for example `Idle · 12m`. Click it to open **Session details**, with tabs **Overview**, **Signals**, **Patterns** and **Raw**. |
 | Prompt cache | The time left on the prompt cache, for example `42 min left`. When the cache is about to go cold, the bar above the terminal turns amber, so you can spot it in the grid too. Not when Neova keeps that agent's cache warm; see [Keep cache warm](/settings/agents/#keep-cache-warm). |
-| Context meter | How much of the context is used, for example `62% context`. From 75% it turns amber. Click it to **Redeploy instructions**. |
+| Context meter | How much of the context is used, for example `62% context`. From 75% it turns amber. Click it to **Redeploy instructions**. When the terminal is too narrow, for example in the grid, a thin line along the bottom of the header fills up instead; point at it to see the percentage. |
 | **Recording** | Shows while terminal logs are captured. |
 | Backlog button | The number of items in the agent's backlog. Hover to preview, click to open the backlog in a side panel. You can add, edit, remove and reorder items there. |
 | **Requests** | The agent's open questions and notifications. The badge counts questions. See [Activity](/agents/activity/). |
