@@ -17,6 +17,7 @@ The column on the left shows the project folder as a tree.
 - Click a file to open it on the right.
 - Images and other files you can't edit show in grey.
 - Type in **Search files** to find files anywhere in the project by name or path. Up to 200 matches show.
+- Click **Hide files** at the top left to fold the tree into a thin strip. Click the strip to open it again. Neova remembers your choice.
 
 ### Starred files
 
@@ -37,6 +38,8 @@ The header shows:
 | Name | The file name, with a dot when there are unsaved changes. Below it, the path in the project. |
 | Language | The file type, for example **TypeScript**, **Markdown** or **JSON**. |
 | **Ln 12, Col 4** | Where the cursor is. |
+| **Wrap long lines** | On by default: long lines continue on the next row, indented under where the line starts, so you don't scroll sideways. Click to turn it off; Neova remembers your choice. |
+| **Expand** | The text fills the whole panel and the tree steps aside. Press Esc or click **Collapse** to bring it back. |
 | **Save** | Saves the file. ⌘S does the same. |
 | **Revert** | Throws away your changes and reads the file from disk again, after you confirm. |
 
