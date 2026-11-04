@@ -35,7 +35,7 @@ Neova creates the folder when you set up a project. It adds missing folders and 
 │   ├── assets/
 │   └── <category>/
 ├── actions/
-├── activities/
+├── skills/
 ├── snippets/
 ├── agents/
 │   └── chat/
@@ -60,7 +60,7 @@ Neova creates the folder when you set up a project. It adds missing folders and 
 | `wiki/<category>/_category.md` | The category's `label`, `description` and `order`. | YAML frontmatter |
 | `wiki/assets/` | Images used across wiki pages. | Image files |
 | `actions/` | Actions. One file per action, named `<name>-<timestamp>.json`. Global actions are in the same format in Neova's own folder. | JSON: `id`, `name`, `description`, `template`, `isEnabled`, `order` |
-| `activities/` | Skills. One file per skill, named `<name>-<timestamp>.json`. | JSON: `id`, `name`, `description`, `template`, `isEnabled` |
+| `skills/` | Skills. One file per skill, named `<name>-<timestamp>.md`. Older versions kept them as JSON in `activities/`; Neova moves them here by itself the first time it opens the project. | Markdown: `id`, `name`, `description`, `isEnabled` in the frontmatter, the skill text below it |
 | `snippets/` | One file per snippet, named `<title>-<timestamp>.md`. | Markdown with YAML frontmatter |
 | `agents/` | One file per agent, named `<agent-name>.md`, with its settings and instructions. | Markdown with YAML frontmatter. The body is the instructions. |
 | `agents/<agent-name>.notebook.md` | The agent's notebook. | Markdown |
@@ -140,7 +140,7 @@ In **Settings › Version history** you can stop keeping a history of some folde
 | **tasks/** | `tasks/` |
 | **wiki/** | `wiki/` |
 | **agents/ (incl. notebooks)** | `agents/` |
-| **goals/ · skills/** | `goals/`, `activities/` |
+| **goals/ · skills/** | `goals/`, `skills/`, `activities/` |
 | **snippets/** | `snippets/` |
 
 When a project has no `.neova/.gitignore`, Neova creates it with the block when you open the project.
