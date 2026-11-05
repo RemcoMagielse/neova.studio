@@ -5,7 +5,7 @@ sidebar:
   order: 5
 ---
 
-Browser runs web pages inside Neova. Each session is a separate browser with its own login. You can use a session yourself or give it to an agent, watch what the agent does, and take over at any time.
+Browser runs web pages inside Neova. Each session is a separate browser with its own login. You can use a session yourself, share it with an agent, or let an agent open its own, and take over at any time.
 
 Open it from **Sidebar › Tools › Browser**.
 
@@ -35,7 +35,7 @@ Hover a tab to see its name, who uses it and who is in control.
 | Zoom (for example **100%**) | Choose a zoom level: 25%, 50%, 75%, 100%, 125%, 150% or 200%. |
 | **Full screen** | Shows the page alone over the whole window. |
 | **Show debug panel** / **Hide debug panel** | Opens or closes the [debug panel](#debug-panel) below the page. |
-| **Session options** (**⋯**) | **Rename**, **Clear login**, **Give to an agent…** (your own sessions only), **Close**. |
+| **Session options** (**⋯**) | **Rename**, **Clear login**, **Share with an agent…** or **Stop sharing** (your own sessions only), **Close**. |
 
 While an agent is in control, the address field is read-only and **Back**, **Forward** and **Reload** are off. Zoom keeps working.
 
@@ -95,14 +95,23 @@ Changes in **Cookies** and **Headers** apply a moment after you stop typing.
 
 **Saved** sessions reopen when you open the project again. **Temporary** sessions do not.
 
-## How to give your session to an agent
+## How to share your session with an agent
 
-Use this when you are signed in to a page and want an agent to work in it, without signing in again.
+Use this to show an agent what you see, or to let it work in a page where you are signed in, without signing in again.
 
-1. Open your session and click **⋯** › **Give to an agent…**.
-2. Choose an **Agent** and click **Give to <Agent>**.
+1. Open your session and click **⋯** › **Share with an agent…**.
+2. Choose an **Agent** and click **Share with <Agent>**.
 
-The session, with your login, now belongs to the agent and the agent is in control. The agent gets a note in its backlog. You can take over at any time. To use the page as your own again, open a new session: a session you gave away stays the agent's.
+The session stays yours and you keep driving. The agent gets a note in its backlog and can look along: it reads the page, takes screenshots, and sees the console and network. It can't close the session or see its cookies.
+
+- **Let <Agent> drive**: hands the agent the wheel. Click **Take over** to get it back.
+- **Stop sharing** (in the bar or in **⋯**): the agent loses access at once.
+
+Sharing ends when you close Neova. One agent at a time: sharing with another agent moves the share.
+
+### When an agent asks for a session
+
+An agent can ask you to share one of your sessions. You get a card with its reason and your open sessions. Pick one to share it, or **Not now**.
 
 ## How to take control from an agent
 
