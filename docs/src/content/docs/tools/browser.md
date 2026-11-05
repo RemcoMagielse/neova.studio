@@ -13,17 +13,33 @@ Open it from **Sidebar › Tools › Browser**.
 
 With no sessions, the page shows **No browser sessions** and a **New session** button.
 
-Each open session has a tab at the top.
+Your sessions sit in a slim rail on the left of the page, one icon per session: the site's own icon, or the session's first letter. A small dot means an agent has the page: pulsing while it works, grey while it is idle. A dimmed icon is a page that went to sleep (see below).
+
+**Hover the rail** and it opens over the page, with:
 
 | Part | What it shows or does |
 |---|---|
-| Dot | Green: you are in control. Pulsing: the agent is using it. Grey: the agent is in control but idle. |
-| Avatar | The agent that uses the session, or a person icon for you. |
-| Name | The session name. |
-| **×** | Closes the session. Closing a **Saved** session asks first, because it signs you out. |
-| **+** (**New browser session**) | Opens the **New browser session** dialog. |
+| **New session** | Opens the **New browser session** dialog. |
+| Folder icon (**New group**) | Makes a group and asks for its name. |
+| A session | Click to open it. Shows the agent that uses it, or **Shared with <Agent>**. |
+| **⋯** on a session | **Move to group**, **Remove from group**, **Rename**, **Close**. |
+| **×** on a session | Closes it. Closing a **Saved** session asks first, because it signs you out. |
 
-Hover a tab to see its name, who uses it and who is in control.
+While the rail is open, the page shows as a still image; it is live again when you move away.
+
+### Groups
+
+Groups are yours: give each a name and a colour, like tab groups in Chrome.
+
+- **Put a session in a group**: **⋯** › **Move to group** › a group, or **New group…**.
+- **Fold a group**: click its header. A folded group shows in the rail as one coloured chip with its number of sessions; click the chip to unfold it.
+- **Rename, recolour or ungroup**: the **⋯** on the group's header. **Ungroup** removes the group; its sessions stay open.
+
+Groups are kept with the project on this computer.
+
+### Up to 20 sessions
+
+A window holds up to 20 sessions. A page you haven't looked at, and no agent has used, for 15 minutes goes to sleep to save memory: it keeps its login and opens again when you click it or an agent uses it. Anything you typed on a sleeping page and didn't submit is lost.
 
 ## Address bar
 
@@ -85,7 +101,7 @@ Changes in **Cookies** and **Headers** apply a moment after you stop typing.
 
 ## How to open a session
 
-1. Click **New session** (or **+** next to the tabs).
+1. Click **New session** (or **+** at the top of the rail).
 2. Fill in the **New browser session** dialog:
    - **Name**, for example `Penpot`.
    - **Who uses it**: **You**, or one of your agents.
