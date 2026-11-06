@@ -1,6 +1,6 @@
 ---
 title: Agent Editor
-description: Create an agent or change its name, start command, instructions, events, backlog and avatar.
+description: Create an agent or change its name, start command, skills and wiki pages, instructions, events, backlog and avatar.
 sidebar:
   order: 3
 ---
@@ -65,9 +65,20 @@ How the agent sounds when it speaks to you.
 | **Voice** | Choose one of ten voices, for example **Nova** or **Atlas**. Click the play button to hear it. The agent uses the same voice in every project, and for **Read aloud**. |
 | **Language** | **English** or **Dutch**. |
 
+### Skills & Knowledge
+
+What the agent loads when it starts, in two groups: **Skills** and **Wiki pages**.
+
+- **Neova Studio** is always the first skill. It shows **Always** and can't be removed.
+- Click **Add** to search skills and wiki pages, and click one to add it. Click **×** to remove it.
+- A new agent has the **Agent Code of Conduct** wiki page already added, when the project has that page.
+- A global agent keeps its picks in every project. A wiki page that a project doesn't have shows **Not in this project** and is skipped there.
+
 ### Instructions
 
-The agent's role and how it should work, in a Markdown editor. A Claude Code agent starts with its instructions built in, and its first message asks it to follow them. Other agents get the instructions sent to their terminal when they start.
+What the agent does, in a Markdown editor. You only write its role: when the agent starts, Neova puts a short start-up section in front of it. That section has the agent register under its name, load Neova Studio and the skills you picked, read the wiki pages you picked, and say so if it can't reach Neova Studio. Older agents that still have a Preparation section keep working; doing the steps twice does no harm.
+
+A Claude Code agent starts with its instructions built in, and its first message asks it to follow them. Other agents get the instructions sent to their terminal when they start.
 
 Click **Insert** to add a reference to a standard, skill, MCP tool or snippet at the cursor.
 
@@ -131,9 +142,10 @@ Notes the agent writes for itself. You can read them here but not edit them. Wit
 1. Go to **Agents › Team** and click **Add Agent**.
 2. Type an **Agent Name**, for example `Software Engineer`.
 3. Type a **Start command**, for example `claude`.
-4. Write the **Instructions**.
-5. Optionally choose an avatar, a **Detection profile** and the events on the **Events** tab.
-6. Click **Create Agent**.
+4. Under **Skills & Knowledge**, click **Add** to pick the skills and wiki pages it should load.
+5. Write its role under **Instructions**.
+6. Optionally choose an avatar, a **Detection profile** and the events on the **Events** tab.
+7. Click **Create Agent**.
 
 ## How to change an agent's instructions
 
@@ -153,7 +165,7 @@ To use it in another project, open that project and click **Add** on the agent u
 
 ## How to let an agent create or change agents
 
-Ask any agent in chat, for example *"Create a Release Manager that cuts our releases"* or *"Give the Reviewer a shorter description"*. The agent asks you first and shows what it will create or change. It can set an agent's description, instructions, start command and events. Renaming and deleting stay with you, here in the Agent Editor.
+Ask any agent in chat, for example *"Create a Release Manager that cuts our releases"* or *"Give the Reviewer a shorter description"*. The agent asks you first and shows what it will create or change. It can set an agent's description, instructions, skills and wiki pages, start command and events. Renaming and deleting stay with you, here in the Agent Editor.
 
 To have every new agent set up your way, write your standard setup on the wiki page **Agent Template** (under **Standards**). Agents that create an agent start from that page and fill in the role. Without the page, they use Neova's standard setup.
 
