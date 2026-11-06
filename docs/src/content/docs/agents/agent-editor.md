@@ -74,6 +74,16 @@ What the agent loads when it starts, in two groups: **Skills** and **Wiki pages*
 - A new agent has the **Agent Code of Conduct** wiki page already added, when the project has that page.
 - A global agent keeps its picks in every project. A wiki page that a project doesn't have shows **Not in this project** and is skipped there.
 
+### Tool servers
+
+The tool (MCP) servers the agent starts with, such as Playwright, Penpot or shadcn, each with a switch. Every agent starts its own copy of every server, so switching off the ones a role doesn't need makes it start faster and use less memory.
+
+- Everything is on by default. Switch one off and the agent starts without it from its next start.
+- Each server shows where it comes from: **This project**, **All projects** (added for every project) or **Plugin**.
+- Neova itself is always on and not listed.
+- A global agent keeps its switches in every project. A server that is off but that a project doesn't have shows **Not in this project**, so you can switch it back on.
+- Works for agents started with `claude`. A start command that doesn't begin with `claude` starts with every server.
+
 ### Instructions
 
 What the agent does, in a Markdown editor. You only write its role: when the agent starts, Neova puts a short start-up section in front of it. That section has the agent register under its name, load Neova Studio and the skills you picked, read the wiki pages you picked, and say so if it can't reach Neova Studio. Older agents that still have a Preparation section keep working; doing the steps twice does no harm.
