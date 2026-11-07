@@ -13,7 +13,7 @@ Open it from **Sidebar › Tools › Browser**.
 
 With no sessions, the page shows **No browser sessions** and a **New session** button.
 
-Your sessions sit in a slim rail on the left of the page, one icon per session: the site's own icon, or the session's first letter. A small dot means an agent has the page: pulsing while it works, grey while it is idle. A dimmed icon is a page that went to sleep (see below).
+Your sessions sit in a slim rail on the left of the page, one icon per session: the site's own icon, or the session's first letter. A small dot says who else is on the page: blue while an agent looks along on a page you shared, terracotta and pulsing while an agent drives, grey while an agent holds it idle, and amber on your own pages while an agent asks to see one. A dimmed icon is a page that went to sleep (see below).
 
 **Hover the rail** and it opens over the page, with:
 
@@ -69,12 +69,15 @@ The session keeps its zoom level when you go to another site.
 
 ## Control bar
 
-Sessions that belong to an agent show a bar below the address bar.
+Sessions that belong to an agent, or that you shared with one, show a bar below the address bar. A coloured frame round the page says the same at a glance: blue while the agent looks along, terracotta while it drives.
 
 | Bar says | Button |
 |---|---|
-| **<Agent> is using this browser.** or **<Agent> has this browser, idle right now.** | **Take over** |
+| **<Agent> is looking along.** You drive; it sees what you see. (a page you shared) | **Let <Agent> drive**, **Stop sharing** |
+| **<Agent> is driving.** or **<Agent> has the wheel, idle right now.** | **Take over** |
 | **You're in control.** <Agent> is paused until you give it back. | **Give back to <Agent>** |
+
+Where an agent clicks or types, its pointer shows on the page for a moment, with its name, so you can follow what it does.
 
 While the agent is in control, you cannot click or type in the page. If you click it, a message says **<Agent> is using this page. Take over to use it yourself.**, with a **Take over** button.
 
@@ -127,7 +130,12 @@ Sharing ends when you close Neova. One agent at a time: sharing with another age
 
 ### When an agent asks for a session
 
-An agent can ask you to share one of your sessions. You get a card with its reason and your open sessions. Pick one to share it, or **Not now**.
+An agent can ask to see one of your pages. You get a notification with an **Open browser** button, and the request waits in Browser, in an amber bar above your page: **<Agent> asks to see this page.** with its reason.
+
+- **Share this page**: shares the page you are on with that agent.
+- **Decline**: the agent gets a note that you declined.
+
+On an agent's own page the bar says to open one of your own pages first. Several requests wait in turn, oldest first.
 
 ## How to take control from an agent
 
