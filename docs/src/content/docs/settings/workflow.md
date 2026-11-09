@@ -83,14 +83,24 @@ You cannot delete the last remaining stage.
 
 ### Task types
 
-This section lists every type in use across the project, with the number of tasks that carry it. Types have no separate list to maintain: a type exists once you set it on a task.
+This section lists every type in use across the project, with the number of tasks that carry it, plus every type that has a template. Types have no separate list to maintain: a type exists once you set it on a task or give it a template.
 
-When no task has a type, the section shows **No task types yet**.
+A type with a template shows **Project template**, **Global template** or both. New tasks of that type start with the template: from the arrow next to **New task**, and when an agent creates a task of that type without a description of its own.
+
+When no type is in use and none has a template, the section shows **No task types yet**.
 
 | Button | What it does |
 |---|---|
-| **Rename** (pencil) | Edit the name inline. Press Return or click the check mark to save, Esc or the cross to cancel. Every task with the type is updated. If the new name is an existing type, the two are merged. |
-| **Delete** (bin) | After you confirm, clears the type from every task that carries it. The type no longer exists. |
+| **New type** | Name a type and write its template, so the type is ready before any task uses it. |
+| **Add template** / **Edit template** (page) | Opens the template. Choose **This project** or **All projects**, write the template and click **Save**. **Remove template** deletes it from the place you chose. |
+| **Rename** (pencil) | Edit the name inline. Press Return or click the check mark to save, Esc or the cross to cancel. Every task with the type is updated, and the project's template moves along. If the new name is an existing type, the two are merged. |
+| **Delete** (bin) | After you confirm, clears the type from every task that carries it and removes the project's template. A template for all projects stays, so the type stays available. |
+
+#### Templates for this project and for all projects
+
+A project template is stored in `.neova/task-templates/` and travels with the project. A template for all projects is stored with Neova on your computer, so every project you open can use it. When both exist for the same type, the project's template is used.
+
+Neova comes with templates for **feature** and **bug** for all projects. Change or remove them like any other template.
 
 ### Tags
 

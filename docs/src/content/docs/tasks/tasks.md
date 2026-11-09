@@ -62,6 +62,13 @@ Click **See all *n* ›** to go to [Boards](/tasks/boards/).
 
 You can also press **⌘T** from anywhere in Neova.
 
+### How to start from a template
+
+1. Click the arrow next to **New task**. The menu lists every task type that has a template: this project's first, then the ones for all projects.
+2. Click a type, for example **Bug**. The new task gets that type, and its description starts with the template.
+
+Templates are set up in [Settings › Board › Task types](/settings/workflow/#task-types).
+
 ## Related
 
 - [Task editor](/tasks/task-editor/): edit the task you open.

@@ -30,7 +30,8 @@ A longer document comes back as page 1, with `pages` and `hasMore` set and an ou
 |---|---|---|
 | `list_tasks` | Lists tasks, with optional filters. | `stage`, `status` (`pending`, `completed`), `tags`, `type`, `assignee`, `pickedUpBy`, `limit` (default 100) |
 | `get_task` | Returns one task's description, by ID or by part of its title. `view: 'history'` returns the change log instead. Falls back to the archive. | `id` or `title`, `view` (`outline`, `history`), `page`, `maxChars`, `depth`, `limit` (history entries, default 20) |
-| `create_task` | Creates a task. The type must already be in use in the project. | `title`*, `description`, `tags`, `type`, `stage` (default: the default stage) |
+| `list_task_types` | The task types an agent can pick, each with its template and whether that template is the project's or for all projects. | none |
+| `create_task` | Creates a task. The type must be in use or have a template. With a type and no description, the task starts from the type's template. | `title`*, `description`, `tags`, `type`, `stage` (default: the default stage) |
 | `update_task` | Changes the fields you pass. Each field replaces the old value. | `id`*, `title`, `description`, `tags`, `type`, `stage`, `status` |
 | `complete_task` | Marks a task as completed. | `id`* |
 | `archive_tasks` | Archives completed tasks; refuses unfinished ones. The user gets one notification per call and can restore from Tasks › Archive. | `ids`* |
@@ -86,7 +87,7 @@ A longer document comes back as page 1, with `pages` and `hasMore` set and an ou
 | `list_wiki` | Lists wiki pages. | `category`, `limit` (default 100) |
 | `list_wiki_categories` | Lists the categories with their descriptions and page counts. | None |
 | `search_wiki` | Searches the wiki and returns the best matches. | `query`*, `category`, `limit` (default 6) |
-| `get_wiki` | Returns a wiki page by ID or name. An approximate name works; when it matches several pages, the tool returns the candidates. | `page`* (page ID or name), `category`, `view` (`outline`), `maxChars`, `depth` |
+| `get_wiki` | Returns a wiki page by ID or name. An approximate name works; when it matches several pages, the tool returns the candidates. | `id`* (page ID or name), `category`, `view` (`outline`), `page` (part of a long page), `maxChars`, `depth` |
 | `get_section_from_wiki` | Reads one section of a wiki page. Returns a `contentHash` for `replace_section_in_wiki`. | `id`*, `heading` or `ref`, `category`, `page`, `maxChars` |
 | `create_wiki` | Creates a wiki page. The category defaults to `standards`. | `id`* (kebab-case), `content`, `description`, `category` |
 | `update_wiki` | Replaces a wiki page's content. | `id`*, `content`*, `description`, `category` |
