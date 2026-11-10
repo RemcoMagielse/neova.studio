@@ -48,25 +48,24 @@ The repository you work in has its own connection, separate from the Issues conn
 
 The token is kept in your computer's keychain, never in the project. Without a token, Git uses your computer's own sign-in, such as an SSH key. With a token, Neova uses it for its own pulls and pushes, also when your repository's address is an SSH one.
 
-## Where work happens
+## Working in
 
-The top of the **Project** tab lists every folder work happens in:
+The first line of the **Project** tab shows the folder you work in, with a short summary of the other places, such as `2 goal worktrees · 1 agent elsewhere · 1 with unpushed work`. Click the folder to switch. The picker lists:
 
 - The **Project folder**: your project itself.
-- Each **Goal worktree**: a copy of the project for one goal, on its own branch, so agents on different goals don't get in each other's way. Worktrees appear when **Work on goals in separate folders** is on in **Settings › Version history**.
+- Each **Goal worktree**: a copy of the project for one goal, on its own branch, so agents on different goals don't get in each other's way. Worktrees appear when **Work on goals in separate folders** is on in **Settings › Version history**. Each shows its branch, how many commits it is behind (↓) or ahead (↑) of the server, how many files changed, and the agents working in it.
+- **Other folders**, folded: a folder that matches no goal (**Open in Finder**) and a folder that is gone (**Clean up**). When something needs cleaning up, the folder button has a dot and the summary says **1 to clean up**; click it to open the picker there.
 
-Each row shows the branch **checked out** there, how many commits it is behind (↓) or ahead (↑) of the server, how many files changed, and the agents working in it, with their avatars. Click a row to look at that folder: the toolbar and the views below follow it.
-
-A worktree's **⋯** menu has **Open in Finder**, **Open the goal**, **Update from main**, **Merge into main**, **Push to the server** and **Close worktree…**. A folder that is gone shows **Clean up**; a folder that matches no goal shows **Open in Finder**.
+The toolbar and the views below follow the folder you pick. In a worktree, the **⋯** next to the folder has **Open in Finder**, **Open the goal**, **Update from main**, **Merge into main**, **Push to the server** and **Close worktree…**.
 
 ## Toolbar
 
 | Item | What it does |
 |---|---|
-| **Checked out** _branch_ ▾ | Switch to another branch, or **New branch…**, which starts from the checked-out branch and takes your changes along. A branch in use by another folder says so and can't be picked. |
+| **Checked out** _branch_ ▾ | Switch to another branch, or **New branch…**, which starts from the checked-out branch and takes your changes along. Branches are grouped, newest first: **On this Mac**, and **Only on the server** (pick one to bring it in). A branch checked out in another folder sits in a dashed frame that names the folder; picking it opens that folder. |
 | **Sync** ↓ ↑ | Pulls what the server has, then pushes your commits. **Up to date** when there is nothing to do; **Push branch** when the branch isn't on the server yet. |
 | **Checked** _time_ **ago** | When Neova last asked the server for new commits. Click it to check now. |
-| **Changes** · **History** · **Pull requests** | The three views. GitLab calls them **Merge requests**. |
+| **History** · **Changes** · **Pull requests** | The three views; Git opens on **History**. GitLab calls them **Merge requests**. |
 
 Neova asks the server for new commits when you open Git, and every 5 minutes while Neova is open. It never changes your files when it checks. The status bar's Git item shows ↓ and a number when commits are waiting.
 
@@ -89,7 +88,7 @@ Right-click a file and choose **Discard changes…** to throw its changes away. 
 
 ## Coming from the server
 
-When the server has commits you don't have yet, **Coming from** _GitHub_ lists them above the view, with who made them and when. Click **Pull** to bring them in, or **Sync**.
+When the server has commits you don't have yet, **History** lists them on top as **Coming from** _GitHub_, with who made them and when, followed by **You are here**: the branch and folder you're in. Click **Pull** to bring them in, or **Sync**. **Changes** and **Pull requests** show one line instead, with **See in History**.
 
 When a pull hits a conflict, it stops with **Pull stopped: 2 files conflict** and **Open Terminal**. Sort out the conflict there, or ask an agent. Neova doesn't resolve conflicts itself.
 
