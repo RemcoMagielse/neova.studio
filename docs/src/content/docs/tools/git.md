@@ -94,11 +94,19 @@ When a pull hits a conflict, it stops with **Pull stopped: 2 files conflict** an
 
 ## History
 
-**History** shows the repository view below. The **Neova** tab uses the same layout: branches and working tree on the left, the commit graph in the middle, commit details on the right. In a narrow pane, the commit details replace the graph. Click **All commits** to go back.
+On the **Project** tab, **History** shows your work as lanes, newest at the top. The first lane is the project folder. Next to it, each goal worktree has its own narrow, tinted lane, divided by dotted lines. Each worktree's line curves into the project folder's line at the commit where its work started.
+
+- Each commit's text sits right next to its dot. A filled dot that says **Not pushed** isn't on the server yet. A hollow dot at the top is a commit on the server that isn't here yet, and a dashed ring is work that isn't committed.
+- A narrow lane shows its agent, a tick when it's clean or the number of files not committed, and a mark when something needs care. Its name is written upright.
+- Hover a lane to open it. It shows the folder and where it is on disk (click to open it in Finder), the branch and its pull request, who works there, **Clean** or how many files aren't committed, and how far it is ahead of and behind `main`. While it's open, the other lanes' commits fade.
+- An open lane also says whether its work **merges cleanly** into `main`, has **conflicts with main**, or changes the **same files as** another worktree. Neova checks this with a trial merge that changes nothing. One button offers the next step: **Update from main**, **Review changes**, **Push**, **Merge into main** or, when nothing is left, **Close folder**.
+- Click a commit to see its details on the right.
+
+The **Neova** tab keeps the classic layout: branches and working tree on the left, the commit graph in the middle and commit details on the right. In a narrow pane, the commit details replace the graph. Click **All commits** to go back.
 
 ### Branches
 
-**Branches** lists the local branches. The checked-out branch is bold and has a **HEAD** badge. ↑ and ↓ show how many commits the branch is ahead of or behind its remote.
+On the **Neova** tab, **Branches** lists the local branches. The checked-out branch is bold and has a **HEAD** badge. ↑ and ↓ show how many commits the branch is ahead of or behind its remote.
 
 Click a branch to highlight its line in the graph. The other lines fade and the graph scrolls to the branch's latest commit. Click the branch again to clear the highlight.
 
