@@ -11,7 +11,11 @@ Open it from **Sidebar › Tools › Containers**. The page is only in the sideb
 
 ## What you see
 
-The subtitle counts the running containers and the memory they use together.
+Three cards at the top show what all containers use together:
+
+- **Memory**: a dial of the memory your containers use, out of all the memory in your Mac. The small mark on the dial is how much Docker may use at most, which is set in Docker Desktop.
+- **CPU**: a dial of the processor use out of all your Mac's cores. If Docker may use fewer cores than your Mac has, a mark shows that limit too.
+- **Running**: how many containers are running, out of all of them.
 
 Each project that has something running gets a card. A project is a set of containers started together with `docker compose`; the card shows its name and the folder it was started from. Containers that were started on their own share one card, **Started on their own**.
 
