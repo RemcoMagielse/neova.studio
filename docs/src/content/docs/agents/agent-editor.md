@@ -96,12 +96,14 @@ Click **Insert** to add a reference to a standard, skill, MCP tool or snippet at
 
 Shows for agents that belong only to this project. Click **Make global** and confirm. The agent's identity (name, description, instructions, start command, avatar and default events) moves to your global agent library and becomes available in every project. The notebook, backlog, detection profile and terminal link stay with this project.
 
-### Updated in another project
+### Changed in another project
 
-When you change a global agent in one project, the other projects that use it keep running their own version until you choose. The agent shows **Updated elsewhere** on Team and in Sessions, and the editor shows **Review changes**. It lists what changed, old next to new, with a changed start command on its own.
+When you change a global agent in one project, every other project that uses it follows the change. A save that changes nothing about the agent itself, such as this project's alerts, is not a change for the others.
 
-- **Take the update**: this project runs the new version.
-- **Keep mine here**: this project keeps its version as an agent of its own, which no longer follows the global agent.
+One exception: a new **start command** runs in your terminal, so it waits. The agent shows **New start command** on Team and in Sessions, and the editor shows **Review** with the old and new command.
+
+- **Take the update**: this project uses the new start command.
+- **Keep mine here**: this project keeps its start command, in an agent of its own that no longer follows the global agent.
 
 You choose before you can edit the agent in that project, so you never overwrite a change made elsewhere.
 
@@ -179,7 +181,7 @@ Ask any agent in chat, for example *"Create a Release Manager that cuts our rele
 
 To have every new agent set up your way, write your standard setup on the wiki page **Agent Template** (under **Standards**). Agents that create an agent start from that page and fill in the role. Without the page, they use Neova's standard setup.
 
-When an agent changes a global agent, your other projects see **Updated elsewhere** and you review the change there.
+When an agent changes a global agent, your other projects follow the change. Only a new start command waits for your review there.
 
 ## How to choose which events an agent receives
 
