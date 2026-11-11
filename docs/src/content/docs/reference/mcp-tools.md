@@ -224,6 +224,7 @@ These tools work on the sessions in **Tools › Browser**. `session` is optional
 | `browser_set_cookie` | Sets a cookie for the page. It takes effect on the next request. | `name`*, `value`*, `url`, `session` |
 | `browser_delete_cookie` | Deletes a cookie. | `name`*, `url`, `session` |
 | `browser_set_headers` | Sets the headers the session adds to every request. Kept in memory only. `[]` clears them. | `headers`* (at most 30), `session` |
+| `browser_resize` | Sets the page size, so screenshots and layout are the same every time. Applies while the page isn't on your screen; on screen it fits your window. Leave both out to forget the size. | `width` (320–3840), `height` (240–2160), `session` |
 | `browser_take_screenshot` | Saves a PNG of the page to the project's images folder and returns its path. | `session` |
 
 ## Schedules
