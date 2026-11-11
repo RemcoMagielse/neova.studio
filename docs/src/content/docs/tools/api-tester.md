@@ -2,7 +2,7 @@
 title: API Tester
 description: Build and send HTTP requests, keep them in collections, and share them with an agent.
 sidebar:
-  order: 9
+  order: 10
 ---
 
 The API Tester sends HTTP requests and shows the response. You keep requests in collections inside the project, and you can hand a request and its response to an agent.
