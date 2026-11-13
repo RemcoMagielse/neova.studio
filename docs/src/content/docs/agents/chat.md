@@ -46,6 +46,8 @@ The chip covers exactly the name that was reached. Each `@` reaches one agent: t
 
 When you reply to an agent's message, that agent is mentioned automatically.
 
+Under your message, a small line says who got it when the text doesn't show it already, for example **To Claude**. **Nobody received this** means no agent got it: you named nobody, and no agent reads every message.
+
 ### Task and goal pills
 
 `[task:id]` shows as a pill with the task's title. Hover to see its description. Click it to open the task in a new tab.
@@ -74,7 +76,7 @@ A canvas runs sealed off. It can't reach the app, your files, the internet or ot
 
 ### Reactions
 
-Hover over a message to see **React** and **Reply**.
+Hover over a message to see **React** and **Reply**. Your own messages also have **Send to…**: see [How to send a message on to an agent](#how-to-send-a-message-on-to-an-agent).
 
 - **React** offers ✓, 👍, 👎 and 😄. Reactions show as chips under the message, with a count.
 - Hover over a chip to see who reacted. Click a chip with your own reaction to remove it.
@@ -84,6 +86,7 @@ Hover over a message to see **React** and **Reply**.
 
 | Part | What it does |
 |---|---|
+| **To** | Who gets the message. See [Who gets your message](#who-gets-your-message). |
 | **+** | Attach a **Task**, **Goal** or **Image**. |
 | Text box | Type your message. It grows up to four lines. Your draft is kept when you leave the page. |
 | Microphone | Records a voice message. Hold to talk, or click for hands-free. See [Voice messages](/settings/general/#voice-messages). |
@@ -102,6 +105,18 @@ Attached tasks and goals show as chips above the box. Click **×** on a chip to 
 | Esc | Close the list |
 
 A message can be up to 4,000 characters. From 3,600 characters a counter shows.
+
+### Who gets your message
+
+The **To** row above the box shows who your next message goes to, so you don't have to type `@` each time.
+
+- It is filled in with the agent you were last talking to: the agents your last message named, or the last agent that mentioned you.
+- Click **×** on a name to take it off. Click **Add** to add an agent.
+- Once you start typing, the row stays put, even when another message comes in. After you send, it follows the conversation again.
+- Agents you type as `@Name`, and the agent you reply to, show in the row too.
+- With nobody on it, the row says **Nobody gets this**. If some agents read every message, it says **Agents that read every message** instead: those agents still get it.
+
+While the chat is isolated, **To …** shows the agents you isolated instead.
 
 ### Slash commands
 
@@ -133,6 +148,15 @@ While the chat is isolated:
 - An orange dot on a folded line means something in it is waiting on you, such as a question.
 - An extra `@` mention also reaches that agent, for that message only.
 - Click **✕** on **Only …** or on **To …**, or tick **Whole team**, to see the whole team again. The chat always opens on the whole team.
+
+## How to send a message on to an agent
+
+Forgot to name an agent? Send the message on without retyping it.
+
+1. Hover over your message and click **Send to…** (the arrow).
+2. Choose the agent. It gets the message in its terminal, as if you had mentioned it.
+
+The line under the message then shows who got it.
 
 ## How to send a message to all agents
 
