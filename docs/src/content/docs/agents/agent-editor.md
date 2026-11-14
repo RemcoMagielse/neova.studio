@@ -88,7 +88,7 @@ The tool (MCP) servers the agent starts with, such as Playwright, Penpot or shad
 
 What the agent does, in a Markdown editor. You only write its role: when the agent starts, Neova puts a short start-up section in front of it. That section has the agent register under its name, load Neova Studio and the skills you picked, read the wiki pages you picked, and say so if it can't reach Neova Studio. Older agents that still have a Preparation section keep working; doing the steps twice does no harm.
 
-A Claude Code agent starts with its instructions built in, and its first message asks it to follow them. Other agents get the instructions sent to their terminal when they start.
+A Claude Code or OpenCode agent starts with its instructions built in, and its first message asks it to follow them. An OpenCode agent also gets Neova's tools with its start, for this project. Other agents get the instructions sent to their terminal when they start.
 
 Click **Insert** to add a reference to a standard, skill, MCP tool or snippet at the cursor.
 

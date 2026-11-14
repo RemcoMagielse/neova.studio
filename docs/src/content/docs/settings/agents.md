@@ -315,9 +315,9 @@ Each tab shows the configuration to add, with a **Copy** button, a line that say
 | **Cursor** | `.cursor/mcp.json` in your project |
 | **Gemini** | Your Gemini CLI configuration |
 | **Mistral Vibe** | Your Mistral Vibe configuration |
-| **OpenCode** | Your OpenCode MCP configuration |
+| **OpenCode** | `opencode.json` in your project, under `"mcp"`. OpenCode agents that Neova starts are connected without it |
 
-On **Claude Code** and **Cursor**, a card writes the file for you:
+On **Claude Code**, **Cursor** and **OpenCode**, a card writes the file for you:
 
 | Card says | Button | What it does |
 |---|---|---|

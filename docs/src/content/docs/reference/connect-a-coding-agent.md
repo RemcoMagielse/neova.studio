@@ -69,7 +69,7 @@ If the server is not running, the window says so, and you can add the entry late
 
 1. Go to **Settings › Agent tools**.
 2. Under **Agent Configuration**, choose the tab for your agent.
-3. For **Claude Code** and **Cursor**, click the button in the card below the configuration. For the other tabs, click **Copy** and paste the configuration into the agent's file yourself.
+3. For **Claude Code**, **Cursor** and **OpenCode**, click the button in the card below the configuration. For the other tabs, click **Copy** and paste the configuration into the agent's file yourself.
 
 | Tab | Target file | Add from Neova |
 |---|---|---|
@@ -77,7 +77,9 @@ If the server is not running, the window says so, and you can add the entry late
 | **Cursor** | `.cursor/mcp.json` | Yes |
 | **Gemini** | `.gemini/settings.json` | No, copy the configuration |
 | **Mistral Vibe** | `.vibe/mcp.json` | No, copy the configuration |
-| **OpenCode** | `.opencode/mcp.json` | No, copy the configuration |
+| **OpenCode** | `opencode.json` (under `"mcp"`) | Yes. Agents that Neova starts don't need it |
+
+**OpenCode agents that Neova starts** get Neova's tools and their instructions with the start command, so there is nothing to copy. An older Neova entry in your OpenCode config, for example one with a fixed `--port`, is switched off for those agents, so they always reach this project.
 
 The card shows the state of the target file in the project folder:
 
