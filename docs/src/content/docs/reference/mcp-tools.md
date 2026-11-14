@@ -80,6 +80,17 @@ A longer document comes back as page 1, with `pages` and `hasMore` set and an ou
 |---|---|---|
 | `list_links` | Returns the project's saved links (title, URL, group, description) in the order of **Project › Overview**. | None |
 
+## To do
+
+The user's [To do](/tasks/to-do/) list: small actions only they can do.
+
+| Tool | What it does | Main parameters |
+|---|---|---|
+| `add_todo` | Puts an action on the list. One paragraph, at most 600 characters. | `text`*, `taskId`, `notifyOnDone` (the agent gets a message when the user ticks it off or removes it) |
+| `list_todos` | Lists the to-dos: open ones oldest first. | `includeDone` (default false) |
+| `complete_todo` | Ticks off a to-do the agent added itself. | `id`* |
+| `remove_todo` | Removes a to-do the agent added itself. | `id`* |
+
 ## Wiki
 
 | Tool | What it does | Main parameters |

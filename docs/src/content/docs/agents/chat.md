@@ -108,11 +108,10 @@ A message can be up to 4,000 characters. From 3,600 characters a counter shows.
 
 ### Who gets your message
 
-The **To** row above the box shows who your next message goes to, so you don't have to type `@` each time.
+The **To** row above the box shows who your message goes to.
 
-- It is filled in with the agent you were last talking to: the agents your last message named, or the last agent that mentioned you.
-- Click **×** on a name to take it off. Click **Add** to add an agent.
-- Once you start typing, the row stays put, even when another message comes in. After you send, it follows the conversation again.
+- It starts empty for every message. It never carries over from your last message.
+- Click **Add** to add an agent. Click **×** on a name to take it off.
 - Agents you type as `@Name`, and the agent you reply to, show in the row too.
 - With nobody on it, the row says **Nobody gets this**. If some agents read every message, it says **Agents that read every message** instead: those agents still get it.
 
