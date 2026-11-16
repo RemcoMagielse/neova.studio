@@ -38,6 +38,10 @@ Done to-dos are cleared automatically seven days after you ticked them off.
 
 Rest the pointer on a to-do and click **×**. If it has a bell, the agent is told you removed it without doing it.
 
+## On your phone
+
+Open to-dos also show in the **Inbox** of Neova Capsule, on the phone and in the browser, below the questions. Tap **Done** to tick one off: it's done on the Mac too, and an agent that waits for it carries on. The project has to be open in Neova Studio.
+
 ## What agents do
 
 Agents add to-dos with the `add_todo` tool, and can tick off or remove the ones they added themselves, for example when they can see you've done it. They can't change your own to-dos or another agent's. See [MCP tools](/reference/mcp-tools/#to-do).
