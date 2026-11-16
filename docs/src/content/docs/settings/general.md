@@ -1,6 +1,6 @@
 ---
 title: You · all projects, and Advanced
-description: Your profile, how Neova looks, sounds and alerts, voice, and the advanced settings you rarely change.
+description: Your profile, how Neova looks, sounds and alerts, voice, your usage, and the advanced settings you rarely change.
 sidebar:
   order: 1
 ---
@@ -9,7 +9,7 @@ Settings has a rail on the left. Each group caption says who a change affects:
 
 | Group | Pages |
 |---|---|
-| **You · all projects** | **Profile**, **Appearance**, **Sounds & alerts**, **Voice** |
+| **You · all projects** | **Profile**, **Appearance**, **Sounds & alerts**, **Voice**, **Usage** |
 | **This project** | **Board**, **Version history**. See [This project](/settings/workflow/). |
 | **Agents** | **Agents**, **Skills**, **Assistant**, **Agent tools**. See [Agents, Skills, Assistant and Agent tools](/settings/agents/). |
 | **Connections** | **Apps**, **Other projects**, **Phone & browser**. See [Connections](/settings/system/). |
@@ -173,6 +173,20 @@ An agent can send you a voice message in the chat when **Can send voice messages
 2. Under **Speech model**, click **Download**. Wait until it shows **✓ Installed**.
 3. To hear agents, click **Download** under **Voices** too.
 4. Click in a field, hold **⌥ Space** and talk. Let go to stop.
+
+## Usage
+
+Which screens you use, for how long, and what you decide. Neova records it on this Mac only: daily totals per screen, no titles, names or text. It never goes into the project, to teammates, your phone or the internet.
+
+- **Period** and **This project** / **All projects** choose what you see.
+- **Screens**, most used first. The bar shows two times: *hands on* (dark: you clicked, typed or scrolled in the last minute) within *in front* (light: Neova was the window in front with this screen visible). A screen left open while you work in another app adds no time. Next to it: visits, and **how you got there** (Sidebar, Tab, ⌘K, Notification, Task link, Assistant, or Link for anything else).
+- **Never opened**: sidebar pages you didn't visit in the period.
+- **Decisions**: questions answered, approved, rejected, to-dos ticked off, tasks you moved, and chat messages you sent. These come from what Neova already saves, so they count from before you turned recording on too.
+- **Agent tools**: how often agents called each Neova tool.
+- **Copy summary** copies the numbers as plain text, to paste into a chat or task.
+- **Record my usage** switches recording off or on. Off keeps what's there; **Clear all** removes it for every project.
+
+Totals are saved every 30 seconds; days older than 60 are dropped.
 
 ## Advanced
 
