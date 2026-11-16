@@ -13,10 +13,11 @@ Open it from **Sidebar › Agents › Assistant**. Press **⌘J** to open it in 
 
 | Part | What it shows or does |
 |---|---|
-| **Neova Assistant** | The name, followed by the status: **not started**, **starting…**, **idle**, **thinking…**, **calling tool…**, **done**, **error** or **needs input**. |
+| **Neova Assistant** | The name, followed by the status: **not started**, **asleep**, **starting…**, **idle**, **thinking…**, **calling tool…**, **done**, **error** or **needs input**. |
 | **Conversation** / **Terminal** | Switches between the chat and the Assistant's own terminal. |
 | Gear (**Assistant settings**) | Opens **Settings › Assistant** in a new tab. |
 | **New chat** | Clears the conversation and resets the Assistant. |
+| **Stop** | Puts the Assistant to sleep. It stays asleep, also after you restart Neova, until you click **Wake up**. |
 
 ## Conversation
 
@@ -28,6 +29,8 @@ Your messages show on the right, the Assistant's replies on the left.
 - A paper-plane icon marks a message that came in through Telegram.
 
 When the Assistant isn't running, the area says **The assistant isn't running yet**. Click **Start assistant** to start it.
+
+When you stopped it, your conversation stays visible but dimmed, under **The Assistant is asleep**. Click **Wake up** to start it again.
 
 ## Message box
 
