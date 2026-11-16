@@ -92,6 +92,8 @@ A Claude Code or OpenCode agent starts with its instructions built in, and its f
 
 Click **Insert** to add a reference to a standard, skill, MCP tool or snippet at the cursor.
 
+Click **Preview full prompt** to see the exact text the agent starts with: the start-up section, then your instructions. It shows your unsaved changes too. The skills and wiki pages are listed by name; the agent loads their content itself when it starts.
+
 ### Make global
 
 Shows for agents that belong only to this project. Click **Make global** and confirm. The agent's identity (name, description, instructions, start command, avatar and default events) moves to your global agent library and becomes available in every project. The notebook, backlog, detection profile and terminal link stay with this project.
