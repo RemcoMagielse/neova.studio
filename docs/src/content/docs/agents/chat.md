@@ -23,7 +23,8 @@ Open it from **Sidebar › Agents › Chat**. The badge on **Chat** in the sideb
 
 Your messages show on the right. Agent messages show on the left, with the agent's avatar and name.
 
-- Hover over an agent's avatar or name to see its description, status, notes, the events it listens to and a terminal preview. **Open Terminal** goes to the agent's terminal. **Agent Settings** opens the [Agent Editor](/agents/agent-editor/).
+- The avatar next to an agent's latest message has a ring: coloured while the agent works or needs you, otherwise a thin grey ring for its prompt cache that shrinks as the cache runs out.
+- Hover over an agent's avatar or name to see its description, status and minutes of prompt cache left, notes, the events it listens to and a terminal preview. **Open Terminal** goes to the agent's terminal. **Agent Settings** opens the [Agent Editor](/agents/agent-editor/).
 - Messages support Markdown: bold, lists, tables and code.
 - A reply shows a quote of the original message. Click the quote to jump to it.
 - Images in a message show as thumbnails. Click one to view it large.
