@@ -22,13 +22,20 @@ Under the text:
 - who added it: an agent's name and picture, or **You**;
 - how long ago;
 - the task it belongs to, if any. Click it to open the task;
-- a bell, when the agent waits to hear that it's done. Rest the pointer on it to see who.
+- a bell, when the agent waits to hear that it's done. Rest the pointer on it to see who;
+- **Add a note**, on an agent's to-do.
 
 Open to-dos are listed oldest first, so you can work down the list.
 
+## Writing a note to the agent
+
+Want to tell the agent something about a to-do, like "done, but only for the test account"? Click **Add a note** under it, type, and press **Enter** or click **Save**. **Shift+Enter** starts a new line, **Esc** cancels.
+
+The note shows under the to-do. Click **Edit** to change it, or empty it to remove it. Once you tick the to-do off, the note goes to the agent.
+
 ## Ticking off
 
-Click the checkbox. The to-do is crossed off and moves under **Show n done**. If it has a bell, the agent gets a message that it's done and carries on.
+Click the checkbox. The to-do is crossed off and moves under **Show n done**. If it has a bell, the agent gets a message that it's done and carries on. If you wrote a note, the agent gets the note too, also without a bell.
 
 Ticked one off by mistake? Click **Show n done** and untick it.
 
@@ -36,11 +43,11 @@ Done to-dos are cleared automatically seven days after you ticked them off.
 
 ## Removing
 
-Rest the pointer on a to-do and click **×**. If it has a bell, the agent is told you removed it without doing it.
+Rest the pointer on a to-do and click **×**. If it has a bell or a note, the agent is told you removed it without doing it, with your note.
 
 ## On your phone
 
-Open to-dos also show in the **Inbox** of Neova Capsule, on the phone and in the browser, below the questions. Tap **Done** to tick one off: it's done on the Mac too, and an agent that waits for it carries on. The project has to be open in Neova Studio.
+Open to-dos also show in the **Inbox** of Neova Capsule, on the phone and in the browser, below the questions. Tap **Done** to tick one off: it's done on the Mac too, and an agent that waits for it carries on. A note you wrote on the Mac goes to the agent as well. The project has to be open in Neova Studio.
 
 ## What agents do
 
