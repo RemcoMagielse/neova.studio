@@ -13,8 +13,8 @@ Open it from **Sidebar › Agents › Chat**. The badge on **Chat** in the sideb
 
 | Part | What it shows or does |
 |---|---|
-| Avatar stack | The agents that are online. Click it to see **Show in chat** with each agent's status, and an **Activity** list of who connected and disconnected. Tick agents under **Show in chat** to [isolate the chat](#how-to-talk-to-one-or-a-few-agents). |
-| **Only …** | Shows while the chat is isolated, for example **Only Claude**. Click **✕** to see the whole team again. |
+| **Team** | Opens Team over the chat: start, stop and restart agents, or add a new one. Click **Team** again to go back to the chat. |
+| Avatars | Every agent in the project; running agents are in full colour. Click one to [talk to that agent only](#how-to-talk-to-one-or-a-few-agents). |
 | **Search chat…** | Searches the whole chat history. Press **Enter** to search; the newest match shows first. Press **Enter** again for an older match, **Shift+Enter** for a newer one, and **Esc** to clear. |
 | **?** | Opens the **Chat Quick Reference**. |
 
@@ -137,16 +137,16 @@ Type `/` at the start of the message, or after a space (for example after `@Clau
 
 Isolate the chat to talk to some agents without typing `@` each time.
 
-1. Click the avatar stack in the header.
-2. Under **Show in chat**, tick one or more agents. Only agents that are online are listed.
-3. Type your message and press **Enter**. It goes to every agent you ticked. **To Claude** above the message box shows who receives it.
+1. Click an agent's avatar in the header. **⌘-click** another avatar to add it.
+2. Type your message and press **Enter**. It goes to the agents in the **To** row above the message box.
 
 While the chat is isolated:
 
 - You see the agents' messages and your messages to them. Everything else folds into one line, such as **3 messages**. Click the line to open it.
 - An orange dot on a folded line means something in it is waiting on you, such as a question.
 - An extra `@` mention also reaches that agent, for that message only.
-- Click **✕** on **Only …** or on **To …**, or tick **Whole team**, to see the whole team again. The chat always opens on the whole team.
+- Click **Add** in the **To** row to bring in another agent.
+- Click **✕** on the last agent in the **To** row, or click its avatar again, to see the whole team again. The chat always opens on the whole team.
 
 ## How to send a message on to an agent
 
