@@ -13,8 +13,9 @@ Open it from **Sidebar › Agents › Chat**. The badge on **Chat** in the sideb
 
 | Part | What it shows or does |
 |---|---|
-| **Team** | Opens Team over the chat: start, stop and restart agents, or add a new one. Click **Team** again to go back to the chat. |
+| **Team** | Opens Team over the chat: start, stop and restart agents, create a new one, or add one from the **Agent Library** at the bottom. Click **Team** again to go back to the chat. |
 | Avatars | Every agent in the project; running agents are in full colour. Click one to [talk to that agent only](#how-to-talk-to-one-or-a-few-agents). |
+| **Only … gets your messages** | Shows while you talk to one or a few agents, for example **Only Claude gets your messages**. Click **✕** to go back to the whole team. |
 | **Search chat…** | Searches the whole chat history. Press **Enter** to search; the newest match shows first. Press **Enter** again for an older match, **Shift+Enter** for a newer one, and **Esc** to clear. |
 | **?** | Opens the **Chat Quick Reference**. |
 
@@ -146,7 +147,7 @@ While the chat is isolated:
 - An orange dot on a folded line means something in it is waiting on you, such as a question.
 - An extra `@` mention also reaches that agent, for that message only.
 - Click **Add** in the **To** row to bring in another agent.
-- Click **✕** on the last agent in the **To** row, or click its avatar again, to see the whole team again. The chat always opens on the whole team.
+- Click **✕** in the **Only … gets your messages** strip, **✕** on the last agent in the **To** row, or its avatar again, to see the whole team again. The chat always opens on the whole team.
 
 ## How to send a message on to an agent
 
