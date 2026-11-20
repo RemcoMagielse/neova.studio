@@ -36,7 +36,7 @@ Each card shows:
 | Part | What it shows or does |
 |---|---|
 | Avatar | A ring around it shows the status and whether the agent's prompt cache is still warm. |
-| Name | A small label shows when the card is another run of the same agent. The pencil (**Edit agent**) shows on hover and opens the Agent Editor. |
+| Name | A library icon shows when the agent comes from your Agent Library and is shared with other projects. A small label shows when the card is another run of the same agent. The pencil (**Edit agent**) shows on hover and opens the Agent Editor. |
 | State | For example **working · 34 min** or **waiting on you · 4 min**. |
 | Goal and task | The task the agent works on, with its goal above it. Click it to open the task. |
 | Questions | One amber row per open question, with how long it has waited and **Answer**. **Answer** opens the same answer window as Activity. |
@@ -50,7 +50,7 @@ Right-click a card for **Start**, **Start on goal**, **Edit** and **Delete**. Th
 
 ### Not running
 
-Agents that aren't running are listed in one line under the board, after **Not running**, with their avatar and name. Click a name to start the agent. Click the arrow next to it to start it in a goal's folder instead.
+Agents that aren't running are listed under the board, after **Not running**, in two groups: **This project** for agents that only this project has, and **From your library** for shared agents from your Agent Library. Click a name to start the agent. Click the arrow next to it to start it in a goal's folder instead.
 
 ## Agent Library
 
