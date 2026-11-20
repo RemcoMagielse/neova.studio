@@ -25,6 +25,7 @@ Each row shows:
 
 - The avatar, with a ring for the status and a green link badge when the terminal is linked to the agent.
 - The name. Another run of the same agent shows a small label with the original agent's name.
+- Your label, if you gave the agent one, such as **Login bug**. Hover the row and click the tag icon to add one; click the label to change or clear it.
 - For a running agent: the status (**Working**, **Needs Attention**, **Idle** or **Error**), the goal it was started in, and **User typing** when you have unsent text in its terminal.
 - A muted bell when the agent receives no events.
 

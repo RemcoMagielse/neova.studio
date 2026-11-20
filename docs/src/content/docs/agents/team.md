@@ -36,7 +36,7 @@ Each card shows:
 | Part | What it shows or does |
 |---|---|
 | Avatar | A ring around it shows the status and whether the agent's prompt cache is still warm. |
-| Name | A library icon shows when the agent comes from your Agent Library and is shared with other projects. A small label shows when the card is another run of the same agent. The pencil (**Edit agent**) shows on hover and opens the Agent Editor. |
+| Name | Your label, if you gave the agent one: hover the card and click the tag icon, type a short label such as **Login bug** and press Enter. Click the label to change it, or **✕** to clear it. A library icon shows when the agent comes from your Agent Library and is shared with other projects. A small label shows when the card is another run of the same agent. The pencil (**Edit agent**) shows on hover and opens the Agent Editor. |
 | State | For example **working · 34 min** or **waiting on you · 4 min**. |
 | Goal and task | The task the agent works on, with its goal above it. Click it to open the task. |
 | Questions | One amber row per open question, with how long it has waited and **Answer**. **Answer** opens the same answer window as Activity. |
